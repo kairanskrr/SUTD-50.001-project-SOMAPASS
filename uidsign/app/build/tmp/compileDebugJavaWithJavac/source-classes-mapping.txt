@@ -1,0 +1,10 @@
+com/kairan/uidesign/CreateAccountActivity.java
+ com.kairan.uidesign.CreateAccountActivity
+ com.kairan.uidesign.CreateAccountActivity$1
+com/kairan/uidesign/MainActivity.java
+ com.kairan.uidesign.MainActivity
+com/kairan/uidesign/LoginActivity.java
+ com.kairan.uidesign.LoginActivity
+ com.kairan.uidesign.LoginActivity$1
+com/kairan/uidesign/BuildConfig.java
+ com.kairan.uidesign.BuildConfig

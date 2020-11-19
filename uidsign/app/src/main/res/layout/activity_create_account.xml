@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccountActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_blue"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/back_to_login"
+        android:layout_width="56dp"
+        android:layout_height="68dp"
+        android:clickable="true"
+        android:src="@drawable/back_arrow_create_account"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_to_login"
+        app:layout_constraintVertical_bias="0.2">
+
+        <TextView
+            android:id="@+id/username_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heavitas"
+            android:paddingLeft="10dp"
+            android:text="USERNAME"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/editText_username_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_text"
+            android:paddingLeft="2dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/studentid_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heavitas"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="5dp"
+            android:text="STUDENT ID"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/editText_studentid_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_text"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp" />
+
+        <TextView
+            android:id="@+id/email_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heavitas"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="5dp"
+            android:text="EMAIL"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/editText_email_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:paddingLeft="2dp" />
+
+        <TextView
+            android:id="@+id/password_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heavitas"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:text="PASSWORD"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/editText_password_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_text"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp" />
+
+        <TextView
+            android:id="@+id/confirm_password_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heavitas"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:text="CONFIRM PASSWORD"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/editText_confirm_password_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/edit_text"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_darkblue"
+            android:text="CREATE ACCOUNT"
+            android:textColor="@color/white"
+            android:fontFamily="@font/heavitas"
+            android:textSize="18dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

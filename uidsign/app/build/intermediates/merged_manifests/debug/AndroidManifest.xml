@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kairan.uidesign"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="30" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@drawable/somapasslogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/somapasslogo"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.Uidesign" >
+        <activity android:name="com.kairan.uidesign.CreateAccountActivity" />
+        <activity android:name="com.kairan.uidesign.LoginActivity" />
+        <!--
+        -android:theme="@style/Theme.Uidesign.Fullscreen"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:theme="@style/Theme.Uidesign"
+        -->
+        <activity android:name="com.kairan.uidesign.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
