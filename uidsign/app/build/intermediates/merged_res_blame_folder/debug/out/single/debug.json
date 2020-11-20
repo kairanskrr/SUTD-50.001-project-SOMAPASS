@@ -1,35 +1,35 @@
 [
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_home_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_home_black_24dp.png"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_notifications_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_icon.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\profile_icon.png"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_background.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\login_background.png"
-    },
-    {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_dashboard_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_dashboard_black_24dp.png"
+    },
+    {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_create_account.xml.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\activity_create_account.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_layout.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\search_layout.xml"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_darkblue.xml.flat",
@@ -40,56 +40,76 @@
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\font_heavitas.ttf.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\font\\heavitas.ttf"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_decalre_icon.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\decalre_icon.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_home_icon.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\home_icon.png"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_somapasslogo.png.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\somapasslogo.png"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_temperature_taking.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\activity_temperature_taking.xml"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bottom_line.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\bottom_line.xml"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_back_arrow_create_account.png.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\back_arrow_create_account.png"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_qrcode_icon.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\qrcode_icon.png"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_remember_me.xml.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\remember_me.xml"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_edit_text.xml.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\edit_text.xml"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_navigation_bar_icon.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\navigation_bar_icon.xml"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cardview_login.xml.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\cardview_login.xml"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_dashboard_black_24dp.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_home_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_home_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_notifications_black_24dp.png"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
@@ -122,6 +142,166 @@
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background.png.flat",
         "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\background.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cardview_layout_menu.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\cardview_layout_menu.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_temperature_icon.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\temperature_icon.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_background.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\login_background.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_daily_declaration.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\activity_daily_declaration.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_icon.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\search_icon.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_home_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_declaration_icon.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\declaration_icon.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\font_heavitas.ttf.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\font\\heavitas.ttf"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_profile.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\background_profile.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_notifications_black_24dp.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_home_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_notifications_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_edit_text.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\edit_text.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_backarrow_darkblue.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\backarrow_darkblue.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_home_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_notifications_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main_menu.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\activity_main_menu.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cardview_login.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\cardview_login.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_scan.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\fragment_scan.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_home_black_24dp.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_topbar.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\profile_topbar.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_profile.xml.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_menu_background.png.flat",
+        "source": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\menu_background.png"
     },
     {
         "merged": "F:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_title_2.png.flat",

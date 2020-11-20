@@ -10,7 +10,11 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".DailyDeclaration" />
+        <activity android:name=".TemperatureTaking" />
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu" />
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
         <!--

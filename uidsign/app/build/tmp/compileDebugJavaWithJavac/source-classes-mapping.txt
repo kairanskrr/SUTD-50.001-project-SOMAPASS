@@ -3,8 +3,28 @@ com/kairan/uidesign/CreateAccountActivity.java
  com.kairan.uidesign.CreateAccountActivity$1
 com/kairan/uidesign/MainActivity.java
  com.kairan.uidesign.MainActivity
+com/kairan/uidesign/ui/scan/ScanViewModel.java
+ com.kairan.uidesign.ui.scan.ScanViewModel
 com/kairan/uidesign/LoginActivity.java
  com.kairan.uidesign.LoginActivity
  com.kairan.uidesign.LoginActivity$1
+ com.kairan.uidesign.LoginActivity$2
 com/kairan/uidesign/BuildConfig.java
  com.kairan.uidesign.BuildConfig
+com/kairan/uidesign/MainMenuActivity.java
+ com.kairan.uidesign.MainMenuActivity
+com/kairan/uidesign/ui/home/HomeFragment.java
+ com.kairan.uidesign.ui.home.HomeFragment
+com/kairan/uidesign/TemperatureTaking.java
+ com.kairan.uidesign.TemperatureTaking
+com/kairan/uidesign/ui/home/HomeViewModel.java
+ com.kairan.uidesign.ui.home.HomeViewModel
+com/kairan/uidesign/ui/profile/ProfileFragment.java
+ com.kairan.uidesign.ui.profile.ProfileFragment
+com/kairan/uidesign/DailyDeclaration.java
+ com.kairan.uidesign.DailyDeclaration
+com/kairan/uidesign/ui/profile/ProfileViewModel.java
+ com.kairan.uidesign.ui.profile.ProfileViewModel
+com/kairan/uidesign/ui/scan/ScanFragment.java
+ com.kairan.uidesign.ui.scan.ScanFragment
+ com.kairan.uidesign.ui.scan.ScanFragment$1

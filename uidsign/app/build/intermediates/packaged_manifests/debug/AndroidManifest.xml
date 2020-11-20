@@ -18,6 +18,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Uidesign" >
+        <activity android:name="com.kairan.uidesign.DailyDeclaration" />
+        <activity android:name="com.kairan.uidesign.TemperatureTaking" />
+        <activity
+            android:name="com.kairan.uidesign.MainMenuActivity"
+            android:label="@string/title_activity_main_menu" />
         <activity android:name="com.kairan.uidesign.CreateAccountActivity" />
         <activity android:name="com.kairan.uidesign.LoginActivity" />
         <!--

@@ -1,4 +1,4 @@
-#Thu Nov 19 12:02:22 CST 2020
+#Sat Nov 21 01:29:08 CST 2020
 base.0=F\:\\SUTD\\Term4\\50.001\\1d test\\1d-test\\uidsign\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
