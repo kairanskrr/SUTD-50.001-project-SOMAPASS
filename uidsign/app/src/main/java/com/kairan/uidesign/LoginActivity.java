@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     Button button_login;
     Button button_create_account;
     private final String sharedPrefFile = "com.example.android.mainsharedprefs"; public static final String KEY = "MyKey"; SharedPreferences mPreferences;
-
+//test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
