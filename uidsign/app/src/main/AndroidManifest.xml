@@ -19,6 +19,8 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".ScanActivity"/>
         <!--
         -android:theme="@style/Theme.Uidesign.Fullscreen"
             android:icon="@mipmap/ic_launcher"

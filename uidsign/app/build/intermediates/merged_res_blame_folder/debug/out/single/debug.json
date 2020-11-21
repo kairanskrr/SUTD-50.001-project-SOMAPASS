@@ -36,8 +36,8 @@
         "source": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\backarrow_darkblue.png"
     },
     {
-        "merged": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_decalre_icon.png.flat",
-        "source": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\decalre_icon.png"
+        "merged": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_declare_icon.png.flat",
+        "source": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\declare_icon.png"
     },
     {
         "merged": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_temptaking.xml.flat",
@@ -216,11 +216,11 @@
         "source": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\title_2.png"
     },
     {
-        "merged": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_profile_topbar.xml.flat",
-        "source": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\src\\main\\res\\drawable-v24\\profile_topbar.xml"
-    },
-    {
         "merged": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profile_icon.png.flat",
         "source": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\src\\main\\res\\drawable\\profile_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_profile_topbar.xml.flat",
+        "source": "C:\\Users\\ngyy3\\Documents\\GitHub\\1d-test\\uidsign\\app\\src\\main\\res\\drawable-v24\\profile_topbar.xml"
     }
 ]

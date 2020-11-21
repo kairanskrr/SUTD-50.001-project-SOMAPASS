@@ -8,6 +8,9 @@ com/kairan/uidesign/LoginActivity.java
  com.kairan.uidesign.LoginActivity$1
  com.kairan.uidesign.LoginActivity$2
  com.kairan.uidesign.LoginActivity$HttpGetRequest
+com/kairan/uidesign/TempTaking.java
+ com.kairan.uidesign.TempTaking
+ com.kairan.uidesign.TempTaking$1
 com/kairan/uidesign/ScanActivity.java
  com.kairan.uidesign.ScanActivity
 com/kairan/uidesign/BuildConfig.java

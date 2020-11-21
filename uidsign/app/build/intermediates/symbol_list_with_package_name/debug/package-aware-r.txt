@@ -1616,8 +1616,8 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable button_darkblue
 drawable cardview_layout_menu
 drawable cardview_login
-drawable decalre_icon
 drawable declaration_icon
+drawable declare_icon
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1893,6 +1893,7 @@ id labeled
 id largeLabel
 id layout
 id left
+id lessthan376
 id line1
 id line3
 id linear
@@ -1904,6 +1905,7 @@ id linearLayout_searchbar_menu_1
 id linearLayout_searchbar_menu_2
 id linearLayout_temperature_declaration_window
 id linearLayout_temperature_taking
+id linearLayout_temptaking_title
 id listMode
 id listView_current_checkin_locations
 id list_item
@@ -1920,6 +1922,8 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id morethan377notwell
+id morethan377well
 id motion_base
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -1948,6 +1952,7 @@ id nav_graph
 id nav_host_fragment
 id nav_host_fragment_container
 id nav_view
+id navigation_declare
 id navigation_header_container
 id navigation_home
 id navigation_profile
@@ -2054,6 +2059,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id tempmcqcontainer
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -2293,6 +2299,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string declare
 string dummy_button
 string dummy_content
 string error_icon_content_description
