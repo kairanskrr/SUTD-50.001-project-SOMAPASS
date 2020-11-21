@@ -18,3 +18,4 @@ com/kairan/uidesign/MenuActivity.java
 com/kairan/uidesign/ProfileActivity.java
  com.kairan.uidesign.ProfileActivity
  com.kairan.uidesign.ProfileActivity$1
+ com.kairan.uidesign.ProfileActivity$2

@@ -10,7 +10,12 @@
         android:id="@+id/profile_backgorund"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background_profile" />
+        android:scaleType="fitXY"
+        android:src="@drawable/background_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout_profile_title"
@@ -23,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069">
+        app:layout_constraintVertical_bias="0.06999999">
 
         <ImageView
             android:id="@+id/imageView_back_profile"
@@ -31,6 +36,7 @@
             android:layout_height="22dp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
+            android:clickable="true"
             android:src="@drawable/backarrow_darkblue" />
 
         <TextView
@@ -38,17 +44,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="@string/title_profile"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:background="@color/white"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/heavitas"
-            android:textColor="@drawable/backarrow_darkblue"
-            android:textSize="35dp" />
+            android:text="@string/title_profile"
+            android:textColor="@color/background_darkblue"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imageView_photo_profile"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/default_photo"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/profile_backgorund"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout_profile_title"
+        app:layout_constraintTop_toTopOf="@+id/profile_backgorund"
+        app:layout_constraintVertical_bias="0.19999999" />
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="370dp"
         android:layout_height="474dp"
         android:background="@drawable/cardview_layout_menu"
@@ -62,20 +81,21 @@
         app:layout_constraintVertical_bias="0.487">
 
         <LinearLayout
+            android:id="@+id/linearLayout_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView_username_profile_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_marginRight="80dp"
+                android:layout_marginRight="40dp"
                 android:background="@color/light_blue"
                 android:fontFamily="@font/heavitas"
                 android:text="USERNAME"
-                android:textColor="@drawable/backarrow_darkblue"
+                android:textColor="@color/background_darkblue"
                 android:textSize="18dp" />
 
             <TextView
@@ -83,15 +103,146 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="40dp"
                 android:background="@color/light_blue"
                 android:fontFamily="@font/heavitas"
-                android:text="USERNAME"
-                android:textColor="@drawable/backarrow_darkblue"
+                android:text="XXXX"
+                android:textColor="@color/background_darkblue"
                 android:textSize="18dp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayout_studentid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_studentid_profile_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="40dp"
+                android:background="@color/light_blue"
+                android:fontFamily="@font/heavitas"
+                android:text="STUDENT ID"
+                android:textColor="@color/background_darkblue"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView_studentid_profile_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="40dp"
+                android:background="@color/light_blue"
+                android:fontFamily="@font/heavitas"
+                android:text="1000000"
+                android:textColor="@color/background_darkblue"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_email_profile_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="10dp"
+                android:background="@color/light_blue"
+                android:fontFamily="@font/heavitas"
+                android:text="EMAIL"
+                android:textColor="@color/background_darkblue"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView_email_profile_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginLeft="10dp"
+                android:background="@color/light_blue"
+                android:fontFamily="@font/heavitas"
+                android:text="xxxx@mymail.sutd.edu.sg"
+                android:textAllCaps="false"
+                android:textColor="@color/background_darkblue"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView_notification_profile_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:background="@color/light_blue"
+                android:fontFamily="@font/heavitas"
+                android:text="NOTIFICATION: "
+                android:textColor="@color/background_darkblue"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/textView_notification_profile_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@color/light_blue"
+                android:fontFamily="@font/heavitas"
+                android:text="OFF"
+                android:textColor="@color/background_darkblue"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switch_notification_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/notification_switch"
+            android:fontFamily="@font/heavitas"
+            android:textColor="@color/background_darkblue"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView_change_password_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:fontFamily="@font/heavitas"
+            android:gravity="left"
+            android:text="CHANGE PASSWORD"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView_signout_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/heavitas"
+            android:gravity="left"
+            android:text="SIGN OUT"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
     </LinearLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_bar"
