@@ -23,6 +23,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Uidesign" >
+        <activity android:name="com.kairan.uidesign.ProfileActivity" />
+        <activity android:name="com.kairan.uidesign.ScanActivity" />
         <activity android:name="com.kairan.uidesign.MenuActivity" />
         <activity android:name="com.kairan.uidesign.CreateAccountActivity" />
         <activity android:name="com.kairan.uidesign.LoginActivity" />
