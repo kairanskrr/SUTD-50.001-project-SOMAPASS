@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/user/Documents/GitHub/1d-test/uidsign/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "F:\\SUTD\\Term4\\50.001\\new_tryout\\1d-test\\uidsign\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/user/.gradle/caches/transforms-2/files-2.1/b988cdf40af7cdf3e0317011f8e5bfe7/material-1.2.1/res/values-night-v8/values-night-v8.xml",
+                    "source": "C:\\Users\\dell\\.gradle\\caches\\transforms-2\\files-2.1\\a527ad4f532df6b258c428a911debd89\\appcompat-1.2.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,38",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "100,170,254,338,434,536,638,3305",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "165,249,333,429,531,633,727,3389"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\dell\\.gradle\\caches\\transforms-2\\files-2.1\\b988cdf40af7cdf3e0317011f8e5bfe7\\material-1.2.1\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/user/Documents/GitHub/1d-test/uidsign/app/src/main/res/values-night/themes.xml",
+                    "source": "F:\\SUTD\\Term4\\50.001\\new_tryout\\1d-test\\uidsign\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2,16",
                         "startColumns": "4,4",
@@ -37,23 +54,6 @@
                         "endLines": "37,43",
                         "endColumns": "12,12",
                         "endOffsets": "3300,3758"
-                    }
-                },
-                {
-                    "source": "/Users/user/.gradle/caches/transforms-2/files-2.1/a527ad4f532df6b258c428a911debd89/appcompat-1.2.0/res/values-night-v8/values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593,687",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "120,204,288,384,486,588,682,771"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,38",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "100,170,254,338,434,536,638,3305",
-                        "endColumns": "69,83,83,95,101,101,93,88",
-                        "endOffsets": "165,249,333,429,531,633,727,3389"
                     }
                 }
             ]

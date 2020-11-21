@@ -1,4 +1,4 @@
-#Fri Nov 20 16:53:01 SGT 2020
-base.0=/Users/user/Documents/GitHub/1d-test/uidsign/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Sat Nov 21 12:39:29 CST 2020
+base.0=F\:\\SUTD\\Term4\\50.001\\new_tryout\\1d-test\\uidsign\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

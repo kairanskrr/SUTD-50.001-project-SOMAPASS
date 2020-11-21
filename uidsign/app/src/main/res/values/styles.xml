@@ -9,4 +9,9 @@
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
     </style>
 
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:fontFamily">@font/heavitas</item>
+        <item name="color">@color/background_darkblue</item>
+    </style>
+
 </resources>
