@@ -15,7 +15,8 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".TempTaking"></activity>
+        <activity android:name=".MenuActivity" />
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
         <!--

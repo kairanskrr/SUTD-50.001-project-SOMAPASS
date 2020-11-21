@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/profile_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background_profile" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_profile_title"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:background="@drawable/profile_topbar"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069">
+
+        <ImageButton
+            android:id="@+id/imageView_back_profile"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="#FFFFFF"
+            android:scaleType="fitCenter"
+            android:src="@drawable/backarrow_darkblue" />
+
+        <TextView
+            android:id="@+id/textView_profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/temptaking"
+            android:layout_marginLeft="15dp"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/heavitas"
+            android:textColor="@drawable/backarrow_darkblue"
+            android:textSize="35dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cardview_layout_menu"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_profile_title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/temptaking"
+            android:fontFamily="@font/heavitas"
+            android:textColor="@color/background_darkblue"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/background_darkblue" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lessthan376"
+                android:text="@string/tempoption1"
+                android:fontFamily="@font/heavitas"
+                android:paddingBottom="5dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/morethan377well"
+                android:text="@string/tempoption2"
+                android:fontFamily="@font/heavitas"
+                android:paddingBottom="5dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/morethan377notwell"
+                android:text="@string/tempoption3"
+                android:fontFamily="@font/heavitas"/>
+
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

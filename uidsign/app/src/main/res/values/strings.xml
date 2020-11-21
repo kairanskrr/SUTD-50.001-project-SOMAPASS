@@ -16,4 +16,26 @@
     <string name="title_home">HOME</string>
     <string name="title_scan">SCAN</string>
     <string name="title_profile">PROFILE</string>
+
+    <string name="temptaking">Temperature Taking</string>
+    <string name="tempoption1">Less Than Or Equal To 37.6&#176;C</string>
+    <string name="tempoption2">More Than Or Equal To 37.7&#176;C But I Am Feeling Well</string>
+    <string name="tempoption3">More Than Or Equal To 37.7&#176;C And I Am Not Feeling Well</string>
+
+    <string name="healthdec">Health Declaration</string>
+    <string name="selectno">Select &#34;No&#34; For All</string>
+    <string name="healthqn1">Have you travelled to other countries besides Singapore in the past 14 days?</string>
+    <string name="healthqn2">Have you received a quarantine/isolation order/stay-home notice in the past 14 days?</string>
+    <string name="healthqn3">Within the past 14 days, have you been in close contact with someone who is a confirmed case for COVID-19 or has been been placed on quarantine or isolation order, and/or served stay-home notice?</string>
+    <string name="healthqn4">Have you been issued a medical certificate (MC) for respiratory symptoms and the validity date of the MC has not yet expired?</string>
+    <string name="healthqn5">Are you unwell with one or more of the following symptoms?</string>
+    <string name="qn5option1">Fever</string>
+    <string name="qn5option2">Dry Cough</string>
+    <string name="qn5option3">Shortness of Breath</string>
+    <string name="qn5option4">Sore Throat</string>
+    <string name="qn5option5">Runny Nose</string>
+
+    <string name="submit">Submit</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

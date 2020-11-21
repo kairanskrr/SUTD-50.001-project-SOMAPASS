@@ -15,11 +15,11 @@
         android:id="@+id/navigation_scan"
         android:name="com.kairan.uidesign.ui.scan.ScanFragment"
         android:label="@string/title_scan"
-        tools:layout="@layout/fragment_scan" />
+        tools:layout="@layout/activity_scan" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.kairan.uidesign.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/activity_profile" />
 </navigation>
