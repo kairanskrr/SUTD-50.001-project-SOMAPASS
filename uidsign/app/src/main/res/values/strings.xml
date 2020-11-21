@@ -17,6 +17,7 @@
     <string name="title_scan">SCAN</string>
     <string name="title_profile">PROFILE</string>
 
+    <string name="declare">Declare</string>
     <string name="temptaking">Temperature Taking</string>
     <string name="tempoption1">Less Than Or Equal To 37.6&#176;C</string>
     <string name="tempoption2">More Than Or Equal To 37.7&#176;C But I Am Feeling Well</string>
