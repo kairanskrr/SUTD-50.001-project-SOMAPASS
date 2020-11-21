@@ -3,6 +3,10 @@ com/kairan/uidesign/CreateAccountActivity.java
  com.kairan.uidesign.CreateAccountActivity$1
 com/kairan/uidesign/MainActivity.java
  com.kairan.uidesign.MainActivity
+com/kairan/uidesign/HealthDec.java
+ com.kairan.uidesign.HealthDec
+ com.kairan.uidesign.HealthDec$1
+ com.kairan.uidesign.HealthDec$2
 com/kairan/uidesign/LoginActivity.java
  com.kairan.uidesign.LoginActivity
  com.kairan.uidesign.LoginActivity$1
@@ -11,6 +15,7 @@ com/kairan/uidesign/LoginActivity.java
 com/kairan/uidesign/TempTaking.java
  com.kairan.uidesign.TempTaking
  com.kairan.uidesign.TempTaking$1
+ com.kairan.uidesign.TempTaking$2
 com/kairan/uidesign/ScanActivity.java
  com.kairan.uidesign.ScanActivity
 com/kairan/uidesign/BuildConfig.java
@@ -18,6 +23,8 @@ com/kairan/uidesign/BuildConfig.java
 com/kairan/uidesign/MenuActivity.java
  com.kairan.uidesign.MenuActivity
  com.kairan.uidesign.MenuActivity$1
+ com.kairan.uidesign.MenuActivity$2
+ com.kairan.uidesign.MenuActivity$3
 com/kairan/uidesign/ProfileActivity.java
  com.kairan.uidesign.ProfileActivity
  com.kairan.uidesign.ProfileActivity$1

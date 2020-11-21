@@ -8,12 +8,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuActivity extends AppCompatActivity {
     TextView textview_username_menu;
+    ImageButton temp_imagebutton;
+    ImageButton healthdec_imagebutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,5 +62,23 @@ public class MenuActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        temp_imagebutton = findViewById(R.id.temp_imagebutton);
+        temp_imagebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this,TempTaking.class);
+                startActivity(intent);
+            }
+        });
+        healthdec_imagebutton = findViewById(R.id.healthdec_imagebutton);
+        healthdec_imagebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this,HealthDec.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

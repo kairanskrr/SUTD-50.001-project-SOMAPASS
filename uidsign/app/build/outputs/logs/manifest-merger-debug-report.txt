@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
 MERGED from [androidx.navigation:navigation-ui:2.3.1] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\e3d7830f778f31330c967610f2dc1b90\navigation-ui-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\b988cdf40af7cdf3e0317011f8e5bfe7\material-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\ec4dd897d4037390d3cac18fc3984d5c\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
@@ -38,22 +38,22 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ngyy3\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\cccd3c0e33aa3a9a75544149af27bd44\lifecycle-livedata-core-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\5344f376b9f142648746b3ae893fe6dc\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\01339aeadc2379d14234ec1725fb1d1d\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
 	package
 		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:4:5-34
 		INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-39:12
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:2:11-69
@@ -74,7 +74,7 @@ ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidM
 	android:name
 		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:9:22-64
 application
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:11:5-37:19
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:11:5-38:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\b988cdf40af7cdf3e0317011f8e5bfe7\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\b988cdf40af7cdf3e0317011f8e5bfe7\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\ngyy3\.gradle\caches\transforms-2\files-2.1\ec4dd897d4037390d3cac18fc3984d5c\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -99,44 +99,48 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ng
 		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:17:9-46
+activity#com.kairan.uidesign.HealthDec
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:9-56
+	android:name
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:19-44
 activity#com.kairan.uidesign.TempTaking
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:9-57
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:9-48
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:19-45
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:19-45
 activity#com.kairan.uidesign.MenuActivity
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:9-50
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:9-50
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:19-47
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:19-47
 activity#com.kairan.uidesign.CreateAccountActivity
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:9-59
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:9-59
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:19-56
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:19-56
 activity#com.kairan.uidesign.LoginActivity
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:9-51
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:9-51
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:19-48
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:19-48
 activity#com.kairan.uidesign.ProfileActivity
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:9-52
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:9-53
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:19-50
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:19-50
 activity#com.kairan.uidesign.ScanActivity
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:9-49
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:24:9-50
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:19-47
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:24:19-47
 activity#com.kairan.uidesign.MainActivity
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:30:9-36:20
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:31:9-37:20
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:30:19-47
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:31:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:31:13-35:29
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:32:13-36:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:32:17-69
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:32:25-66
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:34:17-77
+ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:34:27-74
+		ADDED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:35:27-74
 uses-sdk
 INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml

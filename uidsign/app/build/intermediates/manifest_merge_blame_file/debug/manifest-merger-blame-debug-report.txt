@@ -24,7 +24,7 @@
 14-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:9:22-64
 15
 16    <application
-16-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:11:5-37:19
+16-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:11:5-38:19
 17        android:allowBackup="true"
 17-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:12:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -41,44 +41,47 @@
 24        android:testOnly="true"
 25        android:theme="@style/Theme.Uidesign" >
 25-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:17:9-46
-26        <activity android:name="com.kairan.uidesign.TempTaking" />
-26-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:9-57
-26-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:19-45
-27        <activity android:name="com.kairan.uidesign.MenuActivity" />
-27-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:9-50
-27-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:19-47
-28        <activity android:name="com.kairan.uidesign.CreateAccountActivity" />
-28-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:9-59
-28-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:19-56
-29        <activity android:name="com.kairan.uidesign.LoginActivity" />
-29-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:9-51
-29-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:19-48
-30        <activity android:name="com.kairan.uidesign.ProfileActivity" />
-30-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:9-52
-30-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:19-50
-31        <activity android:name="com.kairan.uidesign.ScanActivity" />
-31-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:9-49
-31-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:19-47
-32        <!--
-33        -android:theme="@style/Theme.Uidesign.Fullscreen"
-34            android:icon="@mipmap/ic_launcher"
-35            android:roundIcon="@mipmap/ic_launcher_round"
-36            android:theme="@style/Theme.Uidesign"
-37        -->
-38        <activity android:name="com.kairan.uidesign.MainActivity" >
-38-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:30:9-36:20
-38-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:30:19-47
-39            <intent-filter>
-39-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:31:13-35:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:32:17-69
-40-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:32:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:34:17-77
-42-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:34:27-74
-43            </intent-filter>
-44        </activity>
-45    </application>
-46
-47</manifest>
+26        <activity android:name="com.kairan.uidesign.HealthDec" />
+26-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:9-56
+26-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:18:19-44
+27        <activity android:name="com.kairan.uidesign.TempTaking" />
+27-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:9-48
+27-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:19:19-45
+28        <activity android:name="com.kairan.uidesign.MenuActivity" />
+28-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:9-50
+28-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:20:19-47
+29        <activity android:name="com.kairan.uidesign.CreateAccountActivity" />
+29-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:9-59
+29-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:21:19-56
+30        <activity android:name="com.kairan.uidesign.LoginActivity" />
+30-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:9-51
+30-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:22:19-48
+31        <activity android:name="com.kairan.uidesign.ProfileActivity" />
+31-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:9-53
+31-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:23:19-50
+32        <activity android:name="com.kairan.uidesign.ScanActivity" />
+32-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:24:9-50
+32-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:24:19-47
+33        <!--
+34        -android:theme="@style/Theme.Uidesign.Fullscreen"
+35            android:icon="@mipmap/ic_launcher"
+36            android:roundIcon="@mipmap/ic_launcher_round"
+37            android:theme="@style/Theme.Uidesign"
+38        -->
+39        <activity android:name="com.kairan.uidesign.MainActivity" >
+39-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:31:9-37:20
+39-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:31:19-47
+40            <intent-filter>
+40-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:32:13-36:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:33:17-69
+41-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:33:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:35:17-77
+43-->C:\Users\ngyy3\Documents\GitHub\1d-test\uidsign\app\src\main\AndroidManifest.xml:35:27-74
+44            </intent-filter>
+45        </activity>
+46    </application>
+47
+48</manifest>

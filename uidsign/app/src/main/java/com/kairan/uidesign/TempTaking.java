@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class TempTaking extends AppCompatActivity {
-
+    ImageButton backbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +53,14 @@ public class TempTaking extends AppCompatActivity {
                 return false;
             }
         });
-
+        backbutton = findViewById(R.id.imageView_back_fromtemp);
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(TempTaking.this,MenuActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

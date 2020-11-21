@@ -1829,6 +1829,7 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id drycough
 id easeIn
 id easeInOut
 id easeOut
@@ -1848,6 +1849,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id fever
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1866,6 +1868,7 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id healthdec_imagebutton
 id hideable
 id home
 id homeAsUp
@@ -1878,11 +1881,11 @@ id ignoreRequest
 id image
 id imageView
 id imageView2
+id imageView_back_fromhealth
+id imageView_back_fromtemp
 id imageView_back_profile
-id imageView_declaration_icon
 id imageView_qrcode_icon
 id imageView_search_icon
-id imageView_temperature_icon
 id info
 id invisible
 id italic
@@ -1900,6 +1903,7 @@ id linear
 id linearLayout
 id linearLayout_current_checkin_window
 id linearLayout_declaration
+id linearLayout_health_title
 id linearLayout_profile_title
 id linearLayout_searchbar_menu_1
 id linearLayout_searchbar_menu_2
@@ -1958,6 +1962,10 @@ id navigation_home
 id navigation_profile
 id navigation_scan
 id never
+id no1
+id no2
+id no3
+id no4
 id noScroll
 id none
 id normal
@@ -1996,6 +2004,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id runnynose
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2018,6 +2027,8 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id selectno
+id shortbreath
 id shortcut
 id showCustom
 id showHome
@@ -2030,6 +2041,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id sorethroat
 id spacer
 id spline
 id split_action_bar
@@ -2059,6 +2071,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id temp_imagebutton
 id tempmcqcontainer
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
@@ -2072,6 +2085,7 @@ id textSpacerNoTitle
 id textStart
 id textView_current_checkin_locations
 id textView_declaration_menu
+id textView_health_title
 id textView_profile_title
 id textView_search_menu
 id textView_temperatur_menu
@@ -2119,6 +2133,10 @@ id withText
 id withinBounds
 id wrap
 id wrap_content
+id yes1
+id yes2
+id yes3
+id yes4
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
