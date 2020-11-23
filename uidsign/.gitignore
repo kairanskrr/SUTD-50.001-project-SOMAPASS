@@ -1,2 +1,11 @@
 .gradle/
 .idea/
+app/build
+local.properties
+*.class
+*.apk
+*.ap_
+*.dex
+# generated files
+bin/
+gen/
