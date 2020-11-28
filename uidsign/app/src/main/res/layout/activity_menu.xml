@@ -58,8 +58,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-        <LinearLayout
-            android:id="@+id/linearLayout_searchbar_menu_2"
+        <RelativeLayout
+            android:id="@+id/relativeLayout_searchbar_menu_2"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/search_layout"
@@ -69,15 +69,19 @@
                 android:id="@+id/imageView_search_icon"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"
                 android:paddingLeft="5dp"
                 android:src="@drawable/search_icon" />
 
             <TextView
                 android:id="@+id/textView_search_menu"
-                android:layout_width="229dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
                 android:clickable="true"
                 android:fontFamily="@font/heavitas"
                 android:padding="10dp"
@@ -85,14 +89,30 @@
                 android:textColor="@color/black_overlay"
                 android:textSize="18dp" />
 
+            <SearchView
+                android:id="@+id/locationSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:visibility="invisible">
+
+            </SearchView>
+
             <ImageView
                 android:id="@+id/imageView_qrcode_icon"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
                 android:clickable="true"
                 android:src="@drawable/qrcode_icon" />
-        </LinearLayout>
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout_current_checkin_window"

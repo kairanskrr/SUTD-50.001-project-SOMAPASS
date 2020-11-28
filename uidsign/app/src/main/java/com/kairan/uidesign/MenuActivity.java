@@ -7,21 +7,30 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+
+
+
 public class MenuActivity extends AppCompatActivity {
     TextView textview_username_menu;
     ImageButton temp_imagebutton;
     ImageButton healthdec_imagebutton;
+    TextView textView_search_menu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+                setContentView(R.layout.activity_menu);
         getSupportActionBar().hide();
         textview_username_menu = findViewById(R.id.textview_username_menu);
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
@@ -80,6 +89,18 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        textView_search_menu = findViewById(R.id.textView_search_menu);
+        textView_search_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
+
+
+
+

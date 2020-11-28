@@ -15,7 +15,8 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
-        <activity android:name=".HealthDec"></activity>
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".HealthDec" />
         <activity android:name=".TempTaking" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".CreateAccountActivity" />
