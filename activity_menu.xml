@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <ImageView
+        android:id="@+id/menu_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/menu_background" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textview_hi_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heavitas"
+            android:text="HI"
+            android:textColor="@color/white"
+            android:textSize="60dp"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:id="@+id/textview_username_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/heavitas"
+            android:paddingLeft="10dp"
+            android:text="XXXX"
+            android:textColor="@color/light_blue"
+            android:textSize="60dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_searchbar_menu_1"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        <RelativeLayout
+            android:id="@+id/relativeLayout_searchbar_menu_2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/search_layout"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView_search_icon"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:paddingLeft="5dp"
+                android:src="@drawable/search_icon" />
+
+            <TextView
+                android:id="@+id/textView_search_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:clickable="true"
+                android:fontFamily="@font/heavitas"
+                android:padding="10dp"
+                android:text="location"
+                android:textColor="@color/black_overlay"
+                android:textSize="18dp" />
+
+            <SearchView
+                android:id="@+id/locationSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:visibility="invisible">
+
+            </SearchView>
+
+            <ImageView
+                android:id="@+id/imageView_qrcode_icon"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:clickable="true"
+                android:src="@drawable/qrcode_icon" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_current_checkin_window"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@drawable/cardview_layout_menu"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textView_current_checkin_locations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heavitas"
+                android:gravity="center_horizontal"
+                android:paddingLeft="20dp"
+                android:text="CURRENT CHECKED IN LOCATIONS"
+                android:textColor="@color/background_darkblue"
+                android:textSize="13dp" />
+
+            <ListView
+                android:id="@+id/listView_current_checkin_locations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_temperature_declaration_window"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@drawable/cardview_layout_menu"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textViw_temperature_declaration_window"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heavitas"
+                android:gravity="center_horizontal"
+                android:text="TEMPERATURE AND HEALTH DECLARATION"
+                android:textColor="@color/background_darkblue"
+                android:textSize="13dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="0dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_temperature_taking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/healthdec_imagebutton"
+                        android:layout_width="85dp"
+                        android:layout_height="80dp"
+                        android:layout_toRightOf="@+id/linearLayout_temperature_taking"
+                        android:background="@color/light_blue"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/declaration_icon" />
+
+                    <TextView
+                        android:id="@+id/textView_temperatur_menu"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/heavitas"
+                        android:gravity="center"
+                        android:text="Health Declaration"
+                        android:textColor="@color/background_darkblue"
+                        android:textSize="10dp" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_declaration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/linearLayout_temperature_taking"
+                    android:clickable="true"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/temp_imagebutton"
+                        android:layout_width="85dp"
+                        android:layout_height="80dp"
+                        android:background="@color/light_blue"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/temperature_icon" />
+
+                    <TextView
+                        android:id="@+id/textView_declaration_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/heavitas"
+                        android:gravity="center"
+                        android:text="Temperature Taking"
+                        android:textColor="@color/background_darkblue"
+                        android:textSize="10dp" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_bar"
+        style="@style/BottomNavigationViewTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@color/background_darkblue"
+        app:itemTextColor="@color/background_darkblue"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>
