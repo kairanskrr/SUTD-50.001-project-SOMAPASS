@@ -38,7 +38,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:clickable="true"
-            android:src="@drawable/backarrow_darkblue" />
+            android:src="@drawable/backarrow_darkblue"
+            android:layout_marginStart="10dp" />
 
         <TextView
             android:id="@+id/textView_profile_title"
@@ -51,11 +52,12 @@
             android:fontFamily="@font/heavitas"
             android:text="@string/title_profile"
             android:textColor="@color/background_darkblue"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginStart="10dp" />
 
     </LinearLayout>
 
-    <ImageView
+    <!---<ImageView
         android:id="@+id/imageView_photo_profile"
         android:layout_width="110dp"
         android:layout_height="110dp"
@@ -65,21 +67,22 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="@+id/linearLayout_profile_title"
         app:layout_constraintTop_toTopOf="@+id/profile_backgorund"
-        app:layout_constraintVertical_bias="0.19999999" />
+        app:layout_constraintVertical_bias="0.19999999" />-->
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="370dp"
-        android:layout_height="474dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
         android:background="@drawable/cardview_layout_menu"
         android:orientation="vertical"
         android:padding="30dp"
+        android:layout_marginHorizontal="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_backgorund"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_profile_title"
-        app:layout_constraintVertical_bias="0.487">
+        app:layout_constraintVertical_bias="0.35000002">
 
         <LinearLayout
             android:id="@+id/linearLayout_username"
@@ -92,10 +95,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:layout_marginEnd="40dp"
                 android:layout_marginRight="40dp"
                 android:background="@color/light_blue"
                 android:fontFamily="@font/heavitas"
-                android:text="USERNAME"
+                android:text="@string/username"
                 android:textColor="@color/background_darkblue"
                 android:textSize="18dp" />
 
@@ -104,6 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
+                android:layout_marginStart="40dp"
                 android:layout_marginLeft="40dp"
                 android:background="@color/light_blue"
                 android:fontFamily="@font/heavitas"
@@ -116,7 +121,7 @@
             android:id="@+id/linearLayout_studentid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/profile_marginTop"
             android:orientation="vertical">
 
             <TextView
@@ -148,7 +153,7 @@
             android:id="@+id/linearLayout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/profile_marginTop"
             android:orientation="vertical">
 
             <TextView
@@ -159,7 +164,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@color/light_blue"
                 android:fontFamily="@font/heavitas"
-                android:text="EMAIL"
+                android:text="@string/email_profile"
                 android:textColor="@color/background_darkblue"
                 android:textSize="18dp" />
 
@@ -181,7 +186,7 @@
             android:id="@+id/linearLayout_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/profile_marginTop"
             android:orientation="horizontal">
 
             <TextView
@@ -191,7 +196,7 @@
                 android:layout_gravity="left"
                 android:background="@color/light_blue"
                 android:fontFamily="@font/heavitas"
-                android:text="NOTIFICATION: "
+                android:text="@string/notification"
                 android:textColor="@color/background_darkblue"
                 android:textSize="18dp" />
 
@@ -223,11 +228,23 @@
             android:id="@+id/textView_change_password_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/profile_marginTop"
             android:clickable="true"
             android:fontFamily="@font/heavitas"
             android:gravity="left"
-            android:text="CHANGE PASSWORD"
+            android:text="@string/change_password"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView_history_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/profile_marginTop"
+            android:clickable="true"
+            android:fontFamily="@font/heavitas"
+            android:gravity="left"
+            android:text="@string/view_history"
             android:textColor="@color/background_darkblue"
             android:textSize="18dp" />
 
@@ -235,10 +252,11 @@
             android:id="@+id/textView_signout_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/profile_marginTop"
+            android:clickable="true"
             android:fontFamily="@font/heavitas"
             android:gravity="left"
-            android:text="SIGN OUT"
+            android:text="@string/sign_out"
             android:textColor="@color/background_darkblue"
             android:textSize="18dp" />
 

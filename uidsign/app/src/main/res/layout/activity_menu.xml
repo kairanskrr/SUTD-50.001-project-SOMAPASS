@@ -49,8 +49,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout_searchbar_menu_1"
-        android:layout_width="400dp"
-        android:layout_height="600dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="30dp"
@@ -75,7 +75,7 @@
 
             <TextView
                 android:id="@+id/textView_search_menu"
-                android:layout_width="229dp"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:clickable="true"
@@ -96,11 +96,11 @@
 
         <LinearLayout
             android:id="@+id/linearLayout_current_checkin_window"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/cardview_layout_menu"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
             android:padding="20dp">
 
             <TextView
@@ -122,11 +122,11 @@
 
         <LinearLayout
             android:id="@+id/linearLayout_temperature_declaration_window"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/cardview_layout_menu"
             android:orientation="vertical"
-            android:layout_marginTop="15dp"
             android:padding="20dp">
 
             <TextView
