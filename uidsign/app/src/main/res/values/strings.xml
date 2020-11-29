@@ -10,9 +10,10 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="username">USERNAME</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!---<string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>-->
     <string name="title_home">HOME</string>
     <string name="title_scan">SCAN</string>
     <string name="title_profile">PROFILE</string>
@@ -39,4 +40,10 @@
     <string name="submit">Submit</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="view_history">VIEW HISTORY</string>
+    <string name="sign_out">SIGN OUT</string>
+    <string name="notification">NOTIFICATION:</string>
+    <string name="change_password">CHANGE PASSWORD</string>
+    <string name="email_profile">EMAIL</string>
+
 </resources>

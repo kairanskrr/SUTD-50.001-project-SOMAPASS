@@ -24,120 +24,115 @@
         android:src="@drawable/title_2"
         app:layout_constraintBottom_toBottomOf="@+id/background_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.1" />
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="213dp"
         android:background="@color/light_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />-->
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/login_section"
+
+    <LinearLayout
+        android:id="@+id/linearLayout_login"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/cardview_login"
-        android:backgroundTint="@color/light_blue"
-        app:cardCornerRadius="50dp"
+        android:background="@drawable/login_component"
+        android:orientation="vertical"
+        android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/heavitas"
+            android:text="USERNAME"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/editText_username"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="30dp">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:paddingLeft="20dp"
+            android:textSize="18dp" />
 
-            <TextView
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="17dp"
-                android:layout_gravity="left"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/heavitas"
-                android:text="USERNAME"
-                android:textColor="@color/background_darkblue"
-                android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/passward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/heavitas"
+            android:text="PASSWORD"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
 
-            <EditText
-                android:id="@+id/editText_username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/edit_text"
-                android:paddingLeft="20dp"
-                android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit_text"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:textSize="18dp" />
 
-            <TextView
-                android:id="@+id/passward"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/heavitas"
-                android:text="PASSWORD"
-                android:textColor="@color/background_darkblue"
-                android:textSize="18dp"/>
+        <CheckBox
+            android:id="@+id/checkBox_rememberMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:clickable="true"
+            android:fontFamily="@font/heavitas"
+            android:text=" REMEMBER ME"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
 
-            <EditText
-                android:id="@+id/editText_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/edit_text"
-                android:paddingLeft="20dp"
-                android:textSize="18dp"
-                android:inputType="textPassword"/>
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_darkblue"
+            android:fontFamily="@font/heavitas"
+            android:text="LOG IN"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
 
-            <CheckBox
-                android:id="@+id/checkBox_rememberMe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:clickable="true"
-                android:fontFamily="@font/heavitas"
-                android:text=" REMEMBER ME"
-                android:textColor="@color/background_darkblue"
-                android:textSize="18dp"/>
-
-            <Button
-                android:id="@+id/button_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/button_darkblue"
-                android:fontFamily="@font/heavitas"
-                android:text="LOG IN"
-                android:textColor="@color/white"
-                android:textSize="18dp"/>
-            <Button
-                android:id="@+id/button_create_account"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/button_darkblue"
-                android:fontFamily="@font/heavitas"
-                android:text="CREATE ACCOUNT"
-                android:textColor="@color/white"
-                android:textSize="18dp" />
+        <Button
+            android:id="@+id/button_create_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_darkblue"
+            android:fontFamily="@font/heavitas"
+            android:text="CREATE ACCOUNT"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
 
 
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
