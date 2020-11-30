@@ -39,9 +39,11 @@ public class MenuActivity extends AppCompatActivity {
     ImageButton healthdec_imagebutton;
 
     //Request code for QR code scan
-    private static final int REQUEST_CODE_QR_SCAN = 101;
     private static final String LOGTAG = "Scan for entry";
     private static final int REQUEST_CODE_CAMERA = 100;
+    private static final int REQUEST_CODE_QR_SCAN = 101;
+    private static final int REQUEST_CODE_EXTERNAL_STORAGE = 102;
+
 
 
     @Override
@@ -55,7 +57,9 @@ public class MenuActivity extends AppCompatActivity {
         textview_username_menu.setText(loggedInName);
 
         //get user permission
-        checkCameraPermission(Manifest.permission.CAMERA, REQUEST_CODE_CAMERA);
+        checkPermission(Manifest.permission.CAMERA, REQUEST_CODE_CAMERA);
+        checkPermission(Manifest.permission.READ_EXTERNAL_STORAGE, REQUEST_CODE_EXTERNAL_STORAGE);
+
 
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
@@ -177,7 +181,7 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
     // Function to check and request permission
-    private void checkCameraPermission(String permission, int requestCode){
+    private void checkPermission(String permission, int requestCode){
         if(ContextCompat.checkSelfPermission(MenuActivity.this,
                 permission) != PackageManager.PERMISSION_GRANTED)
         {
@@ -188,6 +192,8 @@ public class MenuActivity extends AppCompatActivity {
                             requestCode);
         }
     }
+
+
 
     /*
     // HTTPGetRequest Class to handle login network logic

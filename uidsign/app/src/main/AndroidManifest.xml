@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.kairan.uidesign">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -28,6 +27,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ScanActivity" />
+        <activity android:name=".CheckInSuccess" />
         <!--
         -android:theme="@style/Theme.Uidesign.Fullscreen"
             android:icon="@mipmap/ic_launcher"
