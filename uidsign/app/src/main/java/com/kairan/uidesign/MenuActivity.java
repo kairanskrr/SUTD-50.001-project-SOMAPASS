@@ -4,18 +4,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +33,7 @@ public class MenuActivity extends AppCompatActivity {
     //Request code for QR code scan
     private static final int REQUEST_CODE_QR_SCAN = 101;
     private static final String LOGTAG = "Scan for entry";
+    private static final int REQUEST_CODE_CAMERA = 100;
 
 
     @Override
@@ -40,6 +46,9 @@ public class MenuActivity extends AppCompatActivity {
         String loggedInName = sharedPreferences.getString("name","UNDEFINED");
         textview_username_menu.setText(loggedInName);
 
+        //get user permission
+        checkCameraPermission(Manifest.permission.CAMERA, REQUEST_CODE_CAMERA);
+
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
 
@@ -48,12 +57,14 @@ public class MenuActivity extends AppCompatActivity {
 
         //Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navigation_scan:
 //                        startActivity(new Intent(getApplicationContext(),ScanActivity.class));
 //                        overridePendingTransition(0,0);
+
 
                         startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
                         overridePendingTransition(0,0);
@@ -141,6 +152,18 @@ public class MenuActivity extends AppCompatActivity {
                     });
             alertDialog.show();
 
+        }
+    }
+    // Function to check and request permission
+    private void checkCameraPermission(String permission, int requestCode){
+        if(ContextCompat.checkSelfPermission(MenuActivity.this,
+                permission) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat
+                    .requestPermissions(
+                            MenuActivity.this,
+                            new String[] { permission },
+                            requestCode);
         }
     }
 }
