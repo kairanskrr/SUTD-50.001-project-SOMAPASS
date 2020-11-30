@@ -15,6 +15,12 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".HealthDec"></activity>
         <activity android:name=".TempTaking" />
         <activity android:name=".MenuActivity" />
@@ -28,13 +34,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:theme="@style/Theme.Uidesign"
         -->
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

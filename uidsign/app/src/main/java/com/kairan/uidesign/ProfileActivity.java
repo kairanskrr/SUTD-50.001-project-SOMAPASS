@@ -3,19 +3,27 @@ package com.kairan.uidesign;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
+    TextView logout_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         getSupportActionBar().hide();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+
 
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
@@ -51,5 +59,26 @@ public class ProfileActivity extends AppCompatActivity {
                 return false;
             }
         });
+        // Implement Log out Button
+        logout_button = findViewById(R.id.textView_signout_profile);
+        logout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("userid",null);
+                editor.putString("password",null);
+                editor.putString("name",null);
+                editor.commit();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                overridePendingTransition(0,0);
+
+            }
+        });
+
+
+
+
+
+
     }
 }
