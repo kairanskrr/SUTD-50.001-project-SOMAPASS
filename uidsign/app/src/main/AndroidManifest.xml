@@ -15,26 +15,21 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
+        <activity android:name=".SafeEntry"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HealthDec"></activity>
+        <activity android:name=".HealthDec" />
         <activity android:name=".TempTaking" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ScanActivity" />
-        <!--
-        -android:theme="@style/Theme.Uidesign.Fullscreen"
-            android:icon="@mipmap/ic_launcher"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/Theme.Uidesign"
-        -->
-
     </application>
 
 </manifest>
