@@ -154,15 +154,24 @@ public class MenuActivity extends AppCompatActivity {
             //Getting the passed result
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(LOGTAG, "Have scan result in your app activity :" + result);
+
+            /*
+            code that check in straightaway without confirmation:
+
             executeCheckIn openQR = new executeCheckIn();
             openQR.execute(result);
 
             Intent successScreen = new Intent(MenuActivity.this, ScanActivity.class);
             startActivity(successScreen);
+             */
 
-//            Intent i = new Intent(Intent.ACTION_VIEW);
-//            i.setData(Uri.parse(result));
-//            startActivity(i);
+
+            /*
+            code that ask for confirmation with a check in button
+             */
+            Intent openConfirmation = new Intent(MenuActivity.this, ScanActivity.class);
+            openConfirmation.putExtra("Location To Check Into", result);
+            startActivity(openConfirmation);
 
 
         }
@@ -180,6 +189,7 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
+    /*
     // HTTPGetRequest Class to handle login network logic
     class executeCheckIn extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
@@ -226,4 +236,5 @@ public class MenuActivity extends AppCompatActivity {
             return result;
         }
     }
+    */
 }
