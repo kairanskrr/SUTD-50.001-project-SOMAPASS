@@ -114,10 +114,32 @@
                 android:textColor="@color/background_darkblue"
                 android:textSize="13dp" />
 
-            <ListView
-                android:id="@+id/listView_current_checkin_locations"
+            <TextView
+                android:id="@+id/textView_current_latest_checkin"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heavitas"
+                android:gravity="center_horizontal"
+                android:paddingLeft="20dp"
+                android:text="NAME OF LAST CHECK IN PLACE"
+                android:textColor="@color/background_darkblue"
+                android:textSize="13dp" />
+            <TextView
+                android:id="@+id/textView_current_latest_checkintime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heavitas"
+                android:gravity="center_horizontal"
+                android:paddingLeft="20dp"
+                android:text="Date Time of last Check in"
+                android:textColor="@color/background_darkblue"
+                android:textSize="13dp" />
+
+            <!--            <ListView-->
+<!--                android:id="@+id/listView_current_checkin_locations"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content" />-->
+
         </LinearLayout>
 
         <LinearLayout
