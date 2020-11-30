@@ -68,6 +68,8 @@
             android:id="@+id/editText_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="text"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_text"
@@ -106,7 +108,8 @@
             android:fontFamily="@font/heavitas"
             android:text=" REMEMBER ME"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:focusable="true" />
 
         <Button
             android:id="@+id/button_login"
