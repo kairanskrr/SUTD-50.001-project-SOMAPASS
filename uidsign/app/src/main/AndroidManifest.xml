@@ -15,7 +15,10 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity"
+            android:windowSoftInputMode="adjustPan"/>
+
+
         <activity android:name=".HealthDec" />
         <activity android:name=".TempTaking" />
         <activity android:name=".MenuActivity" />
@@ -23,6 +26,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ScanActivity" />
+
+
         <!--
         -android:theme="@style/Theme.Uidesign.Fullscreen"
             android:icon="@mipmap/ic_launcher"

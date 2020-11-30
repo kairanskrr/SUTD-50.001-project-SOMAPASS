@@ -2,7 +2,9 @@ package com.kairan.uidesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -18,6 +20,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     ArrayList<String> locationArray = new ArrayList<String>();
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +28,8 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
 
         // Generate sample data
 
-        locationList = new String[]{"Lion", "Tiger", "Dog",
-                "Cat", "Tortoise", "Rat", "Elephant", "Fox",
-                "Cow","Donkey","Monkey"};
-
+        locationList = new String[]{"DSL","DANCE STUDIO 8","COHORT CLASSROOM 8", "CANTEEN","CHEMISTRY LAB","PI LAB","PHYSICS LAB","STUDIO 1","DANCE STUDIO 9","ONE STOP CENTRE","ISH 1"};
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         // Locate the ListView
         list = (ListView) findViewById(R.id.listview);

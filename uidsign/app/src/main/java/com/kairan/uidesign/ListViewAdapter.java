@@ -1,15 +1,25 @@
 package com.kairan.uidesign;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import static java.lang.System.err;
 
 public class ListViewAdapter extends BaseAdapter {
 
@@ -20,6 +30,8 @@ public class ListViewAdapter extends BaseAdapter {
     private List<String> locationList = null;
     private ArrayList<String> locationArrayList;
     private ArrayList<Boolean> booleanArray;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     public ListViewAdapter(Context context, List<String> locationList) {
         mContext = context;
@@ -27,15 +39,8 @@ public class ListViewAdapter extends BaseAdapter {
         inflater = LayoutInflater.from(mContext);
         this.locationArrayList = new ArrayList<String>();
         this.locationArrayList.addAll(locationList);
-        // if booleanarray exists in sharedpreferances, read that, else make a new booleanarray
-        /*if (booleanarray not in shared preferances) {
-            for (int i=0;i<locationArrayList.size();i++){
-                booleanArray.add(false);
-            }
-        } else {
-            readthatshit();
-
-        }*/
+        this.sharedPreferences = mContext.getSharedPreferences("com.example.android.searchsharedprefs", Context.MODE_PRIVATE);
+        this.editor = sharedPreferences.edit();
     }
 
     public class ViewHolder {
@@ -64,14 +69,52 @@ public class ListViewAdapter extends BaseAdapter {
             holder = new ViewHolder();
             view = inflater.inflate(R.layout.list_view_items, null);
             // Locate the TextViews in listview_item.xml
+
             holder.location = (TextView) view.findViewById(R.id.location);
             holder.checkbox = (CheckBox) view.findViewById(R.id.listCheckbox);
+            holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked) {
+                        //add to sharedpref
+                        if (sharedPreferences.contains("starred locations")) {
+                            editor.putString("starred locations",  holder.location.getText().toString()+ ","+sharedPreferences.getString("starred locations", "") );
+
+                        } else {
+                            editor.putString("starred locations", holder.location.getText().toString()+ ",");
+                        }
+
+
+
+                    } else {
+                        //remove from sharedpref
+                        editor.putString("starred locations", sharedPreferences.getString("starred locations", "").replace(holder.location.getText().toString() + ",", ""));
+
+                    }
+                    editor.commit();
+                    //this returns a fucking long string and i have no goddamn idea why. works tho
+                    //Toast.makeText(mContext,sharedPreferences.getString("starred locations", ""),Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            });
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
         // Set the results into TextViews
         holder.location.setText(locationList.get(position));
+        for (String location: locationList) {
+            if (sharedPreferences.getString("starred locations","").contains(location)){
+                if (holder.location.getText().toString() == location) {
+
+                    holder.checkbox.setChecked(true);
+                }
+
+            }
+        }
+
 
         return view;
     }
@@ -92,12 +135,6 @@ public class ListViewAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public void getBooleanArray(ArrayList<Boolean> booleanArray) {
-        this.booleanArray = booleanArray;
-    }
 
-    public ArrayList<Boolean> setBooleanArray(){
-        return this.booleanArray;
-    }
 }
 
