@@ -17,16 +17,26 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,10 +47,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
 public class MenuActivity extends AppCompatActivity {
     TextView textview_username_menu;
     ImageButton temp_imagebutton;
     ImageButton healthdec_imagebutton;
+
+    TextView textView_search_menu;
+
     TextView latestCheckIn;
     TextView latestCheckInTime;
     Button checkout_home;
@@ -77,10 +91,11 @@ public class MenuActivity extends AppCompatActivity {
         return LOGTAG;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+                setContentView(R.layout.activity_menu);
         getSupportActionBar().hide();
         textview_username_menu = findViewById(R.id.textview_username_menu);
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
@@ -154,6 +169,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,HealthDec.class);
+                startActivity(intent);
+            }
+        });
+        textView_search_menu = findViewById(R.id.textView_search_menu);
+        textView_search_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
                 startActivity(intent);
             }
         });
@@ -454,5 +477,7 @@ public class MenuActivity extends AppCompatActivity {
             return result;
         }
     }
+
     */
 }
+

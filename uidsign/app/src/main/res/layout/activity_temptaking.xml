@@ -10,8 +10,12 @@
         android:id="@+id/profile_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background_darkblue"
         android:src="@drawable/background_profile"
-        android:background="@color/background_darkblue"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout_temptaking_title"
