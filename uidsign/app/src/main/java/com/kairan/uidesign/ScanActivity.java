@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,15 +17,16 @@ import java.net.URL;
 
 
 public class ScanActivity extends AppCompatActivity {
+    ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan);
+        setContentView(R.layout.activity_safe_entry);
         getSupportActionBar().hide();
 
         //check in and out buttons
-        Button mCheckIn = findViewById(R.id.checkIn);
+        Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
 
         mCheckIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +43,14 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
 
+        backButton = findViewById(R.id.back_from_safeentry);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mgoBack = new Intent(ScanActivity.this, MenuActivity.class);
+                startActivity(mgoBack);
+            }
+        });
 
 
     }
