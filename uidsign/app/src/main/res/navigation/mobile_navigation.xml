@@ -15,7 +15,7 @@
         android:id="@+id/navigation_scan"
         android:name="com.kairan.uidesign.ui.scan.ScanFragment"
         android:label="@string/title_scan"
-        tools:layout="@layout/activity_scan" />
+        tools:layout="@layout/activity_safe_entry" />
 
     <fragment
         android:id="@+id/navigation_profile"

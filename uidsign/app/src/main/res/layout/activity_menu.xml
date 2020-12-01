@@ -32,12 +32,15 @@
             android:text="HI"
             android:textColor="@color/white"
             android:textSize="60dp"
-            android:paddingRight="10dp"/>
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:paddingRight="10sp"/>
 
         <TextView
             android:id="@+id/textview_username_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             android:fontFamily="@font/heavitas"
             android:paddingLeft="10dp"
             android:text="XXXX"
@@ -49,8 +52,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout_searchbar_menu_1"
-        android:layout_width="400dp"
-        android:layout_height="600dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="30dp"
@@ -75,7 +78,9 @@
 
             <TextView
                 android:id="@+id/textView_search_menu"
-                android:layout_width="match_parent"
+
+                android:layout_width="230dp"
+
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="50dp"
@@ -116,11 +121,11 @@
 
         <LinearLayout
             android:id="@+id/linearLayout_current_checkin_window"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/cardview_layout_menu"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
             android:padding="20dp">
 
             <TextView
@@ -134,19 +139,56 @@
                 android:textColor="@color/background_darkblue"
                 android:textSize="13dp" />
 
-            <ListView
-                android:id="@+id/listView_current_checkin_locations"
+            <TextView
+                android:id="@+id/textView_current_latest_checkin"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heavitas"
+                android:gravity="left"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="18dp"
+                android:text="LAST CHECK IN PLACE"
+                android:textColor="@color/background_darkblue"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/textView_current_latest_checkintime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/heavitas"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:text="Date Time of last Check in"
+                android:textColor="@color/background_darkblue"
+                android:textSize="13dp" />
+
+            <Button
+                android:id="@+id/checkout_home"
+                android:layout_width="122dp"
+                android:layout_height="45dp"
+                android:layout_gravity="right"
+                android:background="@drawable/button_darkblue"
+                android:fontFamily="@font/heavitas"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
+                android:text="CHECK OUT"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+            <!--            <ListView-->
+<!--                android:id="@+id/listView_current_checkin_locations"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content" />-->
+
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout_temperature_declaration_window"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/cardview_layout_menu"
             android:orientation="vertical"
-            android:layout_marginTop="15dp"
             android:padding="20dp">
 
             <TextView

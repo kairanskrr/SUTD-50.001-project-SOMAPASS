@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -32,14 +34,18 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox checkBox_rememberME;
     Button button_login;
     Button button_create_account;
+
     private final String sharedPrefFile = "com.example.android.mainsharedprefs"; public static final String KEY = "MyKey"; SharedPreferences mPreferences;
 //test
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //To hide top ActionBar(three methods):
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getSupportActionBar().hide();
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_login);
 
         editText_username = findViewById(R.id.editText_username);
@@ -48,6 +54,8 @@ public class LoginActivity extends AppCompatActivity {
         button_login = findViewById(R.id.button_login);
         button_create_account = findViewById(R.id.button_create_account);
 
+
+        //Click create account button: to createAccount
         button_create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
