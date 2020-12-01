@@ -49,7 +49,13 @@ public class MenuActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_QR_SCAN = 101;
     private static final int REQUEST_CODE_EXTERNAL_STORAGE = 102;
 
+    public static int getRequestCodeQrScan() {
+        return REQUEST_CODE_QR_SCAN;
+    }
 
+    public static String getLOGTAG() {
+        return LOGTAG;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
