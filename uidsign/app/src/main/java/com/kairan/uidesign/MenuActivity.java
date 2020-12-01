@@ -272,7 +272,7 @@ public class MenuActivity extends AppCompatActivity {
             try {
                 //Create a URL object holding our url
                 //TODO TO implement the URL Builder taught to us instead of string concat for URL
-                URL myUrl = new URL("https://somapass.xyz/latestcheckout/"+"1"+"/"+"1");
+                URL myUrl = new URL("https://somapass.xyz/latestcheckout/"+useridtosend+"/"+passwordtosend);
                 //Create a connection
                 HttpURLConnection connection =(HttpURLConnection)
                         myUrl.openConnection();
