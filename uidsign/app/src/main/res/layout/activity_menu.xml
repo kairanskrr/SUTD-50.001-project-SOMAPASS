@@ -32,12 +32,15 @@
             android:text="HI"
             android:textColor="@color/white"
             android:textSize="60dp"
-            android:paddingRight="10dp"/>
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:paddingRight="10sp"/>
 
         <TextView
             android:id="@+id/textview_username_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             android:fontFamily="@font/heavitas"
             android:paddingLeft="10dp"
             android:text="XXXX"
