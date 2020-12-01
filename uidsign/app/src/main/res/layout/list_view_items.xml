@@ -9,9 +9,10 @@
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:clickable="true"
         android:fontFamily="@font/heavitas"
-        android:textColor="@color/background_darkblue"
-        android:layout_centerVertical="true"/>
+        android:textColor="@color/background_darkblue" />
 
 
 

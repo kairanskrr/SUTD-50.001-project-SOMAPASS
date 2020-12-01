@@ -1,6 +1,7 @@
 package com.kairan.uidesign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -114,7 +115,16 @@ public class ListViewAdapter extends BaseAdapter {
 
             }
         }
-
+        holder.location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //check into location
+                String checkInLocation = holder.location.getText().toString();
+                Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
+                //Intent checkIn = new Intent(mContext, CheckInActivity.class);
+                //checkIn.putExtra(checkInLocation, location);
+            }
+        });
 
         return view;
     }
