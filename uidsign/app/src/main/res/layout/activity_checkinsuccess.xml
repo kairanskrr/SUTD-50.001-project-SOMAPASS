@@ -61,17 +61,19 @@
             android:padding="30dp">
 
             <TextView
+                android:id="@+id/checkin_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="60dp"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_vertical"
-                android:text="25 NOV 2020"
+                android:text="2 DEC 2020"
                 android:textColor="@color/background_darkblue"
                 android:textSize="30dp" />
 
             <TextView
+                android:id="@+id/checkin_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -89,7 +91,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/heavitas"
-                android:text="XXX"
+                android:text="DSL"
                 android:textColor="@color/background_darkblue"
                 android:textSize="50dp" />
         </LinearLayout>
