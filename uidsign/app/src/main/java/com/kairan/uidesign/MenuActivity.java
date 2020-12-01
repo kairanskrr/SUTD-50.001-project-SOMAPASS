@@ -44,6 +44,7 @@ public class MenuActivity extends AppCompatActivity {
     TextView latestCheckIn;
     TextView latestCheckInTime;
     Button checkout_home;
+    public String tag = "SHARED";
 
     /**
      * FOR NIC: use getter and setter to set scanActivityState during "onClick" of the check out button you implemented. This sets the visibiltiy of checkin to non-visible and checkout visible
@@ -110,6 +111,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
                         startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
+                        Log.i(tag,"startActivity_QRSCAN");
                         overridePendingTransition(0,0);
                         return true;
 
@@ -331,9 +333,13 @@ public class MenuActivity extends AppCompatActivity {
      * @param resultCode
      * @param data
      */
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.i(tag,"onActivityResult");
+        Log.i(tag,"data: "+data);
+        Log.i(tag,"resultCode: "+requestCode);
         if (resultCode != Activity.RESULT_OK) {
             Log.d(LOGTAG, "COULD NOT GET A GOOD RESULT.");
             if (data == null)
@@ -342,12 +348,17 @@ public class MenuActivity extends AppCompatActivity {
             String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
             if (result != null) {
 
+                /*Log.i(tag,"result: "+result);
+                Log.i(tag,"resultCode != Activity.RESULT_OK");
                 SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-
+                Log.i(tag,sharedPreferences.toString());
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                Log.i(tag,editor.toString());
                 editor.putString("checkinlocationnamecard",result);
+                Log.i(tag,"editor, put check in location");
 
                 editor.commit();
+                Log.i(tag,"editor commit");*/
 
 
                 AlertDialog alertDialog = new AlertDialog.Builder(MenuActivity.this).create();
@@ -371,6 +382,16 @@ public class MenuActivity extends AppCompatActivity {
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(LOGTAG, "Have scan result in your app activity :" + result);
 
+            Log.i(tag,"requestCode == REQUEST_CODE_QR_CODE");
+            Log.i(tag,result);
+            SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+            Log.i(tag,sharedPreferences.toString());
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            Log.i(tag,editor.toString());
+            editor.putString("checkInLocation",result);
+            editor.commit();
+            Log.i(tag,"editor, put check in location");
+
             /*
             code that check in straightaway without confirmation:
 
@@ -385,6 +406,13 @@ public class MenuActivity extends AppCompatActivity {
             /*
             code that ask for confirmation with a check in button
              */
+
+            System.out.println("=================================================");
+            System.out.println("=================================================");
+            System.out.println("=================================================");
+            System.out.println("=================================================");
+            System.out.println("=================================================");
+            System.out.println(result);
             Intent openConfirmation = new Intent(MenuActivity.this, ScanActivity.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);

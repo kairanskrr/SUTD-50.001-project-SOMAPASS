@@ -27,6 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView logout_button;
     ImageView backbutton;
     TextView temphistory;
+    public String tag = "SHARED";
 
 
     @Override
@@ -128,6 +129,12 @@ public class ProfileActivity extends AppCompatActivity {
                 //Getting the passed result
                 String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
                 if (result != null) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("checkinlocationnamecard",String.valueOf(data));
+
+                    editor.commit();
+
                     AlertDialog alertDialog = new AlertDialog.Builder(ProfileActivity.this).create();
                     alertDialog.setTitle("Scan Error");
                     alertDialog.setMessage("QR Code could not be scanned");
@@ -148,6 +155,16 @@ public class ProfileActivity extends AppCompatActivity {
                 //Getting the passed result
                 String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
                 Log.d(MenuActivity.getLOGTAG(), "Have scan result in your app activity :" + result);
+
+                Log.i(tag,"requestCode == REQUEST_CODE_QR_CODE");
+                Log.i(tag,result);
+                SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                Log.i(tag,sharedPreferences.toString());
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                Log.i(tag,editor.toString());
+                editor.putString("checkInLocation",result);
+                editor.commit();
+                Log.i(tag,"editor, put check in location");
 
             /*
             code that check in straightaway without confirmation:
