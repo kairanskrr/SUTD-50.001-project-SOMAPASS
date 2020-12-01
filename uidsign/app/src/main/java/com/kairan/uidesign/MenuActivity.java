@@ -341,6 +341,15 @@ public class MenuActivity extends AppCompatActivity {
             //Getting the passed result
             String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
             if (result != null) {
+
+                SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("checkinlocationnamecard",result);
+
+                editor.commit();
+
+
                 AlertDialog alertDialog = new AlertDialog.Builder(MenuActivity.this).create();
                 alertDialog.setTitle("Scan Error");
                 alertDialog.setMessage("QR Code could not be scanned");
