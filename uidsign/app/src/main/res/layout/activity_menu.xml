@@ -138,6 +138,7 @@
                 android:textSize="13dp" />
 
             <Button
+                android:id="@+id/checkout_home"
                 android:layout_width="122dp"
                 android:layout_height="45dp"
                 android:layout_gravity="right"

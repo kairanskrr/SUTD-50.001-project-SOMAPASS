@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,24 @@ public class MenuActivity extends AppCompatActivity {
     ImageButton healthdec_imagebutton;
     TextView latestCheckIn;
     TextView latestCheckInTime;
+
+    /**
+     * FOR NIC: use getter and setter to set scanActivityState during "onClick" of the check out button you implemented. This sets the visibiltiy of checkin to non-visible and checkout visible
+     * Set to 1 to make the button "Check Out"
+     * Set to 0 AFTER onClick on check out button(to set the button back to Check In)
+     */
+    Button mCheckOutHome;
+
+
+    //Track scanactivity state
+    private static int scanActivityState = 0;
+
+    public static int getScanActivityState() {
+        return scanActivityState;
+    }
+    public static void setScanActivityState(int scanActivityState) {
+        MenuActivity.scanActivityState = scanActivityState;
+    }
 
     //Request code for QR code scan
     private static final String LOGTAG = "Scan for entry";
@@ -121,7 +140,6 @@ public class MenuActivity extends AppCompatActivity {
         //httpgetrequest below
 
 
-
         temp_imagebutton = findViewById(R.id.temp_imagebutton);
         temp_imagebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +154,18 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,HealthDec.class);
                 startActivity(intent);
+            }
+        });
+
+
+        /**
+         * FOR NIC: functionality of check out button
+         */
+        mCheckOutHome = findViewById(R.id.checkout_home);
+        mCheckOutHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

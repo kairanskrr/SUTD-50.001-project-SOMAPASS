@@ -104,7 +104,6 @@
             android:background="@drawable/button_lightblue"
             android:fontFamily="@font/heavitas"
             android:text="CHECK OUT"
-            android:visibility="gone"
             android:textColor="@color/background_darkblue"
             android:textSize="18dp" />
 

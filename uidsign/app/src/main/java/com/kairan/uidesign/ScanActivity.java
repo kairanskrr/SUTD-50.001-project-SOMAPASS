@@ -27,7 +27,10 @@ public class ScanActivity extends AppCompatActivity {
 
         //check in and out buttons
         Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
+        Button mCheckOut = findViewById(R.id.button_checkOut_safeEntry);
 
+
+        //button functions
         mCheckIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +45,24 @@ public class ScanActivity extends AppCompatActivity {
 
             }
         });
+        /**
+         * FOR NICHOLAS TO IMPLEMENT
+         */
+        mCheckOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: make checkout button check out in database
+            }
+        });
+
+        if(MenuActivity.getScanActivityState() == 1){
+            mCheckIn.setVisibility(View.GONE);
+            mCheckOut.setVisibility(View.VISIBLE);
+        }else{
+            mCheckIn.setVisibility(View.VISIBLE);
+            mCheckOut.setVisibility(View.GONE );
+        }
+
 
         backButton = findViewById(R.id.back_from_safeentry);
         backButton.setOnClickListener(new View.OnClickListener() {
