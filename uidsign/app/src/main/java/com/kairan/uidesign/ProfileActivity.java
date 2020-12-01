@@ -21,9 +21,12 @@ import android.widget.TextView;
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.w3c.dom.Text;
+
 public class ProfileActivity extends AppCompatActivity {
     TextView logout_button;
     ImageView backbutton;
+    TextView temphistory;
 
 
     @Override
@@ -31,6 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         getSupportActionBar().hide();
+
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
 
@@ -69,6 +73,18 @@ public class ProfileActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        //View TEMP HISTORY BUTTON
+
+        temphistory = findViewById(R.id.textView_history_profile);
+        temphistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenttemphistory = new Intent(ProfileActivity.this,TemperatureHistory.class);
+                startActivity(intenttemphistory);
+            }
+        });
+
         // Implement Log out Button
         logout_button = findViewById(R.id.textView_signout_profile);
         logout_button.setOnClickListener(new View.OnClickListener() {

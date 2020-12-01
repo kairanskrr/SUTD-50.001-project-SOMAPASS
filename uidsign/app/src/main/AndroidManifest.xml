@@ -15,7 +15,8 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
-        <activity android:name=".SafeEntry"></activity>
+        <activity android:name=".TemperatureHistory"></activity>
+        <activity android:name=".SafeEntry" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,13 +32,6 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ScanActivity" />
         <activity android:name=".CheckInSuccess" />
-        <!--
-        -android:theme="@style/Theme.Uidesign.Fullscreen"
-            android:icon="@mipmap/ic_launcher"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/Theme.Uidesign"
-        -->
-
     </application>
 
 </manifest>
