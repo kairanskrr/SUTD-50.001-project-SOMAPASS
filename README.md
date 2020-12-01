@@ -31,3 +31,11 @@ Req: `https://somapass.xyz/currentcheckins/:userid/:password/`
 
 Example: `https://somapass.xyz/currentcheckins/1111111/password`
 
+### /latestcheckin
+
+Will return JSON object of latest check in. If not checked in anywhere, will return 404.
+
+Req: `https://somapass.xyz/latestcheckin/:userid/:password/`
+
+Example: `https://somapass.xyz/latestcheckin/1111111/password`
+

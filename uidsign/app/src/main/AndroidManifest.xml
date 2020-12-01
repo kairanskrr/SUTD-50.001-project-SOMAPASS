@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kairan.uidesign">
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -14,13 +15,15 @@
         android:roundIcon="@drawable/somapasslogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Uidesign">
+        <activity android:name=".SafeEntry"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HealthDec"></activity>
+        <activity android:name=".HealthDec" />
         <activity android:name=".TempTaking" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".CreateAccountActivity" />

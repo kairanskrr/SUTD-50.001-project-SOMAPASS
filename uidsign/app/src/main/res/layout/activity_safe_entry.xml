@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".SafeEntry">
 
     <ImageView
-        android:id="@+id/safeEntry_background_check_success"
+        android:id="@+id/safeEntry_backgorund"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
@@ -18,29 +19,28 @@
 
 
     <LinearLayout
-        android:id="@+id/back_check_success"
+        android:id="@+id/linearLayout4"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:background="@drawable/profile_topbar"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/safeEntry_background_check_success"
-        app:layout_constraintVertical_bias="0.36">
-
+        app:layout_constraintTop_toTopOf="@+id/safeEntry_backgorund"
+        app:layout_constraintVertical_bias="0.35">
         <ImageView
-            android:id="@+id/back_arrow_check_success"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
             android:clickable="true"
-            android:src="@drawable/backarrow_darkblue" />
+            android:src="@drawable/backarrow_darkblue"
+             />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout_check_success_info"
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -63,23 +63,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="80dp"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_vertical"
-                android:text="25 NOV 2020"
+                android:text="YOU ARE VISITING"
                 android:textColor="@color/background_darkblue"
-                android:textSize="30dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/heavitas"
-                android:gravity="center_vertical"
-                android:text="2:02PM"
-                android:textColor="@color/background_darkblue"
-                android:textSize="30dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textView_current_location"
@@ -94,21 +83,34 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/backToHome"
+            android:id="@+id/button_checkIn_safeEntry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_lightblue"
             android:fontFamily="@font/heavitas"
-            android:text="BACK TO HOME"
+            android:text="CHECK IN"
             android:textColor="@color/background_darkblue"
             android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/button_checkOut_safeEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_lightblue"
+            android:fontFamily="@font/heavitas"
+            android:text="CHECK OUT"
+            android:textColor="@color/background_darkblue"
+            android:textSize="18dp" />
+
+
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="290dp"
         android:layout_height="80dp"
         android:background="@drawable/textview_title_safeentry"
@@ -121,6 +123,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998" />
+        app:layout_constraintVertical_bias="0.23000002" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
