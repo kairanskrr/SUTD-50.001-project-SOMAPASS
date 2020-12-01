@@ -78,7 +78,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/heavitas"
-                android:text="XXX"
+                android:text="DSL"
                 android:textColor="@color/background_darkblue"
                 android:textSize="50dp" />
         </LinearLayout>
