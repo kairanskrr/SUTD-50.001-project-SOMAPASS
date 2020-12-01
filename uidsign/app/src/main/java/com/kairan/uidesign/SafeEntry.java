@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class SafeEntry extends AppCompatActivity {
     TextView locationanamecard;
+    public String tag = "SHARED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

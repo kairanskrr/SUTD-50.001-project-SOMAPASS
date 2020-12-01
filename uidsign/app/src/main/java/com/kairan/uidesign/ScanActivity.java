@@ -27,6 +27,7 @@ import java.net.URL;
 public class ScanActivity extends AppCompatActivity {
     ImageView backButton;
     TextView checkinlocationnamecard;
+    public String tag = "SHARED";
 
 
     @Override
@@ -35,10 +36,14 @@ public class ScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_safe_entry);
         getSupportActionBar().hide();
 
+        Log.i(tag,"go to scan activity");
         checkinlocationnamecard = findViewById(R.id.textView_current_location);
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        String checkinlocationnamecardstring = sharedPreferences.getString("checkinlocationnamecard","UNDEFINED");;
+        Log.i(tag,sharedPreferences.toString());
+        String checkinlocationnamecardstring = sharedPreferences.getString("checkInLocation","UNDEFINED");
+        Log.i(tag,checkinlocationnamecardstring);
         checkinlocationnamecard.setText(checkinlocationnamecardstring);
+        Log.i(tag,"set text");
 
         //check in and out buttons
         Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
@@ -55,15 +60,13 @@ public class ScanActivity extends AppCompatActivity {
                 System.out.println("++++++++++++++++++++++++");
                 System.out.println(result);
 
-                SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-
+                /*SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("checkinlocationnamecard",result);
+                editor.commit();*/
 
-                editor.commit();
-
-                checkinlocationnamecard = findViewById(R.id.textView_current_location);
-                String checkinlocationnamecardstring = sharedPreferences.getString("checkinlocationnamecard","UNDEFINED");;
+                // checkinlocationnamecard = findViewById(R.id.textView_current_location);
+                // String checkinlocationnamecardstring = sharedPreferences.getString("checkinlocationnamecard","UNDEFINED");;
 
 
                 executeCheckIn openQR = new executeCheckIn();
