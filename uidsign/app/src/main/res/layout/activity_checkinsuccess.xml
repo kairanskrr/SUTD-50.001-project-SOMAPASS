@@ -44,6 +44,7 @@
         android:id="@+id/linearLayout_check_success_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +52,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636">
+        app:layout_constraintVertical_bias="0.5">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,7 +100,7 @@
         <Button
             android:id="@+id/backToHome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:background="@drawable/button_lightblue"
@@ -119,11 +120,11 @@
         android:gravity="center"
         android:text="SAFEENTRY"
         android:textColor="@color/background_darkblue"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/safeEntry_background_check_success"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26999998" />
+        app:layout_constraintVertical_bias="0.25" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
