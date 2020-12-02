@@ -56,24 +56,17 @@ public class CheckInSuccess extends AppCompatActivity {
         textView_checkIn_date = findViewById(R.id.checkin_date);
         textView_checkIn_time = findViewById(R.id.checkin_time);
 
-//        Log.i(tag,"go to scan activity");
-//        textView_current_location = findViewById(R.id.textView_current_location_checkIn);
-//        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-//        Log.i(tag,sharedPreferences.toString());
-//        String checkinlocationnamecardstring = sharedPreferences.getString("checkInLocation","UNDEFINED");
-//        Log.i(tag,checkinlocationnamecardstring);
-//        textView_current_location.setText(checkinlocationnamecardstring);
-//        Log.i(tag,"set text");
 
-        /*String dateFormat = "dd MMM yyyy";
+        String dateFormat = "dd MMM yyyy";
         String timeFormat = "hh:mm aa";
-        Date date = new Date(dateFormat);
-        Date time = new Date(timeFormat);
+        SimpleDateFormat date = new SimpleDateFormat(dateFormat);
+        SimpleDateFormat time = new SimpleDateFormat(timeFormat);
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
-        textView_checkIn_date.setText(String.valueOf(date.getTime()));
-        Log.i(tag,String.valueOf(date.getTime()));
-        textView_checkIn_time.setText(String.valueOf(time.getTime()));
-        Log.i(tag,String.valueOf(time.getTime()));
+
+        textView_checkIn_date.setText(date.format(new Date()));
+        Log.i(tag,date.format(new Date()));
+        textView_checkIn_time.setText(time.format(new Date()));
+        Log.i(tag,time.format(new Date()));
         Log.i(tag,String.valueOf(textView_checkIn_date.getText()));
         Log.i(tag,String.valueOf(textView_checkIn_time.getText()));
 
@@ -84,8 +77,7 @@ public class CheckInSuccess extends AppCompatActivity {
         String checkInLocation = sharedPreferences.getString("checkInLocation","UNDEFINED");
         Log.i(tag,checkInLocation);
         textView_current_location.setText(checkInLocation);
-        Log.i(tag,"set text");*/
-
+        Log.i(tag,"set text");
 
         //display date
         Calendar calendar = Calendar.getInstance();

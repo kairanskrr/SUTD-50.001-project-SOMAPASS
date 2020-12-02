@@ -73,7 +73,6 @@ public class ScanActivity extends AppCompatActivity {
                 openQR.execute(result);
 
                 Intent successScreen = new Intent(ScanActivity.this, CheckInSuccess.class);
-                successScreen.putExtra("Location To Check Into", intent.getExtras().getString("Location To Check Into"));
                 startActivity(successScreen);
 
             }
@@ -256,8 +255,8 @@ public class ScanActivity extends AppCompatActivity {
             else{
                 checkinlocationnamecard.setText(result);
                 Toast.makeText(ScanActivity.this,"Success Checking out.",Toast.LENGTH_LONG).show();
-                Intent intent2 = new Intent(ScanActivity.this,MainActivity.class);
-                startActivity(intent2);
+                //Intent intent2 = new Intent(ScanActivity.this,MainActivity.class);
+                //startActivity(intent2);
             }
 
         }
