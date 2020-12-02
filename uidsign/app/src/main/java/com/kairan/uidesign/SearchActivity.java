@@ -25,7 +25,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
+        getSupportActionBar().hide();
         // Generate sample data
 
         locationList = new String[]{"DSL","DANCE STUDIO 8","COHORT CLASSROOM 8", "CANTEEN","CHEMISTRY LAB","PI LAB","PHYSICS LAB","STUDIO 1","DANCE STUDIO 9","ONE STOP CENTRE","ISH 1"};
@@ -65,4 +65,6 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         adapter.filter(text);
         return false;
     }
+
+
 }

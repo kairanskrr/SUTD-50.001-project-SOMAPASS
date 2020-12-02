@@ -23,7 +23,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
+// maybe rename this activity?
 public class ScanActivity extends AppCompatActivity {
     ImageView backButton;
     TextView checkinlocationnamecard;
@@ -47,7 +47,7 @@ public class ScanActivity extends AppCompatActivity {
 
         //check in and out buttons
         Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
-        Button mCheckOut = findViewById(R.id.button_checkOut_safeEntry);
+        //Button mCheckOut = findViewById(R.id.button_checkOut_safeEntry);
 
 
         //button functions
@@ -57,8 +57,8 @@ public class ScanActivity extends AppCompatActivity {
 
                 Intent intent = getIntent();
                 String result = intent.getExtras().getString("Location To Check Into");
-                System.out.println("++++++++++++++++++++++++");
-                System.out.println(result);
+                // System.out.println("++++++++++++++++++++++++");
+                // System.out.println(result);
 
                 /*SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -80,7 +80,7 @@ public class ScanActivity extends AppCompatActivity {
         /**
          * FOR NICHOLAS TO IMPLEMENT
          */
-        mCheckOut.setOnClickListener(new View.OnClickListener() {
+        /*mCheckOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO: make checkout button check out in database
@@ -95,7 +95,7 @@ public class ScanActivity extends AppCompatActivity {
             checkinlocationnamecard.setText(checkinlocationnamecardstring);
             mCheckIn.setVisibility(View.VISIBLE);
             mCheckOut.setVisibility(View.GONE );
-        }
+        }*/
 
 
         backButton = findViewById(R.id.back_from_safeentry);

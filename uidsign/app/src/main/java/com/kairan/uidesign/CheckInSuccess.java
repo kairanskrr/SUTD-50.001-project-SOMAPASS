@@ -32,17 +32,23 @@ public class CheckInSuccess extends AppCompatActivity {
         setContentView(R.layout.activity_checkinsuccess);
         getSupportActionBar().hide();
 
+        Log.i(tag,"go to check in success");
+
         textView_checkIn_date = findViewById(R.id.checkin_date);
         textView_checkIn_time = findViewById(R.id.checkin_time);
 
 
-        String dateFormat = "dd MMM yyyy";
+        /*String dateFormat = "dd MMM yyyy";
         String timeFormat = "hh:mm aa";
         Date date = new Date(dateFormat);
         Date time = new Date(timeFormat);
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
         textView_checkIn_date.setText(String.valueOf(date.getTime()));
+        Log.i(tag,String.valueOf(date.getTime()));
         textView_checkIn_time.setText(String.valueOf(time.getTime()));
+        Log.i(tag,String.valueOf(time.getTime()));
+        Log.i(tag,String.valueOf(textView_checkIn_date.getText()));
+        Log.i(tag,String.valueOf(textView_checkIn_time.getText()));
 
         Log.i(tag,"go to scan activity");
         textView_current_location = findViewById(R.id.textView_current_location_checkIn);
@@ -51,7 +57,7 @@ public class CheckInSuccess extends AppCompatActivity {
         String checkInLocation = sharedPreferences.getString("checkInLocation","UNDEFINED");
         Log.i(tag,checkInLocation);
         textView_current_location.setText(checkInLocation);
-        Log.i(tag,"set text");
+        Log.i(tag,"set text");*/
 
 
 

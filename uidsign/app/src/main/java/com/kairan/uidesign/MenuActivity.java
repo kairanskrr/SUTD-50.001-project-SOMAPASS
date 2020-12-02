@@ -254,6 +254,7 @@ public class MenuActivity extends AppCompatActivity {
                 Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
                 latestCheckIn.setText("No Check Ins");
                 latestCheckInTime.setText("");
+                checkout_home.setVisibility(View.INVISIBLE);
             }
             else{
                 try {
@@ -267,7 +268,7 @@ public class MenuActivity extends AppCompatActivity {
                     //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
                     latestCheckIn.setText(jsonObject.getString("locationname"));
                     latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
-
+                    checkout_home.setVisibility(View.VISIBLE);
 
 
                 }catch (JSONException err){
@@ -430,12 +431,7 @@ public class MenuActivity extends AppCompatActivity {
             code that ask for confirmation with a check in button
              */
 
-            System.out.println("=================================================");
-            System.out.println("=================================================");
-            System.out.println("=================================================");
-            System.out.println("=================================================");
-            System.out.println("=================================================");
-            System.out.println(result);
+
             Intent openConfirmation = new Intent(MenuActivity.this, ScanActivity.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);

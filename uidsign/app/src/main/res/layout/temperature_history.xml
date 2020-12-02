@@ -54,13 +54,14 @@
 
     <LinearLayout
         android:id="@+id/temphistory"
-        android:layout_width="353dp"
-        android:layout_height="478dp"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="52dp"
         android:background="@drawable/cardview_layout_menu"
         android:orientation="vertical"
         android:padding="30dp"
+        android:layout_marginHorizontal="30dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:background="@color/background_darkblue" />
+
         <TextView
             android:id="@+id/datetime1"
             android:layout_width="wrap_content"
@@ -90,6 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@color/background_darkblue" />
+
         <TextView
             android:id="@+id/temp1"
             android:layout_width="wrap_content"
@@ -97,10 +100,12 @@
             android:fontFamily="@font/heavitas"
             android:text="temp1"
             android:textColor="@color/background_darkblue" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:background="@color/background_darkblue" />
+
         <TextView
             android:id="@+id/datetime2"
             android:layout_width="wrap_content"
@@ -113,6 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@color/background_darkblue" />
+
         <TextView
             android:id="@+id/temp2"
             android:layout_width="wrap_content"
@@ -120,10 +126,12 @@
             android:fontFamily="@font/heavitas"
             android:text="temp2"
             android:textColor="@color/background_darkblue" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:background="@color/background_darkblue" />
+
         <TextView
             android:id="@+id/datetime3"
             android:layout_width="wrap_content"
@@ -136,6 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@color/background_darkblue" />
+
         <TextView
             android:id="@+id/temp3"
             android:layout_width="wrap_content"
