@@ -80,15 +80,15 @@ public class CheckInSuccess extends AppCompatActivity {
         Log.i(tag,"set text");
 
         //display date
-        Calendar calendar = Calendar.getInstance();
-
-        String formattedDate = calendar.get(Calendar.DAY_OF_MONTH) + " " + fillCalendarMonth(monthsMap).get(calendar.get(Calendar.MONTH)+1) + " " + calendar.get(Calendar.YEAR);
-        textView_checkIn_date.setText(formattedDate);
-
-
-        SimpleDateFormat formattedTime = new SimpleDateFormat("HH:mm");
-        Date date = new Date();
-        textView_checkIn_time.setText(formattedTime.format(date));
+//        Calendar calendar = Calendar.getInstance();
+//
+//        String formattedDate = calendar.get(Calendar.DAY_OF_MONTH) + " " + fillCalendarMonth(monthsMap).get(calendar.get(Calendar.MONTH)+1) + " " + calendar.get(Calendar.YEAR);
+//        textView_checkIn_date.setText(formattedDate);
+//
+//
+//        SimpleDateFormat formattedTime = new SimpleDateFormat("HH:mm");
+//        Date date = new Date();
+//        textView_checkIn_time.setText(formattedTime.format(date));
 
 
 
@@ -111,10 +111,10 @@ public class CheckInSuccess extends AppCompatActivity {
         });
 
 
-        Intent intent = getIntent();
-        String result = intent.getExtras().getString("Location To Check Into");
-        textView_current_location = findViewById(R.id.textView_current_location_checkIn);
-        textView_current_location.setText(result);
+//        Intent intent = getIntent();
+//        String result = intent.getExtras().getString("Location To Check Into");
+//        textView_current_location = findViewById(R.id.textView_current_location_checkIn);
+//        textView_current_location.setText(result);
 
     }
 
