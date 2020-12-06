@@ -191,7 +191,7 @@ public class MenuActivity extends AppCompatActivity {
         checkout_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
+                //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
                 MenuActivity.HttpGetRequestCheckout httpreqcheckout = new MenuActivity.HttpGetRequestCheckout();
                 httpreqcheckout.execute();
             }
@@ -251,7 +251,7 @@ public class MenuActivity extends AppCompatActivity {
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
+                //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
                 latestCheckIn.setText("No Check Ins");
                 latestCheckInTime.setText("");
                 checkout_home.setVisibility(View.INVISIBLE);

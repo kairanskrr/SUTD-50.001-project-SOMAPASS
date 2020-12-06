@@ -176,9 +176,7 @@ public class ScanActivity extends AppCompatActivity {
             }
             else{
                 checkinlocationnamecard.setText(result);
-                Toast.makeText(ScanActivity.this,"Success Checking out.",Toast.LENGTH_LONG).show();
-                //Intent intent2 = new Intent(ScanActivity.this,MainActivity.class);
-               //startActivity(intent2);
+                Toast.makeText(ScanActivity.this,"Success Checking In.",Toast.LENGTH_LONG).show();
             }
 
         }
