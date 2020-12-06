@@ -14,14 +14,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.w3c.dom.Text;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView logout_button;
@@ -92,6 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intenttemphistory = new Intent(ProfileActivity.this,TemperatureHistory.class);
                 startActivity(intenttemphistory);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
 
@@ -106,7 +104,7 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.putString("name", null);
                 editor.commit();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                overridePendingTransition(0, 0);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
 
             }
         });
@@ -117,6 +115,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this,MenuActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
     }
@@ -181,7 +180,7 @@ public class ProfileActivity extends AppCompatActivity {
             executeCheckIn openQR = new executeCheckIn();
             openQR.execute(result);
 
-            Intent successScreen = new Intent(MenuActivity.this, ScanActivity.class);
+            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
             startActivity(successScreen);
              */
 
@@ -189,10 +188,10 @@ public class ProfileActivity extends AppCompatActivity {
             /*
             code that ask for confirmation with a check in button
              */
-                Intent openConfirmation = new Intent(ProfileActivity.this, ScanActivity.class);
+                Intent openConfirmation = new Intent(ProfileActivity.this, SafeEntryCheckIn.class);
                 openConfirmation.putExtra("Location To Check Into", result);
                 startActivity(openConfirmation);
-
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
 
             }
         }

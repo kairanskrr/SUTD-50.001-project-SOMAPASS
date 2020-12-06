@@ -90,6 +90,7 @@
     <string name="check_in_button_checkOut">Check Out</string>
     <string name="you_are_exiting_checkOut">You are leaving</string>
     <string name="name_create_account">STUDENT NAME</string>
+    <string name="past_3_temperature_declarations_history">Past 3 Temperature Declarations</string>
 
 
 </resources>

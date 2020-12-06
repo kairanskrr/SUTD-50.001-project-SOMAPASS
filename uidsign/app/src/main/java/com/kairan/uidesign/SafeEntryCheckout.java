@@ -103,6 +103,7 @@ public class SafeEntryCheckout extends AppCompatActivity {
                 Toast.makeText(SafeEntryCheckout.this,"Success Checking out.",Toast.LENGTH_LONG).show();
                 Intent intent_after_checkout = new Intent(SafeEntryCheckout.this,MenuActivity.class);
                 startActivity(intent_after_checkout);
+                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
 
         }
