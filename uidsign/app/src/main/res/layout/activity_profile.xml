@@ -192,7 +192,7 @@
             <TextView
                 android:id="@+id/textView_notification_profile_left"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="left"
                 android:background="@color/light_blue"
                 android:fontFamily="@font/heavitas"
@@ -224,17 +224,7 @@
             android:textOn="@string/switch_on_profile"
             android:textSize="@dimen/profile_text_size" />
 
-        <TextView
-            android:id="@+id/textView_change_password_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/profile_marginTop"
-            android:clickable="true"
-            android:fontFamily="@font/heavitas"
-            android:gravity="left"
-            android:text="@string/change_password_profile"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size" />
+        imageView_qrcode_icon
 
         <TextView
             android:id="@+id/textView_history_profile"

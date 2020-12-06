@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -54,10 +53,8 @@ public class MenuActivity extends AppCompatActivity {
     TextView textview_username_menu;
     ImageButton temp_imagebutton;
     ImageButton healthdec_imagebutton;
-    ImageView imageView_qr_code_scanner;
-
+    ImageView small_QR_icon;
     TextView textView_search_menu;
-
     TextView latestCheckIn;
     TextView latestCheckInTime;
     Button checkout_home;
@@ -70,9 +67,10 @@ public class MenuActivity extends AppCompatActivity {
      * Set to 1 to make the button "Check Out"
      * Set to 0 AFTER onClick on check out button(to set the button back to Check In)
      */
+    Button mCheckOutHome;
 
 
-    //Track scanActivity state
+    //Track scanactivity state
     private static int scanActivityState = 0;
 
     public static int getScanActivityState() {
@@ -102,7 +100,6 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_menu);
         getSupportActionBar().hide();
-
         textview_username_menu = findViewById(R.id.textview_username_menu);
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
         String loggedInName = sharedPreferences.getString("name","UNDEFINED");
@@ -132,77 +129,42 @@ public class MenuActivity extends AppCompatActivity {
 
                         startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
                         Log.i(tag,"startActivity_QRSCAN");
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.navigation_home:
                         //startActivity(new Intent(getApplicationContext(),MenuActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        //overridePendingTransition(0,0);
                         return true;
 
                     case R.id.navigation_declare:
                         startActivity(new Intent(getApplicationContext(),TempTaking.class));
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.navigation_profile:
                         startActivity(new Intent(MenuActivity.this,ProfileActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        //overridePendingTransition(0,0);
                         return true;
 
                 }
                 return false;
             }
         });
-
+        small_QR_icon = findViewById(R.id.imageView_qrcode_icon);
+        small_QR_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
+                overridePendingTransition(0,0);
+            }
+        });
         latestCheckIn = findViewById(R.id.textView_current_latest_checkin);
         latestCheckInTime = findViewById(R.id.textView_current_latest_checkintime);
         // get latest checkin and update latestCheckIn
-        //MenuActivity.HttpGetRequest httpreq = new MenuActivity.HttpGetRequest();
-        //httpreq.execute();
+        MenuActivity.HttpGetRequest httpreq = new MenuActivity.HttpGetRequest();
+        httpreq.execute();
         //httpgetrequest below
-        HttpRequest httpRequestLastCheckIn = new HttpRequest() {
-
-            @Override
-            protected SharedPreferences getSharedPreferences_(String name, int mode) {
-                return getSharedPreferences(name,mode);
-            }
-
-            @Override
-            protected void onPostExecute(String result) {
-                JSONObject jsonObject;
-                Log.i(tag,"post execute to get latest check in");
-                if (result == null){
-                    //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
-                    latestCheckIn.setText("No Check Ins");
-                    latestCheckInTime.setText("");
-                    checkout_home.setVisibility(View.INVISIBLE);
-                }
-                else{
-                    try {
-                        jsonObject = new JSONObject(result);
-//                        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.putString("userid",jsonObject.getString("userid"));
-//                        editor.putString("password",jsonObject.getString("password"));
-//                        editor.putString("name",jsonObject.getString("name"));
-//                        editor.commit();
-                        //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
-                        latestCheckIn.setText(jsonObject.getString("locationname"));
-                        Log.i(tag,jsonObject.getString("locationname"));
-                        latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
-                        Log.i(tag,jsonObject.getString("checkintimereadable"));
-                        checkout_home.setVisibility(View.VISIBLE);
-
-
-                    }catch (JSONException err){
-                        Log.d("Error", err.toString());
-                    }}
-            }
-        };
-        httpRequestLastCheckIn.execute();
-
-
 
 
         temp_imagebutton = findViewById(R.id.temp_imagebutton);
@@ -211,7 +173,6 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,TempTaking.class);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
         healthdec_imagebutton = findViewById(R.id.healthdec_imagebutton);
@@ -220,7 +181,6 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,HealthDec.class);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
         textView_search_menu = findViewById(R.id.textView_search_menu);
@@ -229,7 +189,6 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.zoom_out, R.anim.zoom_out);
             }
         });
 
@@ -241,52 +200,18 @@ public class MenuActivity extends AppCompatActivity {
         checkout_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
-                HttpRequest httpReqCheckout = new HttpRequest() {
-
-                    @Override
-                    protected void onPostExecute(String result){
-                        JSONObject jsonObject;
-                        if (result == null){
-                            //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
-                            latestCheckIn.setText("No Check Ins");
-                            latestCheckInTime.setText("");
-                            checkout_home.setVisibility(View.INVISIBLE);
-                        }
-                        else{
-                            try {
-                                jsonObject = new JSONObject(result);
-//                        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.putString("userid",jsonObject.getString("userid"));
-//                        editor.putString("password",jsonObject.getString("password"));
-//                        editor.putString("name",jsonObject.getString("name"));
-//                        editor.commit();
-                                //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
-                                latestCheckIn.setText(jsonObject.getString("locationname"));
-                                latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
-                                checkout_home.setVisibility(View.VISIBLE);
-
-
-                            }catch (JSONException err){
-                                Log.d("Error", err.toString());
-                            }}
-
-                    }
-
-                    @Override
-                    protected SharedPreferences getSharedPreferences_(String name, int mode) {
-                        return getSharedPreferences(name,mode);
-                    }
-                };
-                httpReqCheckout.execute();
+                //INSTEAD OF IMMEDIATE CHECKOUT, GO TO NEW ACTIVITY FOR CHECKOUT CARD
+//                MenuActivity.HttpGetRequestCheckout httpreqcheckout = new MenuActivity.HttpGetRequestCheckout();
+//                httpreqcheckout.execute();
+                Intent intent_to_checkout_card = new Intent(MenuActivity.this,SafeEntryCheckout.class);
+                startActivity(intent_to_checkout_card);
             }
         });
 
     }
 
     // HTTPGetRequest Class to handle login network logic
-    /*class HttpGetRequest extends AsyncTask<String, Void, String> {
+    class HttpGetRequest extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -345,12 +270,10 @@ public class MenuActivity extends AppCompatActivity {
             else{
                 try {
                     jsonObject = new JSONObject(result);
-//                        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.putString("userid",jsonObject.getString("userid"));
-//                        editor.putString("password",jsonObject.getString("password"));
-//                        editor.putString("name",jsonObject.getString("name"));
-//                        editor.commit();
+                        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("checkoutlocationnamecard",jsonObject.getString("locationname"));
+                        editor.commit();
                     //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
                     latestCheckIn.setText(jsonObject.getString("locationname"));
                     latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
@@ -362,81 +285,79 @@ public class MenuActivity extends AppCompatActivity {
                 }}
 
         }
-    }*/
+    }
 
 
     //end of latestCheckIn
     //start of checkout button
 
-    // HTTPGetRequest Class to check latest checked in location
-
-
-    /*class HttpGetRequestCheckout extends AsyncTask<String, Void, String> {
-        public static final String REQUEST_METHOD = "GET";
-        public static final int READ_TIMEOUT = 15000;
-        public static final int CONNECTION_TIMEOUT = 15000;
-
-        protected String doInBackground(String... params){
-            //String stringUrl = params[0];
-            String result;
-            String inputLine;
-            SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-            String useridtosend = sharedPreferences.getString("userid","UNDEFINED");;
-            String passwordtosend = sharedPreferences.getString("password","UNDEFINED");;
-            try {
-                //Create a URL object holding our url
-                //TODO TO implement the URL Builder taught to us instead of string concat for URL
-                URL myUrl = new URL("https://somapass.xyz/latestcheckout/"+useridtosend+"/"+passwordtosend);
-                //Create a connection
-                HttpURLConnection connection =(HttpURLConnection)
-                        myUrl.openConnection();
-                //Set methods and timeouts
-                connection.setRequestMethod(REQUEST_METHOD);
-                connection.setReadTimeout(READ_TIMEOUT);
-                connection.setConnectTimeout(CONNECTION_TIMEOUT);
-
-                //Connect to our url
-                connection.connect();
-                //Create a new InputStreamReader
-                InputStreamReader streamReader = new
-                        InputStreamReader(connection.getInputStream());
-                //Create a new buffered reader and String Builder
-                BufferedReader reader = new BufferedReader(streamReader);
-                StringBuilder stringBuilder = new StringBuilder();
-                //Check if the line we are reading is not null
-                while((inputLine = reader.readLine()) != null){
-                    stringBuilder.append(inputLine);
-                }
-                //Close our InputStream and Buffered reader
-                reader.close();
-                streamReader.close();
-                //Set our result equal to our stringBuilder
-                result = stringBuilder.toString();
-            }
-            catch(IOException e){
-                e.printStackTrace();
-                result = null;
-            }
-            return result;
-        }
-        protected void onPostExecute(String result){
-            JSONObject jsonObject;
-            if (result == null){
-                Toast.makeText(MenuActivity.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
-            }
-            else{
-                Toast.makeText(MenuActivity.this,"Success Checking out.",Toast.LENGTH_LONG).show();
-                Intent intent2 = new Intent(MenuActivity.this,MainActivity.class);
-                startActivity(intent2);
-            }
-
-        }
-    }*/
-
-
-    //end of latestCheckIn
-
-    //end of checkout button
+//    // HTTPGetRequest Class to check latest checked in location
+//    class HttpGetRequestCheckout extends AsyncTask<String, Void, String> {
+//        public static final String REQUEST_METHOD = "GET";
+//        public static final int READ_TIMEOUT = 15000;
+//        public static final int CONNECTION_TIMEOUT = 15000;
+//
+//        protected String doInBackground(String... params){
+//            //String stringUrl = params[0];
+//            String result;
+//            String inputLine;
+//            SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+//            String useridtosend = sharedPreferences.getString("userid","UNDEFINED");;
+//            String passwordtosend = sharedPreferences.getString("password","UNDEFINED");;
+//            try {
+//                //Create a URL object holding our url
+//                //TODO TO implement the URL Builder taught to us instead of string concat for URL
+//                URL myUrl = new URL("https://somapass.xyz/latestcheckout/"+useridtosend+"/"+passwordtosend);
+//                //Create a connection
+//                HttpURLConnection connection =(HttpURLConnection)
+//                        myUrl.openConnection();
+//                //Set methods and timeouts
+//                connection.setRequestMethod(REQUEST_METHOD);
+//                connection.setReadTimeout(READ_TIMEOUT);
+//                connection.setConnectTimeout(CONNECTION_TIMEOUT);
+//
+//                //Connect to our url
+//                connection.connect();
+//                //Create a new InputStreamReader
+//                InputStreamReader streamReader = new
+//                        InputStreamReader(connection.getInputStream());
+//                //Create a new buffered reader and String Builder
+//                BufferedReader reader = new BufferedReader(streamReader);
+//                StringBuilder stringBuilder = new StringBuilder();
+//                //Check if the line we are reading is not null
+//                while((inputLine = reader.readLine()) != null){
+//                    stringBuilder.append(inputLine);
+//                }
+//                //Close our InputStream and Buffered reader
+//                reader.close();
+//                streamReader.close();
+//                //Set our result equal to our stringBuilder
+//                result = stringBuilder.toString();
+//            }
+//            catch(IOException e){
+//                e.printStackTrace();
+//                result = null;
+//            }
+//            return result;
+//        }
+//        protected void onPostExecute(String result){
+//            JSONObject jsonObject;
+//            if (result == null){
+//                Toast.makeText(MenuActivity.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
+//            }
+//            else{
+//                Toast.makeText(MenuActivity.this,"Success Checking out.",Toast.LENGTH_LONG).show();
+//                Intent intent2 = new Intent(MenuActivity.this,MainActivity.class);
+//                startActivity(intent2);
+//            }
+//
+//        }
+//    }
+//
+//
+//    //end of latestCheckIn
+//
+//    //end of checkout button
 
 
     /*****************
@@ -523,7 +444,6 @@ public class MenuActivity extends AppCompatActivity {
             Intent openConfirmation = new Intent(MenuActivity.this, ScanActivity.class);
             openConfirmation.putExtra(checkIn_location_intent, result);
             startActivityForResult(openConfirmation,CHECK_IN_LOCATION_MENU);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             //startActivity(openConfirmation);
 
 
