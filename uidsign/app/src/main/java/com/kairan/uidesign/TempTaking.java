@@ -35,6 +35,7 @@ import java.net.URL;
 public class TempTaking extends AppCompatActivity {
     ImageButton backbutton;
     Button temp_submit;
+    Button temp_history_button;
     public String tag = "SHARED";
 
 
@@ -74,22 +75,16 @@ public class TempTaking extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-
                 }
                 return false;
             }
         });
         backbutton = findViewById(R.id.imageView_back_fromtemp);
-
-
-
-
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TempTaking.this,MenuActivity.class);
                 startActivity(intent);
-
             }
         });
 
@@ -100,8 +95,15 @@ public class TempTaking extends AppCompatActivity {
             public void onClick(View v) {
                 TempTaking.HttpGetRequestNewTemperature newTempReq = new HttpGetRequestNewTemperature();
                 newTempReq.execute();
-//                Intent intent = new Intent(TempTaking.this,MenuActivity.class);
-//                startActivity(intent);
+            }
+        });
+
+        temp_history_button = findViewById(R.id.temp_history_button);
+        temp_history_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_to_temp_history = new Intent(TempTaking.this,TemperatureHistory.class);
+                startActivity(intent_to_temp_history);
             }
         });
 
