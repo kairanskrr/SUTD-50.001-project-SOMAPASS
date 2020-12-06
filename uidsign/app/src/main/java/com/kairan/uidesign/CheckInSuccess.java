@@ -41,10 +41,6 @@ public class CheckInSuccess extends AppCompatActivity {
     HashMap<Integer, String> monthsMap = new HashMap<>();
 
 
-
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
