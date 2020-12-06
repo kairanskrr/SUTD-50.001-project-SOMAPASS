@@ -117,13 +117,26 @@
 
     <Button
         android:id="@+id/temp_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="310dp"
+        android:layout_height="56dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/cardview_layout_menu"
         android:fontFamily="@font/heavitas"
         android:paddingHorizontal="90dp"
         android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempmcqcontainer" />
+
+    <Button
+        android:id="@+id/temp_history_button"
+        android:layout_width="310dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/cardview_layout_menu"
+        android:fontFamily="@font/heavitas"
+        android:paddingHorizontal="90dp"
+        android:text="@string/view_temp_history"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempmcqcontainer" />
