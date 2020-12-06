@@ -89,6 +89,7 @@
     <string name="safeentry_checkIn_success">SAFEENTRY</string>
     <string name="check_in_button_checkOut">Check Out</string>
     <string name="you_are_exiting_checkOut">You are leaving</string>
+    <string name="name_create_account">STUDENT NAME</string>
 
 
 </resources>

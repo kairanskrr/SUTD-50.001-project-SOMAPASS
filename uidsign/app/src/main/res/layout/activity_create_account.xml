@@ -38,63 +38,45 @@
         app:layout_constraintTop_toBottomOf="@+id/back_to_login"
         app:layout_constraintVertical_bias="0.2">
 
-        <TextView
-            android:id="@+id/username_create_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/heavitas"
-            android:paddingLeft="10dp"
-            android:text="@string/username_create_account"
-            android:textColor="@color/background_darkblue"
-            android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/editText_username_create_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/edit_text"
-            android:paddingLeft="2dp"
-            android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/studentid_create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:paddingLeft="5dp"
             android:text="@string/student_id_create_account"
             android:textColor="@color/background_darkblue"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText_studentid_create_account"
+            android:id="@+id/editText_name_create_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/edit_text"
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp" />
-
         <TextView
-            android:id="@+id/email_create_account"
+            android:id="@+id/name_create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:paddingLeft="5dp"
-            android:text="@string/email_create_account"
+            android:text="@string/name_create_account"
             android:textColor="@color/background_darkblue"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/editText_email_create_account"
+            android:id="@+id/editText_studentname_create_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
             android:background="@drawable/edit_text"
+            android:layout_marginTop="10dp"
             android:paddingLeft="2dp" />
 
         <TextView
@@ -117,27 +99,9 @@
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp" />
 
-        <TextView
-            android:id="@+id/confirm_password_create_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/heavitas"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="15dp"
-            android:text="@string/confirm_password_create_account"
-            android:textColor="@color/background_darkblue"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/editText_confirm_password_create_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/edit_text"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="2dp" />
 
         <Button
+            android:id="@+id/create_account_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_darkblue"
