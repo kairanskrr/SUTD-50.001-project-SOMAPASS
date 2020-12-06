@@ -55,7 +55,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/textview_safeentry"
             android:orientation="vertical"
             android:padding="30dp">
@@ -64,23 +64,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="60dp"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_vertical"
-                android:text="YOU ARE VISITING"
+                android:text="@string/you_are_visiting_checkIn"
                 android:textColor="@color/background_darkblue"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView_current_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
                 android:fontFamily="@font/heavitas"
                 android:text="DSL"
+                android:textAlignment="center"
                 android:textColor="@color/background_darkblue"
-                android:textSize="50dp" />
+                android:textSize="40sp" />
         </LinearLayout>
 
         <Button
@@ -91,9 +92,9 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/button_lightblue"
             android:fontFamily="@font/heavitas"
-            android:text="CHECK IN"
+            android:text="@string/check_in_button_checkIn"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="@dimen/checkIn_button_text_size" />
 
         <!--<Button
             android:id="@+id/button_checkOut_safeEntry"
@@ -116,14 +117,14 @@
         android:background="@drawable/textview_title_safeentry"
         android:fontFamily="@font/heavitas"
         android:gravity="center"
-        android:text="SAFEENTRY"
+        android:text="@string/safeentry_checkIn"
         android:textColor="@color/background_darkblue"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/linearLayout3"
         app:layout_constraintEnd_toEndOf="@id/linearLayout3"
         app:layout_constraintStart_toStartOf="@id/linearLayout4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.42000002" />
 
 
 

@@ -56,7 +56,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/textview_safeentry"
             android:orientation="vertical"
             android:padding="30dp">
@@ -68,10 +68,10 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="60dp"
                 android:fontFamily="@font/heavitas"
-                android:gravity="center_vertical"
+
                 android:text="2 DEC 2020"
                 android:textColor="@color/background_darkblue"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/checkin_time"
@@ -83,18 +83,19 @@
                 android:gravity="center_vertical"
                 android:text="2:02PM"
                 android:textColor="@color/background_darkblue"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textView_current_location_checkIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/heavitas"
                 android:text="DSL"
                 android:textColor="@color/background_darkblue"
-                android:textSize="50dp" />
+                android:textSize="40sp"
+                android:textAlignment="center"/>
         </LinearLayout>
 
         <Button
@@ -105,9 +106,9 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/button_lightblue"
             android:fontFamily="@font/heavitas"
-            android:text="BACK TO HOME"
+            android:text="@string/back_to_home_button_checkIn_success"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="@dimen/checkIn_button_text_size" />
 
     </LinearLayout>
 
@@ -118,9 +119,9 @@
         android:background="@drawable/textview_title_safeentry"
         android:fontFamily="@font/heavitas"
         android:gravity="center"
-        android:text="SAFEENTRY"
+        android:text="@string/safeentry_checkIn_success"
         android:textColor="@color/background_darkblue"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/safeEntry_background_check_success"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

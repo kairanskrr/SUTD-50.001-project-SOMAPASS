@@ -15,8 +15,8 @@
 
     <ImageView
         android:id="@+id/back_to_login"
-        android:layout_width="56dp"
-        android:layout_height="68dp"
+        android:layout_width="55dp"
+        android:layout_height="65dp"
         android:clickable="true"
         android:src="@drawable/back_arrow_create_account"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -44,9 +44,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
             android:paddingLeft="10dp"
-            android:text="USERNAME"
+            android:text="@string/username_create_account"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editText_username_create_account"
@@ -64,9 +64,9 @@
             android:fontFamily="@font/heavitas"
             android:layout_marginTop="15dp"
             android:paddingLeft="5dp"
-            android:text="STUDENT ID"
+            android:text="@string/student_id_create_account"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editText_studentid_create_account"
@@ -84,9 +84,9 @@
             android:fontFamily="@font/heavitas"
             android:layout_marginTop="15dp"
             android:paddingLeft="5dp"
-            android:text="EMAIL"
+            android:text="@string/email_create_account"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editText_email_create_account"
@@ -104,9 +104,9 @@
             android:fontFamily="@font/heavitas"
             android:paddingLeft="5dp"
             android:layout_marginTop="15dp"
-            android:text="PASSWORD"
+            android:text="@string/password_create_account"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editText_password_create_account"
@@ -124,9 +124,9 @@
             android:fontFamily="@font/heavitas"
             android:paddingLeft="5dp"
             android:layout_marginTop="15dp"
-            android:text="CONFIRM PASSWORD"
+            android:text="@string/confirm_password_create_account"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editText_confirm_password_create_account"
@@ -141,10 +141,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_darkblue"
-            android:text="CREATE ACCOUNT"
+            android:text="@string/create_account_button_create_account"
             android:textColor="@color/white"
             android:fontFamily="@font/heavitas"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"/>
 

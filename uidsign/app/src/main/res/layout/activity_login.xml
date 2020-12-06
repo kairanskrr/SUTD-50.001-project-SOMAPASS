@@ -60,9 +60,9 @@
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/heavitas"
-            android:text="USERNAME"
+            android:text="@string/username_login"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="@dimen/login_text_size" />
 
         <EditText
             android:id="@+id/editText_username"
@@ -75,7 +75,7 @@
             android:maxLines="1"
             android:paddingLeft="20dp"
             android:textColor="#000000"
-            android:textSize="18dp" />
+            android:textSize="@dimen/login_text_size" />
 
         <TextView
             android:id="@+id/passward"
@@ -84,9 +84,9 @@
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/heavitas"
-            android:text="PASSWORD"
+            android:text="@string/password_login"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp" />
+            android:textSize="@dimen/login_text_size" />
 
         <EditText
             android:id="@+id/editText_password"
@@ -98,7 +98,7 @@
             android:inputType="textPassword"
             android:paddingLeft="20dp"
             android:textColor="#000000"
-            android:textSize="18dp" />
+            android:textSize="@dimen/login_text_size" />
 
         <CheckBox
             android:id="@+id/checkBox_rememberMe"
@@ -108,9 +108,9 @@
             android:layout_marginTop="30dp"
             android:clickable="true"
             android:fontFamily="@font/heavitas"
-            android:text=" REMEMBER ME"
+            android:text="@string/remember_me_login"
             android:textColor="@color/background_darkblue"
-            android:textSize="18dp"
+            android:textSize="@dimen/login_text_size"
             android:focusable="true" />
 
         <Button
@@ -121,9 +121,9 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/button_darkblue"
             android:fontFamily="@font/heavitas"
-            android:text="LOG IN"
+            android:text="@string/log_in_button_login"
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="@dimen/login_text_size" />
 
         <Button
             android:id="@+id/button_create_account"
@@ -133,9 +133,9 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/button_darkblue"
             android:fontFamily="@font/heavitas"
-            android:text="CREATE ACCOUNT"
+            android:text="@string/create_account_button_login"
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="@dimen/login_text_size" />
 
 
     </LinearLayout>

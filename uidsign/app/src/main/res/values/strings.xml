@@ -18,12 +18,32 @@
     <string name="title_scan">SCAN</string>
     <string name="title_profile">PROFILE</string>
 
+    <!---login-->
+    <string name="username_login">USERNAME</string>
+    <string name="password_login">PASSWORD</string>
+    <string name="remember_me_login">REMEMBER ME</string>
+    <string name="log_in_button_login">LOG IN</string>
+    <string name="create_account_button_login">CREATE ACCOUNT</string>
+
+    <!---menu-->
+    <string name="hi_menu">HI</string>
+    <string name="temperature_taking_menu">Temperature Taking</string>
+    <string name="health_declaration_menu">Health Declaration</string>
+    <string name="temperature_and_health_declaration_menu">TEMPERATURE AND HEALTH DECLARATION</string>
+    <string name="check_out_button_menu">CHECK OUT</string>
+    <string name="date_time_of_last_check_in_menu">Date Time of last Check in</string>
+    <string name="last_check_in_place_menu">LAST CHECK IN PLACE</string>
+    <string name="current_checked_in_locations_menu">CURRENT CHECKED IN LOCATIONS</string>
+    <string name="location_menu">location</string>
+
+    <!---temperature taking-->
     <string name="declare">Declare</string>
     <string name="temptaking">Temperature Taking</string>
     <string name="tempoption1">Less Than Or Equal To 37.6&#176;C</string>
     <string name="tempoption2">More Than Or Equal To 37.7&#176;C But I Am Feeling Well</string>
     <string name="tempoption3">More Than Or Equal To 37.7&#176;C And I Am Not Feeling Well</string>
 
+    <!---health declaration-->
     <string name="healthdec">Health Declaration</string>
     <string name="selectno">Select &#34;No&#34; For All</string>
     <string name="healthqn1">Have you travelled to other countries besides Singapore in the past 14 days?</string>
@@ -41,12 +61,31 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
-
-    <string name="view_history">VIEW HISTORY</string>
-    <string name="sign_out">SIGN OUT</string>
-    <string name="notification">NOTIFICATION:</string>
-    <string name="change_password">CHANGE PASSWORD</string>
+    <!---profile-->
+    <string name="view_history_profile">VIEW HISTORY</string>
+    <string name="sign_out_profile">SIGN OUT</string>
+    <string name="notification_profile">NOTIFICATION:</string>
+    <string name="change_password_profile">CHANGE PASSWORD</string>
     <string name="email_profile">EMAIL</string>
+    <string name="switch_on_profile">ON</string>
+    <string name="switch_off_profile">OFF</string>
+
+    <!---create account-->
+    <string name="username_create_account">USERNAME</string>
+    <string name="create_account_button_create_account">CREATE ACCOUNT</string>
+    <string name="confirm_password_create_account">CONFIRM PASSWORD</string>
+    <string name="password_create_account">PASSWORD</string>
+    <string name="email_create_account">EMAIL</string>
+    <string name="student_id_create_account">STUDENT ID</string>
+
+    <!---safe entry-->
+    <string name="you_are_visiting_checkIn">YOU ARE VISITING</string>
+    <string name="check_in_button_checkIn">CHECK IN</string>
+    <string name="safeentry_checkIn">SAFEENTRY</string>
+
+    <!---check in success-->
+    <string name="back_to_home_button_checkIn_success">BACK TO HOME</string>
+    <string name="safeentry_checkIn_success">SAFEENTRY</string>
 
 
 </resources>

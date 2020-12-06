@@ -22,7 +22,7 @@ import java.util.Locale;
 
 import static java.lang.System.err;
 
-public class ListViewAdapter extends BaseAdapter {
+public abstract class ListViewAdapter extends BaseAdapter {
 
     // Declare Variables
 
@@ -71,7 +71,7 @@ public class ListViewAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.list_view_items, null);
             // Locate the TextViews in listview_item.xml
 
-            holder.location = (TextView) view.findViewById(R.id.location);
+            holder.location = (TextView) view.findViewById(R.id.textView_location_search);
             holder.checkbox = (CheckBox) view.findViewById(R.id.listCheckbox);
             holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
@@ -109,7 +109,6 @@ public class ListViewAdapter extends BaseAdapter {
         for (String location: locationList) {
             if (sharedPreferences.getString("starred locations","").contains(location)){
                 if (holder.location.getText().toString() == location) {
-
                     holder.checkbox.setChecked(true);
                 }
 
@@ -121,13 +120,18 @@ public class ListViewAdapter extends BaseAdapter {
                 //check into location
                 String checkInLocation = holder.location.getText().toString();
                 Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
-                //Intent checkIn = new Intent(mContext, CheckInActivity.class);
-                //checkIn.putExtra(checkInLocation, location);
+                //Intent checkIn = new Intent(mContext, ScanActivity.class);
+                //checkIn.putExtra(checkInLocation, checkInLocation);
+                createIntent(checkInLocation);
             }
         });
 
         return view;
     }
+
+    abstract void createIntent(String location);
+
+
 
     // Filter Class
     public void filter(String charText) {
