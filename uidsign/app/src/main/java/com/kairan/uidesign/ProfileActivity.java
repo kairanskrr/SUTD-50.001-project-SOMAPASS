@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -92,6 +93,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intenttemphistory = new Intent(ProfileActivity.this,TemperatureHistory.class);
                 startActivity(intenttemphistory);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
 
@@ -106,7 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.putString("name", null);
                 editor.commit();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                overridePendingTransition(0, 0);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
 
             }
         });
@@ -117,6 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this,MenuActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
     }
@@ -192,7 +195,7 @@ public class ProfileActivity extends AppCompatActivity {
                 Intent openConfirmation = new Intent(ProfileActivity.this, ScanActivity.class);
                 openConfirmation.putExtra("Location To Check Into", result);
                 startActivity(openConfirmation);
-
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
 
             }
         }

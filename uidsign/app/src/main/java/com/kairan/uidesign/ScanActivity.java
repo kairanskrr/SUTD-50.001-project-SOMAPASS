@@ -88,6 +88,7 @@ public class ScanActivity extends AppCompatActivity {
                 Intent successScreen = new Intent(ScanActivity.this, CheckInSuccess.class);
                 successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
                 startActivity(successScreen);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
                 Log.i(tag,checkIn_location_name.getText().toString());
 
             }
@@ -119,6 +120,7 @@ public class ScanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent mgoBack = new Intent(ScanActivity.this, MenuActivity.class);
                 startActivity(mgoBack);
+                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
 

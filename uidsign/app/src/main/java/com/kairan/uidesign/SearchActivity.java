@@ -56,6 +56,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
                 Intent intent = new Intent(SearchActivity.this,ScanActivity.class);
                 intent.putExtra(CheckInLocation,location);
                 startActivityForResult(intent,CHECK_IN_LOCATION_SEARCH);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         };
 

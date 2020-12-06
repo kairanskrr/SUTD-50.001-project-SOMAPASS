@@ -58,6 +58,7 @@ public class TemperatureHistory extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TemperatureHistory.this,ProfileActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
 
