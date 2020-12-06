@@ -31,6 +31,7 @@ import android.view.View;
 import android.widget.Button;
 
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,9 +53,8 @@ public class MenuActivity extends AppCompatActivity {
     TextView textview_username_menu;
     ImageButton temp_imagebutton;
     ImageButton healthdec_imagebutton;
-
+    ImageView small_QR_icon;
     TextView textView_search_menu;
-
     TextView latestCheckIn;
     TextView latestCheckInTime;
     Button checkout_home;
@@ -151,7 +151,14 @@ public class MenuActivity extends AppCompatActivity {
                 return false;
             }
         });
-
+        small_QR_icon = findViewById(R.id.imageView_qrcode_icon);
+        small_QR_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_to_QR_scanner = new Intent(MenuActivity.this,QrCodeActivity.class);
+                startActivity(intent_to_QR_scanner);
+            }
+        });
         latestCheckIn = findViewById(R.id.textView_current_latest_checkin);
         latestCheckInTime = findViewById(R.id.textView_current_latest_checkintime);
         // get latest checkin and update latestCheckIn
