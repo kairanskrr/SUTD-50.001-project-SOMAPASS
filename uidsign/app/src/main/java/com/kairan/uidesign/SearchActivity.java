@@ -2,9 +2,14 @@ package com.kairan.uidesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -18,6 +23,9 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     SearchView editSearch;
     String[] locationList;
     ArrayList<String> locationArray = new ArrayList<String>();
+    public static String CheckInLocation = "CHECK_IN_LOCATION";
+    final int CHECK_IN_LOCATION_SEARCH = 1110;
+    ArrayAdapter<String> arrayAdapter;
 
 
 
@@ -32,7 +40,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         // Locate the ListView
-        list = (ListView) findViewById(R.id.listview);
+        list = (ListView) findViewById(R.id.listView_search_result);
 
         for (int i = 0; i < locationList.length; i++) {
 
@@ -42,7 +50,16 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         }
 
         // Pass results to ListViewAdapter Class
-        adapter = new ListViewAdapter(this, locationArray);
+        adapter = new ListViewAdapter(this, locationArray) {
+            @Override
+            void createIntent(String location) {
+                Intent intent = new Intent(SearchActivity.this,ScanActivity.class);
+                intent.putExtra(CheckInLocation,location);
+                startActivityForResult(intent,CHECK_IN_LOCATION_SEARCH);
+            }
+        };
+
+
 
 
         // Binds the Adapter to the ListView
@@ -51,8 +68,24 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         // Locate the EditText in
         editSearch = (SearchView) findViewById(R.id.search);
         editSearch.setOnQueryTextListener(this);
-    }
 
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.i("click",parent.getSelectedItem().toString());
+                Intent intent = new Intent(SearchActivity.this,ScanActivity.class);
+                System.out.println("======================================================");
+                System.out.println("======================================================");
+                System.out.println("======================================================");
+                System.out.println(parent.getSelectedItem().toString());
+                System.out.println(parent.getItemAtPosition(position).toString());
+                intent.putExtra(CheckInLocation,parent.getSelectedItem().toString());
+                startActivity(intent);
+
+            }
+        });
+
+    }
     @Override
     public boolean onQueryTextSubmit(String query) {
 
@@ -65,6 +98,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         adapter.filter(text);
         return false;
     }
+
 
 
 }

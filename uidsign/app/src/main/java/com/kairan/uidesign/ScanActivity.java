@@ -1,7 +1,9 @@
 package com.kairan.uidesign;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,8 +28,11 @@ import java.net.URL;
 // maybe rename this activity?
 public class ScanActivity extends AppCompatActivity {
     ImageView backButton;
-    TextView checkinlocationnamecard;
+    TextView checkIn_location_name;
     public String tag = "SHARED";
+    static String GET_CHECK_IN_LOCATION_SCAN = "get check in location";
+
+
 
 
     @Override
@@ -36,14 +41,22 @@ public class ScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_safe_entry);
         getSupportActionBar().hide();
 
-        Log.i(tag,"go to scan activity");
-        checkinlocationnamecard = findViewById(R.id.textView_current_location);
-        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        Log.i(tag,sharedPreferences.toString());
-        String checkinlocationnamecardstring = sharedPreferences.getString("checkInLocation","UNDEFINED");
-        Log.i(tag,checkinlocationnamecardstring);
-        checkinlocationnamecard.setText(checkinlocationnamecardstring);
-        Log.i(tag,"set text");
+
+
+        //Log.i(tag,"go to scan activity");
+        checkIn_location_name = findViewById(R.id.textView_current_location);
+        //SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+        //Log.i(tag,sharedPreferences.toString());
+        //String checkinlocationnamecardstring = sharedPreferences.getString("checkInLocation","UNDEFINED");
+        String checkInLocation_scan = getIntent().getStringExtra(MenuActivity.checkIn_location_intent);
+        String checkInLocation_search = getIntent().getStringExtra(SearchActivity.CheckInLocation);
+        if(checkInLocation_search==null) {
+            //Log.i(tag, checkinlocationnamecardstring);
+            checkIn_location_name.setText(checkInLocation_scan);
+        }else{
+            checkIn_location_name.setText(checkInLocation_search);
+        }
+        //Log.i(tag,"set text");
 
         //check in and out buttons
         Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
@@ -56,7 +69,7 @@ public class ScanActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = getIntent();
-                String result = intent.getExtras().getString("Location To Check Into");
+                String result = intent.getExtras().getString(MenuActivity.checkIn_location_intent);
                 // System.out.println("++++++++++++++++++++++++");
                 // System.out.println(result);
 
@@ -69,11 +82,13 @@ public class ScanActivity extends AppCompatActivity {
                 // String checkinlocationnamecardstring = sharedPreferences.getString("checkinlocationnamecard","UNDEFINED");;
 
 
-                executeCheckIn openQR = new executeCheckIn();
+                executeCheckIn openQR = new executeCheckIn(checkIn_location_name.getText().toString());
                 openQR.execute(result);
 
                 Intent successScreen = new Intent(ScanActivity.this, CheckInSuccess.class);
+                successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
                 startActivity(successScreen);
+                Log.i(tag,checkIn_location_name.getText().toString());
 
             }
         });
@@ -116,6 +131,11 @@ public class ScanActivity extends AppCompatActivity {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
+        private String checkIn_location;
+
+        executeCheckIn(String checkIn_location){
+            this.checkIn_location = checkIn_location;
+        }
 
 
         protected String doInBackground(String... urls){
@@ -135,7 +155,8 @@ public class ScanActivity extends AppCompatActivity {
                 publishProgress(String.valueOf(urls[0]));
 
 
-                URL myUrl = new URL("https://somapass.xyz/checkin/"+useridtosend+"/"+passwordtosend+"/1/"+urls[0]);
+                //URL myUrl = new URL("https://somapass.xyz/checkin/"+useridtosend+"/"+passwordtosend+"/1/"+urls[0]);
+                URL myUrl = new URL("https://somapass.xyz/checkin/"+useridtosend+"/"+passwordtosend+"/1/"+checkIn_location);
                 //Create a connection
                 HttpURLConnection connection =(HttpURLConnection)
                         myUrl.openConnection();
@@ -175,7 +196,7 @@ public class ScanActivity extends AppCompatActivity {
                 Toast.makeText(ScanActivity.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
             }
             else{
-                checkinlocationnamecard.setText(result);
+                checkIn_location_name.setText(result);
                 Toast.makeText(ScanActivity.this,"Success Checking In.",Toast.LENGTH_LONG).show();
             }
 
@@ -184,7 +205,7 @@ public class ScanActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
-            checkinlocationnamecard.setText(values[0]);
+            //checkIn_location_name.setText(values[0]);
         }
     }
 
@@ -253,7 +274,7 @@ public class ScanActivity extends AppCompatActivity {
                 Toast.makeText(ScanActivity.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
             }
             else{
-                checkinlocationnamecard.setText(result);
+                checkIn_location_name.setText(result);
                 Toast.makeText(ScanActivity.this,"Success Checking out.",Toast.LENGTH_LONG).show();
                 //Intent intent2 = new Intent(ScanActivity.this,MainActivity.class);
                 //startActivity(intent2);

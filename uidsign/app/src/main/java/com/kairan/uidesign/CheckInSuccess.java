@@ -72,9 +72,10 @@ public class CheckInSuccess extends AppCompatActivity {
 
         Log.i(tag,"go to scan activity");
         textView_current_location = findViewById(R.id.textView_current_location_checkIn);
-        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        Log.i(tag,sharedPreferences.toString());
-        String checkInLocation = sharedPreferences.getString("checkInLocation","UNDEFINED");
+        //SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+        //Log.i(tag,sharedPreferences.toString());
+        //String checkInLocation = sharedPreferences.getString("checkInLocation","UNDEFINED");
+        String checkInLocation = getIntent().getStringExtra(ScanActivity.GET_CHECK_IN_LOCATION_SCAN);
         Log.i(tag,checkInLocation);
         textView_current_location.setText(checkInLocation);
         Log.i(tag,"set text");

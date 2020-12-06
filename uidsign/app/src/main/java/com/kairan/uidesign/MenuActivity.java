@@ -59,6 +59,8 @@ public class MenuActivity extends AppCompatActivity {
     TextView latestCheckInTime;
     Button checkout_home;
     public String tag = "SHARED";
+    public static String checkIn_location_intent = "Location To Check Into";
+    final int CHECK_IN_LOCATION_MENU = 1111;
 
     /**
      * FOR NIC: use getter and setter to set scanActivityState during "onClick" of the check out button you implemented. This sets the visibiltiy of checkin to non-visible and checkout visible
@@ -433,8 +435,9 @@ public class MenuActivity extends AppCompatActivity {
 
 
             Intent openConfirmation = new Intent(MenuActivity.this, ScanActivity.class);
-            openConfirmation.putExtra("Location To Check Into", result);
-            startActivity(openConfirmation);
+            openConfirmation.putExtra(checkIn_location_intent, result);
+            startActivityForResult(openConfirmation,CHECK_IN_LOCATION_MENU);
+            //startActivity(openConfirmation);
 
 
         }
