@@ -26,7 +26,7 @@
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ScanActivity" />
+        <activity android:name=".SafeEntryCheckIn" />
 
 
         <!--
@@ -51,7 +51,7 @@
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ScanActivity" />
+        <activity android:name=".SafeEntryCheckIn" />
         <activity android:name=".CheckInSuccess" />
     </application>
 

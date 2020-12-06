@@ -53,7 +53,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         adapter = new ListViewAdapter(this, locationArray) {
             @Override
             void createIntent(String location) {
-                Intent intent = new Intent(SearchActivity.this,ScanActivity.class);
+                Intent intent = new Intent(SearchActivity.this, SafeEntryCheckIn.class);
                 intent.putExtra(CheckInLocation,location);
                 startActivityForResult(intent,CHECK_IN_LOCATION_SEARCH);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
@@ -74,7 +74,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("click",parent.getSelectedItem().toString());
-                Intent intent = new Intent(SearchActivity.this,ScanActivity.class);
+                Intent intent = new Intent(SearchActivity.this, SafeEntryCheckIn.class);
                 System.out.println("======================================================");
                 System.out.println("======================================================");
                 System.out.println("======================================================");

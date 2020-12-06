@@ -75,7 +75,7 @@ public class TemperatureHistory extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navigation_scan:
-//                        startActivity(new Intent(getApplicationContext(),ScanActivity.class));
+//                        startActivity(new Intent(getApplicationContext(),SafeEntryCheckIn.class));
 //                        overridePendingTransition(0,0);
 
 

@@ -17,8 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
@@ -171,7 +169,7 @@ public class TempTaking extends AppCompatActivity {
             executeCheckIn openQR = new executeCheckIn();
             openQR.execute(result);
 
-            Intent successScreen = new Intent(MenuActivity.this, ScanActivity.class);
+            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
             startActivity(successScreen);
              */
 
@@ -179,7 +177,7 @@ public class TempTaking extends AppCompatActivity {
             /*
             code that ask for confirmation with a check in button
              */
-            Intent openConfirmation = new Intent(TempTaking.this, ScanActivity.class);
+            Intent openConfirmation = new Intent(TempTaking.this, SafeEntryCheckIn.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);

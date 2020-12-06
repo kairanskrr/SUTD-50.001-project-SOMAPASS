@@ -115,7 +115,7 @@ public class HealthDec extends AppCompatActivity {
             executeCheckIn openQR = new executeCheckIn();
             openQR.execute(result);
 
-            Intent successScreen = new Intent(MenuActivity.this, ScanActivity.class);
+            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
             startActivity(successScreen);
              */
 
@@ -123,7 +123,7 @@ public class HealthDec extends AppCompatActivity {
             /*
             code that ask for confirmation with a check in button
              */
-            Intent openConfirmation = new Intent(HealthDec.this, ScanActivity.class);
+            Intent openConfirmation = new Intent(HealthDec.this, SafeEntryCheckIn.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
