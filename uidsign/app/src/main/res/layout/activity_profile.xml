@@ -52,7 +52,7 @@
             android:fontFamily="@font/heavitas"
             android:text="@string/title_profile"
             android:textColor="@color/background_darkblue"
-            android:textSize="20sp"
+            android:textSize="@dimen/profile_title_text_size"
             android:layout_marginStart="10dp" />
 
     </LinearLayout>
@@ -75,7 +75,7 @@
         android:layout_height="500dp"
         android:background="@drawable/cardview_layout_menu"
         android:orientation="vertical"
-        android:padding="30dp"
+        android:padding="@dimen/card_padding"
         android:layout_marginHorizontal="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_backgorund"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
                 android:fontFamily="@font/heavitas"
                 android:text="@string/username"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18sp" />
+                android:textSize="@dimen/profile_text_size" />
 
             <TextView
                 android:id="@+id/textView_username_profile_right"
@@ -114,7 +114,7 @@
                 android:fontFamily="@font/heavitas"
                 android:text="XXXX"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18dp" />
+                android:textSize="@dimen/profile_text_size" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,7 +134,7 @@
                 android:fontFamily="@font/heavitas"
                 android:text="STUDENT ID"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18dp" />
+                android:textSize="@dimen/profile_text_size" />
 
             <TextView
                 android:id="@+id/textView_studentid_profile_right"
@@ -146,10 +146,10 @@
                 android:fontFamily="@font/heavitas"
                 android:text="1000000"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18sp" />
+                android:textSize="@dimen/profile_text_size" />
         </LinearLayout>
 
-        <LinearLayout
+        <!---<LinearLayout
             android:id="@+id/linearLayout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                 android:fontFamily="@font/heavitas"
                 android:text="@string/email_profile"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18dp" />
+                android:textSize="@dimen/profile_text_size" />
 
             <TextView
                 android:id="@+id/textView_email_profile_right"
@@ -179,8 +179,8 @@
                 android:text="xxxx@mymail.sutd.edu.sg"
                 android:textAllCaps="false"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18sp" />
-        </LinearLayout>
+                android:textSize="@dimen/profile_text_size" />
+        </LinearLayout>-->
 
         <LinearLayout
             android:id="@+id/linearLayout_notification"
@@ -198,7 +198,7 @@
                 android:fontFamily="@font/heavitas"
                 android:text="@string/notification_profile"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18sp" />
+                android:textSize="@dimen/profile_text_size" />
 
             <TextView
                 android:id="@+id/textView_notification_profile_right"
@@ -209,7 +209,7 @@
                 android:fontFamily="@font/heavitas"
                 android:text="OFF"
                 android:textColor="@color/background_darkblue"
-                android:textSize="18sp" />
+                android:textSize="@dimen/profile_text_size" />
         </LinearLayout>
 
         <Switch
@@ -222,7 +222,7 @@
             android:textColor="@color/background_darkblue"
             android:textOff="@string/switch_off_profile"
             android:textOn="@string/switch_on_profile"
-            android:textSize="18sp" />
+            android:textSize="@dimen/profile_text_size" />
 
         <TextView
             android:id="@+id/textView_change_password_profile"
@@ -234,7 +234,7 @@
             android:gravity="left"
             android:text="@string/change_password_profile"
             android:textColor="@color/background_darkblue"
-            android:textSize="18sp" />
+            android:textSize="@dimen/profile_text_size" />
 
         <TextView
             android:id="@+id/textView_history_profile"
@@ -246,7 +246,7 @@
             android:gravity="left"
             android:text="VIEW TEMP HISTORY"
             android:textColor="@color/background_darkblue"
-            android:textSize="18sp" />
+            android:textSize="@dimen/profile_text_size" />
 
         <TextView
             android:id="@+id/textView_signout_profile"
@@ -258,7 +258,7 @@
             android:gravity="left"
             android:text="@string/sign_out_profile"
             android:textColor="@color/background_darkblue"
-            android:textSize="18sp" />
+            android:textSize="@dimen/profile_text_size" />
 
     </LinearLayout>
 

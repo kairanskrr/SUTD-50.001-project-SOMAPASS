@@ -32,9 +32,9 @@
 
         <ImageView
             android:id="@+id/back_arrow_check_success"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="@dimen/checkIn_back_arrow_width"
+            android:layout_height="@dimen/checkIn_back_arrow_height"
+            android:layout_marginLeft="@dimen/checkIn_back_arrow_margin_left"
             android:clickable="true"
             android:src="@drawable/backarrow_darkblue" />
 
@@ -66,12 +66,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="@dimen/checkIn_space_btwn_title_text"
                 android:fontFamily="@font/heavitas"
 
                 android:text="2 DEC 2020"
                 android:textColor="@color/background_darkblue"
-                android:textSize="30sp" />
+                android:textSize="@dimen/checkIn_date_time_text_size" />
 
             <TextView
                 android:id="@+id/checkin_time"
@@ -83,7 +83,7 @@
                 android:gravity="center_vertical"
                 android:text="2:02PM"
                 android:textColor="@color/background_darkblue"
-                android:textSize="30sp" />
+                android:textSize="@dimen/checkIn_date_time_text_size" />
 
             <TextView
                 android:id="@+id/textView_current_location_checkIn"
@@ -93,17 +93,17 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/heavitas"
                 android:text="DSL"
+                android:textAlignment="center"
                 android:textColor="@color/background_darkblue"
-                android:textSize="40sp"
-                android:textAlignment="center"/>
+                android:textSize="@dimen/checkIn_location_text_size" />
         </LinearLayout>
 
         <Button
             android:id="@+id/backToHome"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/checkIn_button_height"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/checkIn_space_btwn_text_button"
             android:background="@drawable/button_lightblue"
             android:fontFamily="@font/heavitas"
             android:text="@string/back_to_home_button_checkIn_success"
@@ -112,20 +112,23 @@
 
     </LinearLayout>
 
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="290dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/checkIn_safeEntry_box_width"
+        android:layout_height="@dimen/checkIn_safeEntry_box_height"
         android:background="@drawable/textview_title_safeentry"
         android:fontFamily="@font/heavitas"
         android:gravity="center"
         android:text="@string/safeentry_checkIn_success"
         android:textColor="@color/background_darkblue"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/safeEntry_background_check_success"
+        android:textSize="@dimen/checkIn_safeEntry_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_check_success_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout_check_success_info"
+        app:layout_constraintVertical_bias="0.0" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

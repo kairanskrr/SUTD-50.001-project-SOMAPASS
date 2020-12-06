@@ -27,6 +27,8 @@ public class ProfileActivity extends AppCompatActivity {
     TextView logout_button;
     ImageView backbutton;
     TextView temphistory;
+    TextView userName;
+    TextView studentId;
     public String tag = "SHARED";
 
 
@@ -36,8 +38,15 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         getSupportActionBar().hide();
 
+        userName = findViewById(R.id.textView_username_profile_right);
+        studentId = findViewById(R.id.textView_studentid_profile_right);
 
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+        String loggedInName = sharedPreferences.getString("name","UNDEFINED");
+        String loggedInId = sharedPreferences.getString("userid","UNDEFINED");
+        userName.setText(loggedInName);
+        studentId.setText(loggedInId);
+
 
 
         //Initialize and Assign Variable

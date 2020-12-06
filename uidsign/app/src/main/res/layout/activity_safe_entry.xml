@@ -31,9 +31,9 @@
         app:layout_constraintVertical_bias="0.35">
         <ImageView
             android:id="@+id/back_from_safeentry"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="@dimen/checkIn_back_arrow_width"
+            android:layout_height="@dimen/checkIn_back_arrow_height"
+            android:layout_marginLeft="@dimen/checkIn_back_arrow_margin_left"
             android:clickable="true"
             android:src="@drawable/backarrow_darkblue" />
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="30dp"
+        android:padding="@dimen/card_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -58,18 +58,18 @@
             android:layout_height="wrap_content"
             android:background="@drawable/textview_safeentry"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="@dimen/card_padding">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="@dimen/checkIn_space_btwn_title_text"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_vertical"
                 android:text="@string/you_are_visiting_checkIn"
                 android:textColor="@color/background_darkblue"
-                android:textSize="20sp" />
+                android:textSize="@dimen/checkIn_you_are_visiting_text_size" />
 
             <TextView
                 android:id="@+id/textView_current_location"
@@ -81,15 +81,15 @@
                 android:text="DSL"
                 android:textAlignment="center"
                 android:textColor="@color/background_darkblue"
-                android:textSize="40sp" />
+                android:textSize="@dimen/checkIn_location_text_size" />
         </LinearLayout>
 
         <Button
             android:id="@+id/button_checkIn_safeEntry"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/checkIn_button_height"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/checkIn_space_btwn_text_button"
             android:background="@drawable/button_lightblue"
             android:fontFamily="@font/heavitas"
             android:text="@string/check_in_button_checkIn"
@@ -112,19 +112,19 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="290dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/checkIn_safeEntry_box_width"
+        android:layout_height="@dimen/checkIn_safeEntry_box_height"
         android:background="@drawable/textview_title_safeentry"
         android:fontFamily="@font/heavitas"
         android:gravity="center"
         android:text="@string/safeentry_checkIn"
         android:textColor="@color/background_darkblue"
-        android:textSize="20sp"
+        android:textSize="@dimen/checkIn_safeEntry_text_size"
         app:layout_constraintBottom_toBottomOf="@id/linearLayout3"
         app:layout_constraintEnd_toEndOf="@id/linearLayout3"
         app:layout_constraintStart_toStartOf="@id/linearLayout4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 
