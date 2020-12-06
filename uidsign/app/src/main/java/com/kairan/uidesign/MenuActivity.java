@@ -155,8 +155,8 @@ public class MenuActivity extends AppCompatActivity {
         small_QR_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_to_QR_scanner = new Intent(MenuActivity.this,QrCodeActivity.class);
-                startActivity(intent_to_QR_scanner);
+                startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
+                overridePendingTransition(0,0);
             }
         });
         latestCheckIn = findViewById(R.id.textView_current_latest_checkin);
