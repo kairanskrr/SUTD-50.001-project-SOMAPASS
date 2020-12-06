@@ -1,10 +1,29 @@
 <resources>
+    <dimen name="card_padding">30dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="profile_marginTop">10dp</dimen>
+    <dimen name="profile_text_size">18sp</dimen>
+    <dimen name="profile_title_text_size">20sp</dimen>
     <dimen name="menu_title_hi_xxxx">60sp</dimen>
     <dimen name="menu_subtitle_checkIn_healthDec">13sp</dimen>
     <dimen name="menu_temperatureTaking_healthDec_icon_width">85dp</dimen>
     <dimen name="menu_temperatureTaking_healthDec_icon_height">80dp</dimen>
     <dimen name="login_text_size">18sp</dimen>
     <dimen name="checkIn_button_text_size">18sp</dimen>
+    <dimen name="checkIn_button_height">60dp</dimen>
+    <dimen name="checkIn_space_btwn_text_button">20dp</dimen>
+    <dimen name="checkIn_space_btwn_title_text">60dp</dimen>
+    <dimen name="checkIn_location_text_size">40sp</dimen>
+    <dimen name="checkIn_safeEntry_text_size">20sp</dimen>
+    <dimen name="checkIn_safeEntry_box_width">300dp</dimen>
+    <dimen name="checkIn_safeEntry_box_height">80dp</dimen>
+    <dimen name="checkIn_date_time_text_size">30sp</dimen>
+    <dimen name="checkIn_back_arrow_width">40dp</dimen>
+    <dimen name="checkIn_back_arrow_height">40dp</dimen>
+    <dimen name="checkIn_back_arrow_margin_left">10dp</dimen>
+    <dimen name="checkIn_you_are_visiting_text_size">20sp</dimen>
+    <dimen name="search_bar_width">300dp</dimen>
+    <dimen name="search_bar_height">50dp</dimen>
+    <dimen name="search_listView_margin_top">30dp</dimen>
+    <dimen name="search_listView_margin_horizontal">20dp</dimen>
 </resources>

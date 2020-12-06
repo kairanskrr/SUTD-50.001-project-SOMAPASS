@@ -19,8 +19,8 @@
 
     <SearchView
         android:id="@+id/search"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/search_bar_width"
+        android:layout_height="@dimen/search_bar_height"
         android:background="@drawable/profile_topbar"
         android:fontFamily="@font/heavitas"
         android:iconifiedByDefault="false"
@@ -36,13 +36,14 @@
 
     <ListView
         android:id="@+id/listView_search_result"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/search_listView_margin_top"
+        android:layout_marginHorizontal="@dimen/search_listView_margin_horizontal"
         android:background="@drawable/cardview_layout_menu"
         android:fontFamily="@font/heavitas"
         android:orientation="vertical"
-        android:padding="30dp"
+        android:padding="@dimen/card_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search">
