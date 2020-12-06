@@ -99,6 +99,7 @@ public class CheckInSuccess extends AppCompatActivity {
             public void onClick(View v) {
                 Intent goBack = new Intent(CheckInSuccess.this, MenuActivity.class);
                 startActivity(goBack);
+                overridePendingTransition(android.R.anim.slide_out_right, android.R.anim.slide_in_left);
             }
         });
 
@@ -108,6 +109,7 @@ public class CheckInSuccess extends AppCompatActivity {
             public void onClick(View v) {
                 Intent goBack = new Intent(CheckInSuccess.this, MenuActivity.class);
                 startActivity(goBack);
+                overridePendingTransition(android.R.anim.cycle_interpolator, android.R.anim.bounce_interpolator);
             }
         });
 

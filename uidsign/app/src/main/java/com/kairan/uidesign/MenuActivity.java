@@ -166,6 +166,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,TempTaking.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.overshoot_interpolator, android.R.anim.overshoot_interpolator);
             }
         });
         healthdec_imagebutton = findViewById(R.id.healthdec_imagebutton);
@@ -174,6 +175,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,HealthDec.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.anticipate_overshoot_interpolator, android.R.anim.anticipate_overshoot_interpolator);
             }
         });
         textView_search_menu = findViewById(R.id.textView_search_menu);
@@ -182,6 +184,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
                 startActivity(intent);
+                overridePendingTransition(android.R.anim.linear_interpolator, android.R.anim.linear_interpolator);
             }
         });
 
