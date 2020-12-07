@@ -1,13 +1,18 @@
 <resources>
     <dimen name="card_padding">30dp</dimen>
+    <dimen name="space_btwn_text_bottomLine">2dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="profile_marginTop">10dp</dimen>
     <dimen name="profile_text_size">18sp</dimen>
     <dimen name="profile_title_text_size">20sp</dimen>
     <dimen name="menu_title_hi_xxxx">60sp</dimen>
-    <dimen name="menu_subtitle_checkIn_healthDec">13sp</dimen>
+    <dimen name="menu_subtitle_checkIn_healthDec">12sp</dimen>
     <dimen name="menu_temperatureTaking_healthDec_icon_width">85dp</dimen>
     <dimen name="menu_temperatureTaking_healthDec_icon_height">80dp</dimen>
+    <dimen name="menu_margin_btwn_layout">20dp</dimen>
+    <dimen name="menu_last_checkIn_text_size">20sp</dimen>
+    <dimen name="menu_last_checkIn_date_time_text_size">13sp</dimen>
+    <dimen name="menu_check_out_button_text_size">13sp</dimen>
     <dimen name="login_text_size">18sp</dimen>
     <dimen name="checkIn_button_text_size">18sp</dimen>
     <dimen name="checkIn_button_height">60dp</dimen>
