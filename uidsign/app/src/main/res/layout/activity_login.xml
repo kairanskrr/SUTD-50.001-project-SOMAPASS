@@ -60,7 +60,7 @@
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/heavitas"
-            android:text="@string/username_login"
+            android:text="@string/student_id_create_account"
             android:textColor="@color/background_darkblue"
             android:textSize="@dimen/login_text_size" />
 
@@ -71,7 +71,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_text"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:paddingLeft="20dp"
             android:textColor="#000000"
