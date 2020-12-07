@@ -132,11 +132,11 @@
 
             <TextView
                 android:id="@+id/textView_current_checkin_locations"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_horizontal"
-                android:paddingLeft="10dp"
+
                 android:text="@string/current_checked_in_locations_menu"
                 android:textColor="@color/background_darkblue"
                 android:textSize="@dimen/menu_subtitle_checkIn_healthDec" />
@@ -154,9 +154,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/menu_margin_btwn_layout"
                 android:fontFamily="@font/heavitas"
-                android:gravity="left"
-                android:paddingStart="10dp"
-                android:paddingLeft="10dp"
+
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="18dp"
+
                 android:text="@string/last_check_in_place_menu"
                 android:textColor="@color/background_darkblue"
                 android:textSize="@dimen/menu_last_checkIn_text_size" />
@@ -205,7 +207,7 @@
 
             <TextView
                 android:id="@+id/textView_temperature_declaration_window"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_horizontal"
