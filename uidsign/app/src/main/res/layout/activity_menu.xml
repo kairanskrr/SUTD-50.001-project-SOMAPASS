@@ -55,6 +55,11 @@
         android:id="@+id/linearLayout_searchbar_menu_1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+<<<<<<< HEAD
+=======
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+>>>>>>> parent of 1a32b26... Merge pull request #30 from kairanskrr/kr
         android:orientation="vertical"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="30dp"
@@ -144,12 +149,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+<<<<<<< HEAD
                 android:src="@drawable/darkblue_line"/>
+=======
+                android:src="@drawable/darkblue_line" />
+>>>>>>> parent of 1a32b26... Merge pull request #30 from kairanskrr/kr
 
             <TextView
                 android:id="@+id/textView_current_latest_checkin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:fontFamily="@font/heavitas"
                 android:gravity="left"
                 android:layout_marginTop="20dp"
@@ -158,18 +168,37 @@
                 android:textColor="@color/background_darkblue"
                 android:textSize="20sp"
                 android:paddingStart="18dp" />
+=======
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/heavitas"
+                android:gravity="left"
+                android:paddingStart="18dp"
+                android:paddingLeft="18dp"
+                android:text="@string/last_check_in_place_menu"
+                android:textColor="@color/background_darkblue"
+                android:textSize="20sp" />
+
+>>>>>>> parent of 1a32b26... Merge pull request #30 from kairanskrr/kr
             <TextView
                 android:id="@+id/textView_current_latest_checkintime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_horizontal"
+<<<<<<< HEAD
                 android:layout_marginTop="10dp"
                 android:paddingLeft="20dp"
                 android:text="@string/date_time_of_last_check_in_menu"
                 android:textColor="@color/background_darkblue"
                 android:textSize="13sp"
                 android:paddingStart="20dp" />
+=======
+                android:paddingStart="20dp"
+                android:paddingLeft="20dp"
+                android:text="@string/date_time_of_last_check_in_menu"
+                android:textColor="@color/background_darkblue"
+                android:textSize="13sp" />
+>>>>>>> parent of 1a32b26... Merge pull request #30 from kairanskrr/kr
 
             <Button
                 android:id="@+id/checkout_home"
@@ -179,7 +208,10 @@
                 android:background="@drawable/button_darkblue"
                 android:fontFamily="@font/heavitas"
                 android:padding="10dp"
+<<<<<<< HEAD
                 android:layout_marginTop="15dp"
+=======
+>>>>>>> parent of 1a32b26... Merge pull request #30 from kairanskrr/kr
                 android:text="@string/check_out_button_menu"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
@@ -194,8 +226,13 @@
         <LinearLayout
             android:id="@+id/linearLayout_temperature_declaration_window"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="200dp"
             android:layout_marginTop="30dp"
+=======
+            android:layout_height="230dp"
+            android:layout_marginTop="20dp"
+>>>>>>> parent of 1a32b26... Merge pull request #30 from kairanskrr/kr
             android:background="@drawable/cardview_layout_menu"
             android:orientation="vertical"
             android:padding="20dp">
@@ -215,7 +252,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
+<<<<<<< HEAD
                 android:src="@drawable/darkblue_line"/>
+=======
+                android:src="@drawable/darkblue_line" />
+>>>>>>> parent of 1a32b26... Merge pull request #30 from kairanskrr/kr
 
             <RelativeLayout
                 android:layout_width="match_parent"
