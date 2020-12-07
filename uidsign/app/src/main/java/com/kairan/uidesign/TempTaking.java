@@ -17,8 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
@@ -85,6 +83,7 @@ public class TempTaking extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TempTaking.this,MenuActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
 
@@ -104,6 +103,7 @@ public class TempTaking extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent_to_temp_history = new Intent(TempTaking.this,TemperatureHistory.class);
                 startActivity(intent_to_temp_history);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
 
@@ -169,7 +169,7 @@ public class TempTaking extends AppCompatActivity {
             executeCheckIn openQR = new executeCheckIn();
             openQR.execute(result);
 
-            Intent successScreen = new Intent(MenuActivity.this, ScanActivity.class);
+            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
             startActivity(successScreen);
              */
 
@@ -177,10 +177,10 @@ public class TempTaking extends AppCompatActivity {
             /*
             code that ask for confirmation with a check in button
              */
-            Intent openConfirmation = new Intent(TempTaking.this, ScanActivity.class);
+            Intent openConfirmation = new Intent(TempTaking.this, SafeEntryCheckIn.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);
-
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
 
         }
     }
@@ -255,6 +255,7 @@ public class TempTaking extends AppCompatActivity {
                 Toast.makeText(TempTaking.this,"Success Temp declaration out.",Toast.LENGTH_LONG).show();
                 Intent intent3 = new Intent(TempTaking.this,MenuActivity.class);
                 startActivity(intent3);
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
             }
 
         }
