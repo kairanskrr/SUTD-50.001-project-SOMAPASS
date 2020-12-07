@@ -3,6 +3,7 @@ package com.kairan.uidesign;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ abstract class HttpRequest extends AsyncTask<String,String,String> {
             //Create a URL object holding our url
             //TODO TO implement the URL Builder taught to us instead of string concat for URL
             URL myUrl = new URL("https://somapass.xyz/latestcheckout/"+useridtosend+"/"+passwordtosend);
-
+            Uri.Builder builder = new Uri.Builder();
             //Create a connection
             HttpURLConnection connection =(HttpURLConnection)
                     myUrl.openConnection();

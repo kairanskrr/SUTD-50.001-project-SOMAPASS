@@ -122,7 +122,7 @@ public class MenuActivity extends AppCompatActivity {
 
                         startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
                         Log.i(tag,"startActivity_QRSCAN");
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
                         return true;
 
                     case R.id.navigation_home:
@@ -132,12 +132,12 @@ public class MenuActivity extends AppCompatActivity {
 
                     case R.id.navigation_declare:
                         startActivity(new Intent(getApplicationContext(),TempTaking.class));
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
                         return true;
 
                     case R.id.navigation_profile:
                         startActivity(new Intent(MenuActivity.this,ProfileActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
                         return true;
 
                 }
@@ -166,7 +166,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,TempTaking.class);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
             }
         });
         healthdec_imagebutton = findViewById(R.id.healthdec_imagebutton);
@@ -175,7 +175,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,HealthDec.class);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
             }
         });
         textView_search_menu = findViewById(R.id.textView_search_menu);
