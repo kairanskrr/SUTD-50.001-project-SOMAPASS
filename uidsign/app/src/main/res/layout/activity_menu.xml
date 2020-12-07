@@ -154,10 +154,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/menu_margin_btwn_layout"
                 android:fontFamily="@font/heavitas"
-
                 android:gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:paddingLeft="18dp"
+                android:paddingLeft="10dp"
 
                 android:text="@string/last_check_in_place_menu"
                 android:textColor="@color/background_darkblue"
