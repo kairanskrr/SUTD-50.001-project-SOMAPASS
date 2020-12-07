@@ -55,7 +55,7 @@
         android:id="@+id/linearLayout_searchbar_menu_1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/menu_margin_btwn_layout"
         android:layout_marginBottom="10dp"
         android:orientation="vertical"
         android:paddingHorizontal="30dp"
@@ -124,7 +124,7 @@
         <LinearLayout
             android:id="@+id/linearLayout_current_checkin_window"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/cardview_layout_menu"
             android:orientation="vertical"
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_horizontal"
-                android:paddingLeft="20dp"
+                android:paddingLeft="10dp"
                 android:text="@string/current_checked_in_locations_menu"
                 android:textColor="@color/background_darkblue"
                 android:textSize="@dimen/menu_subtitle_checkIn_healthDec" />
@@ -145,21 +145,21 @@
                 android:id="@+id/darkBlue_line_checkIn_window"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="@dimen/space_btwn_text_bottomLine"
                 android:src="@drawable/darkblue_line" />
 
             <TextView
                 android:id="@+id/textView_current_latest_checkin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/menu_margin_btwn_layout"
                 android:fontFamily="@font/heavitas"
                 android:gravity="left"
-                android:paddingStart="18dp"
-                android:paddingLeft="18dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
                 android:text="@string/last_check_in_place_menu"
                 android:textColor="@color/background_darkblue"
-                android:textSize="20sp" />
+                android:textSize="@dimen/menu_last_checkIn_text_size" />
 
             <TextView
                 android:id="@+id/textView_current_latest_checkintime"
@@ -168,24 +168,24 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/heavitas"
                 android:gravity="center_horizontal"
-                android:paddingStart="20dp"
-                android:paddingLeft="20dp"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
                 android:text="@string/date_time_of_last_check_in_menu"
                 android:textColor="@color/background_darkblue"
-                android:textSize="13sp" />
+                android:textSize="@dimen/menu_last_checkIn_date_time_text_size" />
 
             <Button
                 android:id="@+id/checkout_home"
-                android:layout_width="122dp"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_gravity="right"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/button_darkblue"
                 android:fontFamily="@font/heavitas"
-                android:padding="10dp"
+                android:paddingHorizontal="15dp"
                 android:text="@string/check_out_button_menu"
                 android:textColor="@color/white"
-                android:textSize="13sp" />
+                android:textSize="@dimen/menu_check_out_button_text_size" />
 
             <!--            <ListView-->
             <!--                android:id="@+id/listView_current_checkin_locations"-->
@@ -197,8 +197,8 @@
         <LinearLayout
             android:id="@+id/linearLayout_temperature_declaration_window"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/menu_margin_btwn_layout"
             android:background="@drawable/cardview_layout_menu"
             android:orientation="vertical"
             android:padding="20dp">
@@ -211,13 +211,14 @@
                 android:gravity="center_horizontal"
                 android:text="@string/temperature_and_health_declaration_menu"
                 android:textColor="@color/background_darkblue"
-                android:textSize="@dimen/menu_subtitle_checkIn_healthDec" />
+                android:textSize="@dimen/menu_subtitle_checkIn_healthDec"
+                android:paddingLeft="10dp"/>
 
             <ImageView
                 android:id="@+id/darkBlue_line_healthDec_window"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="@dimen/space_btwn_text_bottomLine"
                 android:src="@drawable/darkblue_line" />
 
             <RelativeLayout
@@ -233,7 +234,6 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
@@ -275,7 +275,6 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
