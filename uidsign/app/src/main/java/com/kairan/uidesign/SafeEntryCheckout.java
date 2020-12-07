@@ -29,7 +29,8 @@ public class SafeEntryCheckout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safe_entry_checkout);
-        locationanamecard = findViewById(R.id.textView_current_location);
+        getSupportActionBar().hide();
+        locationanamecard = findViewById(R.id.textView_current_location_out);
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
         String checkoutlocationnamecard = sharedPreferences.getString("checkoutlocationnamecard","UNDEFINED");;
         locationanamecard.setText(checkoutlocationnamecard);
