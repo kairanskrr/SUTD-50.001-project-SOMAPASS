@@ -249,10 +249,10 @@ public class TempTaking extends AppCompatActivity {
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                Toast.makeText(TempTaking.this,"Please Check.",Toast.LENGTH_LONG).show();
+                Toast.makeText(TempTaking.this,"There was an error with Temperature Declaration.",Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(TempTaking.this,"Success Temp declaration out.",Toast.LENGTH_LONG).show();
+                //Toast.makeText(TempTaking.this,"Success Temp declaration out.",Toast.LENGTH_LONG).show();
                 Intent intent3 = new Intent(TempTaking.this,MenuActivity.class);
                 startActivity(intent3);
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);

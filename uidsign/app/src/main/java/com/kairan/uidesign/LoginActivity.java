@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("password",jsonObject.getString("password"));
                     editor.putString("name",jsonObject.getString("name"));
                     editor.commit();
-                    Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
                     startActivity(intent);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);

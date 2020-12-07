@@ -119,7 +119,7 @@ public abstract class ListViewAdapter extends BaseAdapter {
             public void onClick(View v) {
                 //check into location
                 String checkInLocation = holder.location.getText().toString();
-                Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
                 //Intent checkIn = new Intent(mContext, SafeEntryCheckIn.class);
                 //checkIn.putExtra(checkInLocation, checkInLocation);
                 createIntent(checkInLocation);

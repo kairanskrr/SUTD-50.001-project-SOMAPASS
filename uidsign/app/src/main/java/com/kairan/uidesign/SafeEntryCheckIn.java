@@ -192,11 +192,11 @@ public class SafeEntryCheckIn extends AppCompatActivity {
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                Toast.makeText(SafeEntryCheckIn.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
+                Toast.makeText(SafeEntryCheckIn.this,"NO CURRENT CHECKINS",Toast.LENGTH_LONG).show();
             }
             else{
                 checkIn_location_name.setText(result);
-                Toast.makeText(SafeEntryCheckIn.this,"Success Checking In.",Toast.LENGTH_LONG).show();
+                //.makeText(SafeEntryCheckIn.this,"Success Checking In.",Toast.LENGTH_LONG).show();
             }
 
         }
@@ -270,11 +270,11 @@ public class SafeEntryCheckIn extends AppCompatActivity {
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                Toast.makeText(SafeEntryCheckIn.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
+                Toast.makeText(SafeEntryCheckIn.this,"NO CURRENT CHECKINS.",Toast.LENGTH_LONG).show();
             }
             else{
                 checkIn_location_name.setText(result);
-                Toast.makeText(SafeEntryCheckIn.this,"Success Checking out.",Toast.LENGTH_LONG).show();
+                //Toast.makeText(SafeEntryCheckIn.this,"Success Checking out.",Toast.LENGTH_LONG).show();
                 //Intent intent2 = new Intent(SafeEntryCheckIn.this,MainActivity.class);
                 //startActivity(intent2);
             }

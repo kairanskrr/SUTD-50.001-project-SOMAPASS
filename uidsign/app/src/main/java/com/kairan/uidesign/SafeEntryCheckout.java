@@ -98,10 +98,10 @@ public class SafeEntryCheckout extends AppCompatActivity {
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                Toast.makeText(SafeEntryCheckout.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
+                Toast.makeText(SafeEntryCheckout.this,"NO CHECKINS.",Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(SafeEntryCheckout.this,"Success Checking out.",Toast.LENGTH_LONG).show();
+                //Toast.makeText(SafeEntryCheckout.this,"Success Checking out.",Toast.LENGTH_LONG).show();
                 Intent intent_after_checkout = new Intent(SafeEntryCheckout.this,MenuActivity.class);
                 startActivity(intent_after_checkout);
                 overridePendingTransition(R.anim.left_in,R.anim.left_out);
