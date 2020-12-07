@@ -14,19 +14,26 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 
 
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -116,13 +123,13 @@ public class MenuActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navigation_scan:
-//                        startActivity(new Intent(getApplicationContext(),SafeEntryCheckIn.class));
+//                        startActivity(new Intent(getApplicationContext(),ScanActivity.class));
 //                        overridePendingTransition(0,0);
 
 
                         startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
                         Log.i(tag,"startActivity_QRSCAN");
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.navigation_home:
@@ -132,12 +139,12 @@ public class MenuActivity extends AppCompatActivity {
 
                     case R.id.navigation_declare:
                         startActivity(new Intent(getApplicationContext(),TempTaking.class));
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.navigation_profile:
                         startActivity(new Intent(MenuActivity.this,ProfileActivity.class));
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                        //overridePendingTransition(0,0);
                         return true;
 
                 }
@@ -149,7 +156,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
+                overridePendingTransition(0,0);
             }
         });
         latestCheckIn = findViewById(R.id.textView_current_latest_checkin);
@@ -166,7 +173,6 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,TempTaking.class);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
         healthdec_imagebutton = findViewById(R.id.healthdec_imagebutton);
@@ -175,7 +181,6 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,HealthDec.class);
                 startActivity(intent);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
         textView_search_menu = findViewById(R.id.textView_search_menu);
@@ -184,7 +189,6 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.zoom_out, R.anim.zoom_out);
             }
         });
 
@@ -201,7 +205,6 @@ public class MenuActivity extends AppCompatActivity {
 //                httpreqcheckout.execute();
                 Intent intent_to_checkout_card = new Intent(MenuActivity.this,SafeEntryCheckout.class);
                 startActivity(intent_to_checkout_card);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         });
 
@@ -428,7 +431,7 @@ public class MenuActivity extends AppCompatActivity {
             executeCheckIn openQR = new executeCheckIn();
             openQR.execute(result);
 
-            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
+            Intent successScreen = new Intent(MenuActivity.this, ScanActivity.class);
             startActivity(successScreen);
              */
 
@@ -438,10 +441,9 @@ public class MenuActivity extends AppCompatActivity {
              */
 
 
-            Intent openConfirmation = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
+            Intent openConfirmation = new Intent(MenuActivity.this, ScanActivity.class);
             openConfirmation.putExtra(checkIn_location_intent, result);
             startActivityForResult(openConfirmation,CHECK_IN_LOCATION_MENU);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             //startActivity(openConfirmation);
 
 

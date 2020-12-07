@@ -10,7 +10,6 @@
         android:id="@+id/profile_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:background="@color/background_darkblue"
         android:src="@drawable/background_profile"
         app:layout_constraintBottom_toBottomOf="parent"

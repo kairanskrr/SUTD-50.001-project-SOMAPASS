@@ -58,7 +58,6 @@ public class TemperatureHistory extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(TemperatureHistory.this,ProfileActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
 
@@ -75,7 +74,7 @@ public class TemperatureHistory extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navigation_scan:
-//                        startActivity(new Intent(getApplicationContext(),SafeEntryCheckIn.class));
+//                        startActivity(new Intent(getApplicationContext(),ScanActivity.class));
 //                        overridePendingTransition(0,0);
 
 

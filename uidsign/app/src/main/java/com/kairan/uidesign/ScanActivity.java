@@ -1,7 +1,9 @@
 package com.kairan.uidesign;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -23,7 +26,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 // maybe rename this activity?
-public class SafeEntryCheckIn extends AppCompatActivity {
+public class ScanActivity extends AppCompatActivity {
     ImageView backButton;
     TextView checkIn_location_name;
     public String tag = "SHARED";
@@ -82,10 +85,9 @@ public class SafeEntryCheckIn extends AppCompatActivity {
                 executeCheckIn openQR = new executeCheckIn(checkIn_location_name.getText().toString());
                 openQR.execute(result);
 
-                Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);
+                Intent successScreen = new Intent(ScanActivity.this, CheckInSuccess.class);
                 successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
                 startActivity(successScreen);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
                 Log.i(tag,checkIn_location_name.getText().toString());
 
             }
@@ -115,9 +117,8 @@ public class SafeEntryCheckIn extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mgoBack = new Intent(SafeEntryCheckIn.this, MenuActivity.class);
+                Intent mgoBack = new Intent(ScanActivity.this, MenuActivity.class);
                 startActivity(mgoBack);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
 
@@ -192,11 +193,11 @@ public class SafeEntryCheckIn extends AppCompatActivity {
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                Toast.makeText(SafeEntryCheckIn.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
+                Toast.makeText(ScanActivity.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
             }
             else{
                 checkIn_location_name.setText(result);
-                Toast.makeText(SafeEntryCheckIn.this,"Success Checking In.",Toast.LENGTH_LONG).show();
+                Toast.makeText(ScanActivity.this,"Success Checking In.",Toast.LENGTH_LONG).show();
             }
 
         }
@@ -270,12 +271,12 @@ public class SafeEntryCheckIn extends AppCompatActivity {
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                Toast.makeText(SafeEntryCheckIn.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
+                Toast.makeText(ScanActivity.this,"NULL POST EXECUTE CHECKOUT.",Toast.LENGTH_LONG).show();
             }
             else{
                 checkIn_location_name.setText(result);
-                Toast.makeText(SafeEntryCheckIn.this,"Success Checking out.",Toast.LENGTH_LONG).show();
-                //Intent intent2 = new Intent(SafeEntryCheckIn.this,MainActivity.class);
+                Toast.makeText(ScanActivity.this,"Success Checking out.",Toast.LENGTH_LONG).show();
+                //Intent intent2 = new Intent(ScanActivity.this,MainActivity.class);
                 //startActivity(intent2);
             }
 

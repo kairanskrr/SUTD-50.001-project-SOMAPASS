@@ -6,21 +6,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
     <ImageView
         android:id="@+id/history_backgound"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/background_darkblue"
         android:scaleType="fitXY"
         android:src="@drawable/background_profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/background_darkblue"/>
 
     <LinearLayout
         android:id="@+id/linearLayout_temptaking_history"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/profile_topbar"
         android:orientation="horizontal"
@@ -29,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05">
+        app:layout_constraintVertical_bias="0.069">
 
         <ImageButton
             android:id="@+id/imageView_back_fromtemphist"
@@ -51,8 +48,7 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/heavitas"
             android:text="@string/temptaking"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_title_text_size"/>
+            android:textColor="@color/background_darkblue" />
 
     </LinearLayout>
 
@@ -60,34 +56,26 @@
     <LinearLayout
         android:id="@+id/temphistory"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginHorizontal="25dp"
+        android:layout_height="480dp"
+        android:layout_marginHorizontal="30dp"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="52dp"
         android:background="@drawable/cardview_layout_menu"
         android:orientation="vertical"
         android:padding="30dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout_temptaking_history"
-        app:layout_constraintVertical_bias="0.35000002">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_temptaking_title"
+        app:layout_constraintVertical_bias="0.3">
 
         <TextView
             android:id="@+id/Title1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
-            android:text="@string/past_3_temperature_declarations_history"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size"/>
-
-        <ImageView
-            android:id="@+id/darkBlue_line_checkIn_window"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:src="@drawable/darkblue_line" />
+            android:text="Past 3 Temperature Declarations"
+            android:textColor="@color/background_darkblue" />
 
         <Space
             android:layout_width="match_parent"
@@ -100,8 +88,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
             android:text="datetime1"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size"/>
+            android:textColor="@color/background_darkblue" />
 
         <Space
             android:layout_width="match_parent"
@@ -114,8 +101,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
             android:text="temp1"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size"/>
+            android:textColor="@color/background_darkblue" />
 
         <Space
             android:layout_width="match_parent"
@@ -128,8 +114,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
             android:text="datetime2"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size"/>
+            android:textColor="@color/background_darkblue" />
 
         <Space
             android:layout_width="match_parent"
@@ -142,8 +127,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
             android:text="temp2"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size"/>
+            android:textColor="@color/background_darkblue" />
 
         <Space
             android:layout_width="match_parent"
@@ -156,8 +140,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
             android:text="datetime3"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size"/>
+            android:textColor="@color/background_darkblue" />
 
         <Space
             android:layout_width="match_parent"
@@ -170,8 +153,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/heavitas"
             android:text="temp3"
-            android:textColor="@color/background_darkblue"
-            android:textSize="@dimen/profile_text_size"/>
+            android:textColor="@color/background_darkblue" />
 
         <Space
             android:layout_width="match_parent"

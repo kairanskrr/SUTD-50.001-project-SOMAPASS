@@ -26,7 +26,8 @@
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".SafeEntryCheckIn" />
+        <activity android:name=".ScanActivity" />
+
 
 
         <!--
@@ -37,6 +38,8 @@
         -->
 
         <activity android:name=".TemperatureHistory"></activity>
+        <activity android:name=".SafeEntry" />
+        <activity android:name=".SafeEntryCheckout" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -51,7 +54,7 @@
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".SafeEntryCheckIn" />
+        <activity android:name=".ScanActivity" />
         <activity android:name=".CheckInSuccess" />
     </application>
 

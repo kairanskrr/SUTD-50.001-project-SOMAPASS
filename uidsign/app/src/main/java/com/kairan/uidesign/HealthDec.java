@@ -66,7 +66,6 @@ public class HealthDec extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HealthDec.this,MenuActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.left_in, R.anim.left_out);
             }
         });
     }
@@ -115,7 +114,7 @@ public class HealthDec extends AppCompatActivity {
             executeCheckIn openQR = new executeCheckIn();
             openQR.execute(result);
 
-            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
+            Intent successScreen = new Intent(MenuActivity.this, ScanActivity.class);
             startActivity(successScreen);
              */
 
@@ -123,10 +122,9 @@ public class HealthDec extends AppCompatActivity {
             /*
             code that ask for confirmation with a check in button
              */
-            Intent openConfirmation = new Intent(HealthDec.this, SafeEntryCheckIn.class);
+            Intent openConfirmation = new Intent(HealthDec.this, ScanActivity.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
 
 
         }
