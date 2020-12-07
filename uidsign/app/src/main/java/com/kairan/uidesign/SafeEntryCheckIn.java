@@ -85,7 +85,7 @@ public class SafeEntryCheckIn extends AppCompatActivity {
                 Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);
                 successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
                 startActivity(successScreen);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
                 Log.i(tag,checkIn_location_name.getText().toString());
 
             }
