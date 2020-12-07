@@ -14,6 +14,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -155,9 +156,41 @@ public class MenuActivity extends AppCompatActivity {
         latestCheckIn = findViewById(R.id.textView_current_latest_checkin);
         latestCheckInTime = findViewById(R.id.textView_current_latest_checkintime);
         // get latest checkin and update latestCheckIn
-        MenuActivity.HttpGetRequest httpreq = new MenuActivity.HttpGetRequest();
-        httpreq.execute();
+        //MenuActivity.HttpGetRequest httpreq = new MenuActivity.HttpGetRequest();
+        //httpreq.execute();
         //httpgetrequest below
+        HttpRequest httpRequest = new HttpRequest("latestcheckin",MenuActivity.this) {
+            @Override
+            protected void onPostExecute(String result) {
+                System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
+                System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
+                System.out.println(result);
+                JSONObject jsonObject;
+                if (result == null){
+                    //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
+                    latestCheckIn.setText("No Check Ins");
+                    latestCheckInTime.setText("");
+                    checkout_home.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    try {
+                        jsonObject = new JSONObject(result);
+                        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("checkoutlocationnamecard",jsonObject.getString("locationname"));
+                        editor.commit();
+                        //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
+                        latestCheckIn.setText(jsonObject.getString("locationname"));
+                        latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
+                        checkout_home.setVisibility(View.VISIBLE);
+
+
+                    }catch (JSONException err){
+                        Log.d("Error", err.toString());
+                    }}
+            }
+        };
+        httpRequest.execute();
 
 
         temp_imagebutton = findViewById(R.id.temp_imagebutton);
@@ -166,7 +199,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,TempTaking.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
         healthdec_imagebutton = findViewById(R.id.healthdec_imagebutton);
@@ -175,7 +208,7 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this,HealthDec.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
         textView_search_menu = findViewById(R.id.textView_search_menu);
@@ -212,6 +245,10 @@ public class MenuActivity extends AppCompatActivity {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
+        final String scheme = "https";
+        final String authority = "somapass.xyz";
+        private String back;
+        private Uri uri;
 
         protected String doInBackground(String... params){
             //String stringUrl = params[0];
@@ -225,6 +262,16 @@ public class MenuActivity extends AppCompatActivity {
                 //TODO TO implement the URL Builder taught to us instead of string concat for URL
                 URL myUrl = new URL("https://somapass.xyz/latestcheckin/"+useridtosend+"/"+passwordtosend);
                 //Create a connection
+                /*this.back = back+"/"+useridtosend+"/"+passwordtosend;
+                Uri.Builder builder = new Uri.Builder();
+                builder.scheme(scheme)
+                        .authority(authority)
+                        .appendPath(this.back);
+                uri = builder.build();
+                URL myUrl= new URL(uri.toString());*/
+                System.out.println("==================================================================");
+                System.out.println("===================================================================");
+                System.out.println(myUrl);
                 HttpURLConnection connection =(HttpURLConnection)
                         myUrl.openConnection();
                 //Set methods and timeouts
@@ -257,6 +304,9 @@ public class MenuActivity extends AppCompatActivity {
             return result;
         }
         protected void onPostExecute(String result){
+            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
+            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
+            System.out.println(result);
             JSONObject jsonObject;
             if (result == null){
                 //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();

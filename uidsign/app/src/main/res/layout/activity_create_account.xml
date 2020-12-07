@@ -61,6 +61,7 @@
             android:inputType="number"
             android:maxLines="1"
             android:paddingLeft="20dp"
+            android:textColor="@color/background_darkblue"
             android:fontFamily="@font/heavitas"/>
         <TextView
             android:id="@+id/name_create_account"
@@ -83,6 +84,7 @@
             android:paddingLeft="20dp"
             android:maxLines="1"
             android:inputType="text"
+            android:textColor="@color/background_darkblue"
             android:fontFamily="@font/heavitas"/>
 
         <TextView
@@ -104,6 +106,7 @@
             android:background="@drawable/edit_text"
             android:layout_marginTop="10dp"
             android:paddingLeft="20dp"
+            android:textColor="@color/background_darkblue"
             android:inputType="textPassword"
             android:fontFamily="@font/heavitas"/>
 
