@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SafeEntry">
+    tools:context=".SafeEntryCheckout">
 
     <ImageView
         android:id="@+id/safeEntry_backgorund"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="@+id/safeEntry_backgorund"
         app:layout_constraintVertical_bias="0.35">
         <ImageView
-            android:id="@+id/back_from_safeentry"
+            android:id="@+id/back_from_safe_entry_out"
             android:layout_width="@dimen/checkIn_back_arrow_width"
             android:layout_height="@dimen/checkIn_back_arrow_height"
             android:layout_marginLeft="@dimen/checkIn_back_arrow_margin_left"
@@ -72,7 +72,7 @@
                 android:textSize="@dimen/checkIn_you_are_visiting_text_size" />
 
             <TextView
-                android:id="@+id/textView_current_location"
+                android:id="@+id/textView_current_location_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
