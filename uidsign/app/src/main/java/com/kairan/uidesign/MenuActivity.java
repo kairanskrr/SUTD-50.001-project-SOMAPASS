@@ -37,7 +37,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity{
     TextView textview_username_menu;
     ImageButton temp_imagebutton;
     ImageButton healthdec_imagebutton;
@@ -202,7 +202,13 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+
+
     // HTTPGetRequest Class to handle login network logic
+
+    /**
+     * DELEGATION
+     */
     class HttpGetRequest extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
@@ -218,6 +224,9 @@ public class MenuActivity extends AppCompatActivity {
             try {
                 //Create a URL object holding our url
                 //TODO TO implement the URL Builder taught to us instead of string concat for URL
+//                setAuthority("latestcheckin");
+//                URL myUrl = new URL(HttpRequest.makeURL(getAuthority()).toString());
+
                 URL myUrl = new URL("https://somapass.xyz/latestcheckin/"+useridtosend+"/"+passwordtosend);
                 //Create a connection
                 HttpURLConnection connection =(HttpURLConnection)
@@ -251,10 +260,10 @@ public class MenuActivity extends AppCompatActivity {
             }
             return result;
         }
+
         protected void onPostExecute(String result){
             JSONObject jsonObject;
             if (result == null){
-                //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
                 latestCheckIn.setText("No Check Ins");
                 latestCheckInTime.setText("");
                 checkout_home.setVisibility(View.INVISIBLE);
@@ -277,6 +286,7 @@ public class MenuActivity extends AppCompatActivity {
                 }}
 
         }
+
     }
 
 
