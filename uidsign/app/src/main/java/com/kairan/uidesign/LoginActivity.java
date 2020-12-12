@@ -47,23 +47,16 @@ public class LoginActivity extends AppCompatActivity {
 
 
         //Click create account button: to createAccount
-        button_create_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,CreateAccountActivity.class);
-                startActivity(intent);
-            }
+        button_create_account.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this,CreateAccountActivity.class);
+            startActivity(intent);
         });
 
-        button_login.setOnClickListener(new View.OnClickListener() {
-            //TODO REFACTOR Login logic LATER
-            @Override
-            public void onClick(View v) {
-                HttpLogin httpreq = new HttpLogin();
-                httpreq.execute("login",editText_username.getText().toString(),editText_passward.getText().toString());
-            }
-
-            //TODO END OF REFACTOR LATER
+        //TODO REFACTOR Login logic LATER
+//TODO END OF REFACTOR LATER
+        button_login.setOnClickListener(v -> {
+            HttpLogin httpreq = new HttpLogin();
+            httpreq.execute("login",editText_username.getText().toString(),editText_passward.getText().toString());
         });
     }
 

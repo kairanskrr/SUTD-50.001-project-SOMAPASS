@@ -22,17 +22,15 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
         String loggedInUserID = sharedPreferences.getString("userid",null);
         new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        if (loggedInUserID != null){
-                            Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                            startActivity(intent);
-                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
-                        }else{
-                            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                            startActivity(intent);
-                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
-                        }
+                () -> {
+                    if (loggedInUserID != null){
+                        Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                    }else{
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
                     }
                 },
                 2000);

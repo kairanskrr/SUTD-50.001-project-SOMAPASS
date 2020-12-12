@@ -74,23 +74,17 @@ public class CheckInSuccess extends AppCompatActivity {
 
 
         Button mBackToHome = findViewById(R.id.backToHome);
-        mBackToHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goBack = new Intent(CheckInSuccess.this, MenuActivity.class);
-                startActivity(goBack);
-                overridePendingTransition(R.anim.left_in, R.anim.left_out);
-            }
+        mBackToHome.setOnClickListener(v -> {
+            Intent goBack = new Intent(CheckInSuccess.this, MenuActivity.class);
+            startActivity(goBack);
+            overridePendingTransition(R.anim.left_in, R.anim.left_out);
         });
 
         backButton = findViewById(R.id.back_arrow_check_success);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goBack = new Intent(CheckInSuccess.this, MenuActivity.class);
-                startActivity(goBack);
-                overridePendingTransition(R.anim.left_in, R.anim.left_out);
-            }
+        backButton.setOnClickListener(v -> {
+            Intent goBack = new Intent(CheckInSuccess.this, MenuActivity.class);
+            startActivity(goBack);
+            overridePendingTransition(R.anim.left_in, R.anim.left_out);
         });
 
 

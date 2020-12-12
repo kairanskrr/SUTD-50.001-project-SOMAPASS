@@ -1,7 +1,5 @@
 package com.kairan.uidesign.Utils;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 
@@ -26,9 +24,6 @@ abstract public class HttpRequest extends AsyncTask<String,String,String> {
         //String stringUrl = params[0];
         String result;
         String inputLine;
-        /*SharedPreferences sharedPreferences = getSharedPreferences_("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        String useridtosend = sharedPreferences.getString("userid","UNDEFINED");;
-        String passwordtosend = sharedPreferences.getString("password","UNDEFINED");;*/
         try {
             //Create a URL object holding our url
             //TODO TO implement the URL Builder taught to us instead of string concat for URL

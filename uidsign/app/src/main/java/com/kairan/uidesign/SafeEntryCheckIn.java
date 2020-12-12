@@ -53,37 +53,34 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
 
         //button functions
-        mCheckIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        mCheckIn.setOnClickListener(v -> {
 
-                //Intent intent = getIntent();
-                //String result = intent.getExtras().getString(MenuActivity.checkIn_location_intent);
-                // System.out.println("++++++++++++++++++++++++");
-                // System.out.println(result);
+            //Intent intent = getIntent();
+            //String result = intent.getExtras().getString(MenuActivity.checkIn_location_intent);
+            // System.out.println("++++++++++++++++++++++++");
+            // System.out.println(result);
 
-                /*SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("checkinlocationnamecard",result);
-                editor.commit();*/
+            /*SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("checkinlocationnamecard",result);
+            editor.commit();*/
 
-                // checkinlocationnamecard = findViewById(R.id.textView_current_location);
-                // String checkinlocationnamecardstring = sharedPreferences.getString("checkinlocationnamecard","UNDEFINED");;
+            // checkinlocationnamecard = findViewById(R.id.textView_current_location);
+            // String checkinlocationnamecardstring = sharedPreferences.getString("checkinlocationnamecard","UNDEFINED");;
 
 
-                HttpCheckIn executeCheckIn = new HttpCheckIn();
-                executeCheckIn.execute("checkin",
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"userid"),
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"password"),
-                        "1",checkIn_location_name.getText().toString());
+            HttpCheckIn executeCheckIn = new HttpCheckIn();
+            executeCheckIn.execute("checkin",
+                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"userid"),
+                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"password"),
+                    "1",checkIn_location_name.getText().toString());
 
-                Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);
-                successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
-                startActivity(successScreen);
-                overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
-                Log.i(tag,checkIn_location_name.getText().toString());
+            Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);
+            successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
+            startActivity(successScreen);
+            overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
+            Log.i(tag,checkIn_location_name.getText().toString());
 
-            }
         });
         /**
          * FOR NICHOLAS TO IMPLEMENT
@@ -107,13 +104,10 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
 
         backButton = findViewById(R.id.back_from_safeentry);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent mgoBack = new Intent(SafeEntryCheckIn.this, MenuActivity.class);
-                startActivity(mgoBack);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
-            }
+        backButton.setOnClickListener(v -> {
+            Intent mgoBack = new Intent(SafeEntryCheckIn.this, MenuActivity.class);
+            startActivity(mgoBack);
+            overridePendingTransition(R.anim.left_in,R.anim.left_out);
         });
 
 

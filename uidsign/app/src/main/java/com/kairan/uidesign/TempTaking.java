@@ -43,64 +43,52 @@ public class TempTaking extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
 
         //Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.navigation_scan:
-                        startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
-                        overridePendingTransition(0, 0);
-                        return true;
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.navigation_scan:
+                    startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
+                    overridePendingTransition(0, 0);
+                    return true;
 
-                    case R.id.navigation_home:
-                        startActivity(new Intent(getApplicationContext(),MenuActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                case R.id.navigation_home:
+                    startActivity(new Intent(getApplicationContext(),MenuActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
 
-                    case R.id.navigation_declare:
-                        //startActivity(new Intent(getApplicationContext(),TempTaking.class));
-                        //overridePendingTransition(0,0);
-                        return true;
+                case R.id.navigation_declare:
+                    //startActivity(new Intent(getApplicationContext(),TempTaking.class));
+                    //overridePendingTransition(0,0);
+                    return true;
 
-                    case R.id.navigation_profile:
-                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
+                case R.id.navigation_profile:
+                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                    overridePendingTransition(0,0);
+                    return true;
             }
+            return false;
         });
         backbutton = findViewById(R.id.imageView_back_fromtemp);
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TempTaking.this,MenuActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
-            }
+        backbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(TempTaking.this,MenuActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.left_in,R.anim.left_out);
         });
 
         //Submit button
         temp_submit = findViewById(R.id.temp_submit);
-        temp_submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HttpReqNewTemp newTempReq = new HttpReqNewTemp();
-                newTempReq.execute("newtemperature",
-                        ToSharePreferences.GetSharedPreferences(TempTaking.this,"userid"),
-                        ToSharePreferences.GetSharedPreferences(TempTaking.this,"password"),
-                        currentTemperature);
-            }
+        temp_submit.setOnClickListener(v -> {
+            HttpReqNewTemp newTempReq = new HttpReqNewTemp();
+            newTempReq.execute("newtemperature",
+                    ToSharePreferences.GetSharedPreferences(TempTaking.this,"userid"),
+                    ToSharePreferences.GetSharedPreferences(TempTaking.this,"password"),
+                    currentTemperature);
         });
 
         temp_history_button = findViewById(R.id.temp_history_button);
-        temp_history_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent_to_temp_history = new Intent(TempTaking.this,TemperatureHistory.class);
-                startActivity(intent_to_temp_history);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
-            }
+        temp_history_button.setOnClickListener(v -> {
+            Intent intent_to_temp_history = new Intent(TempTaking.this,TemperatureHistory.class);
+            startActivity(intent_to_temp_history);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
         });
 
     }
@@ -132,11 +120,7 @@ public class TempTaking extends AppCompatActivity {
                 alertDialog.setTitle("Scan Error");
                 alertDialog.setMessage("QR Code could not be scanned");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+                        (dialog, which) -> dialog.dismiss());
                 alertDialog.show();
             }
             return;

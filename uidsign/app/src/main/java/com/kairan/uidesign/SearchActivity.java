@@ -70,20 +70,17 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         editSearch = (SearchView) findViewById(R.id.search);
         editSearch.setOnQueryTextListener(this);
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("click",parent.getSelectedItem().toString());
-                Intent intent = new Intent(SearchActivity.this, SafeEntryCheckIn.class);
-                System.out.println("======================================================");
-                System.out.println("======================================================");
-                System.out.println("======================================================");
-                System.out.println(parent.getSelectedItem().toString());
-                System.out.println(parent.getItemAtPosition(position).toString());
-                intent.putExtra(CheckInLocation,parent.getSelectedItem().toString());
-                startActivity(intent);
+        list.setOnItemClickListener((parent, view, position, id) -> {
+            Log.i("click",parent.getSelectedItem().toString());
+            Intent intent = new Intent(SearchActivity.this, SafeEntryCheckIn.class);
+            System.out.println("======================================================");
+            System.out.println("======================================================");
+            System.out.println("======================================================");
+            System.out.println(parent.getSelectedItem().toString());
+            System.out.println(parent.getItemAtPosition(position).toString());
+            intent.putExtra(CheckInLocation,parent.getSelectedItem().toString());
+            startActivity(intent);
 
-            }
         });
 
     }

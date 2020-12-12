@@ -73,31 +73,27 @@ public abstract class ListViewAdapter extends BaseAdapter {
 
             holder.location = (TextView) view.findViewById(R.id.textView_location_search);
             holder.checkbox = (CheckBox) view.findViewById(R.id.listCheckbox);
-            holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked) {
-                        //add to sharedpref
-                        if (sharedPreferences.contains("starred locations")) {
-                            editor.putString("starred locations",  holder.location.getText().toString()+ ","+sharedPreferences.getString("starred locations", "") );
-
-                        } else {
-                            editor.putString("starred locations", holder.location.getText().toString()+ ",");
-                        }
-
-
+            holder.checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if (isChecked) {
+                    //add to sharedpref
+                    if (sharedPreferences.contains("starred locations")) {
+                        editor.putString("starred locations",  holder.location.getText().toString()+ ","+sharedPreferences.getString("starred locations", "") );
 
                     } else {
-                        //remove from sharedpref
-                        editor.putString("starred locations", sharedPreferences.getString("starred locations", "").replace(holder.location.getText().toString() + ",", ""));
-
+                        editor.putString("starred locations", holder.location.getText().toString()+ ",");
                     }
-                    editor.commit();
-                    //this returns a fucking long string and i have no goddamn idea why. works tho
-                    //Toast.makeText(mContext,sharedPreferences.getString("starred locations", ""),Toast.LENGTH_SHORT).show();
 
+
+
+                } else {
+                    //remove from sharedpref
+                    editor.putString("starred locations", sharedPreferences.getString("starred locations", "").replace(holder.location.getText().toString() + ",", ""));
 
                 }
+                editor.commit();
+                //this returns a fucking long string and i have no goddamn idea why. works tho
+                //Toast.makeText(mContext,sharedPreferences.getString("starred locations", ""),Toast.LENGTH_SHORT).show();
+
 
             });
             view.setTag(holder);
@@ -114,16 +110,13 @@ public abstract class ListViewAdapter extends BaseAdapter {
 
             }
         }
-        holder.location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //check into location
-                String checkInLocation = holder.location.getText().toString();
-                //Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
-                //Intent checkIn = new Intent(mContext, SafeEntryCheckIn.class);
-                //checkIn.putExtra(checkInLocation, checkInLocation);
-                createIntent(checkInLocation);
-            }
+        holder.location.setOnClickListener(v -> {
+            //check into location
+            String checkInLocation = holder.location.getText().toString();
+            //Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
+            //Intent checkIn = new Intent(mContext, SafeEntryCheckIn.class);
+            //checkIn.putExtra(checkInLocation, checkInLocation);
+            createIntent(checkInLocation);
         });
 
         return view;

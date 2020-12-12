@@ -30,15 +30,12 @@ public class SafeEntryCheckout extends AppCompatActivity {
         locationanamecard.setText(checkoutlocationnamecard);
 
         checkOutButton = findViewById(R.id.button_checkOut_safeEntry);
-        checkOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //NETWORK REQ AND EXECUTE
-                HttpReqCheckout httpReqCheckout = new HttpReqCheckout();
-                httpReqCheckout.execute("latestcheckout",
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"userid"),
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"password"));
-            }
+        checkOutButton.setOnClickListener(v -> {
+            //NETWORK REQ AND EXECUTE
+            HttpReqCheckout httpReqCheckout = new HttpReqCheckout();
+            httpReqCheckout.execute("latestcheckout",
+                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"userid"),
+                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"password"));
         });
 
     }
