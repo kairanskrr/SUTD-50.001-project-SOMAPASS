@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,14 +20,8 @@ import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.ToSharePreferences;
 
 public class TempTaking extends AppCompatActivity {
     ImageButton backbutton;
@@ -92,8 +85,11 @@ public class TempTaking extends AppCompatActivity {
         temp_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TempTaking.HttpGetRequestNewTemperature newTempReq = new HttpGetRequestNewTemperature();
-                newTempReq.execute();
+                HttpReqNewTemp newTempReq = new HttpReqNewTemp();
+                newTempReq.execute("newtemperature",
+                        ToSharePreferences.GetSharedPreferences(TempTaking.this,"userid"),
+                        ToSharePreferences.GetSharedPreferences(TempTaking.this,"password"),
+                        currentTemperature);
             }
         });
 
@@ -198,7 +194,23 @@ public class TempTaking extends AppCompatActivity {
     }
 
     // HTTPGetRequest Class to check latest checked in location
-    public class HttpGetRequestNewTemperature extends AsyncTask<String, Void, String> {
+    class HttpReqNewTemp extends HttpRequest {
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result == null){
+                Toast.makeText(TempTaking.this,"There was an error with Temperature Declaration.",Toast.LENGTH_LONG).show();
+            }
+            else{
+                //Toast.makeText(TempTaking.this,"Success Temp declaration out.",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(TempTaking.this,MenuActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        }
+    }
+
+    /*public class HttpGetRequestNewTemperature extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -259,7 +271,7 @@ public class TempTaking extends AppCompatActivity {
             }
 
         }
-    }
+    }*/
 
 
 

@@ -5,27 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.Display;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.kairan.uidesign.Utils.HttpRequest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -68,8 +59,8 @@ public class LoginActivity extends AppCompatActivity {
             //TODO REFACTOR Login logic LATER
             @Override
             public void onClick(View v) {
-                HttpGetRequest httpreq = new HttpGetRequest();
-                httpreq.execute(editText_username.getText().toString(),editText_passward.getText().toString());
+                HttpLogin httpreq = new HttpLogin();
+                httpreq.execute("login",editText_username.getText().toString(),editText_passward.getText().toString());
             }
 
             //TODO END OF REFACTOR LATER
@@ -78,7 +69,35 @@ public class LoginActivity extends AppCompatActivity {
 
 
     // HTTPGetRequest Class to handle login network logic
-    class HttpGetRequest extends AsyncTask<String, Void, String> {
+    class HttpLogin extends HttpRequest {
+
+        @Override
+        protected void onPostExecute(String result) {
+            JSONObject jsonObject;
+            if (result == null){Toast.makeText(LoginActivity.this,"WRONG USERNAME OR PASSWORD",Toast.LENGTH_LONG).show();}
+            else{
+                try {
+                    jsonObject = new JSONObject(result);
+                    SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("userid",jsonObject.getString("userid"));
+                    editor.putString("password",jsonObject.getString("password"));
+                    editor.putString("name",jsonObject.getString("name"));
+                    editor.commit();
+                    //Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+
+
+                }catch (JSONException err){
+                    Log.d("Error", err.toString());
+                }}
+
+        }
+    }
+
+    /*class HttpGetRequest extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -148,7 +167,7 @@ public class LoginActivity extends AppCompatActivity {
                 }}
 
         }
-    }
+    }*/
 
 
 }

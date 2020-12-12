@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -26,15 +25,11 @@ import androidx.core.content.ContextCompat;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.ToSharePreferences;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 
 public class MenuActivity extends AppCompatActivity{
@@ -150,8 +145,10 @@ public class MenuActivity extends AppCompatActivity{
         latestCheckIn = findViewById(R.id.textView_current_latest_checkin);
         latestCheckInTime = findViewById(R.id.textView_current_latest_checkintime);
         // get latest checkin and update latestCheckIn
-        MenuActivity.HttpGetRequest httpreq = new MenuActivity.HttpGetRequest();
-        httpreq.execute();
+        HttpGetRequest httpRequest_LatestCheckIn = new HttpGetRequest();
+        httpRequest_LatestCheckIn.execute("latestcheckin",
+                ToSharePreferences.GetSharedPreferences(MenuActivity.this,"userid"),
+                ToSharePreferences.GetSharedPreferences(MenuActivity.this,"password"));
         //httpgetrequest below
 
 
@@ -209,7 +206,36 @@ public class MenuActivity extends AppCompatActivity{
     /**
      * DELEGATION
      */
-    class HttpGetRequest extends AsyncTask<String, Void, String> {
+
+    class HttpGetRequest extends HttpRequest {
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result == null){
+                //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
+                latestCheckIn.setText("No Check Ins");
+                latestCheckInTime.setText("");
+                checkout_home.setVisibility(View.INVISIBLE);
+            }
+            else{
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("checkoutlocationnamecard",jsonObject.getString("locationname"));
+                    editor.commit();
+                    //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
+                    latestCheckIn.setText(jsonObject.getString("locationname"));
+                    latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
+                    checkout_home.setVisibility(View.VISIBLE);
+
+
+                }catch (JSONException err){
+                    Log.d("Error", err.toString());
+                }}
+        }
+    }
+    /*class HttpGetRequest extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -287,7 +313,7 @@ public class MenuActivity extends AppCompatActivity{
 
         }
 
-    }
+    }*/
 
 
     //end of latestCheckIn

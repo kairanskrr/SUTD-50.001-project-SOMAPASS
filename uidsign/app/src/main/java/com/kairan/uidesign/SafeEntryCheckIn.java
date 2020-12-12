@@ -2,10 +2,7 @@ package com.kairan.uidesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,13 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.ToSharePreferences;
 
 // maybe rename this activity?
 public class SafeEntryCheckIn extends AppCompatActivity {
@@ -65,8 +57,8 @@ public class SafeEntryCheckIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = getIntent();
-                String result = intent.getExtras().getString(MenuActivity.checkIn_location_intent);
+                //Intent intent = getIntent();
+                //String result = intent.getExtras().getString(MenuActivity.checkIn_location_intent);
                 // System.out.println("++++++++++++++++++++++++");
                 // System.out.println(result);
 
@@ -79,8 +71,11 @@ public class SafeEntryCheckIn extends AppCompatActivity {
                 // String checkinlocationnamecardstring = sharedPreferences.getString("checkinlocationnamecard","UNDEFINED");;
 
 
-                executeCheckIn openQR = new executeCheckIn(checkIn_location_name.getText().toString());
-                openQR.execute(result);
+                HttpCheckIn executeCheckIn = new HttpCheckIn();
+                executeCheckIn.execute("checkin",
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"userid"),
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"password"),
+                        "1",checkIn_location_name.getText().toString());
 
                 Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);
                 successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
@@ -126,7 +121,21 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
     }
     // HTTPGetRequest Class to handle login network logic
-    class executeCheckIn extends AsyncTask<String, String, String> {
+    class HttpCheckIn extends HttpRequest {
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result == null){
+                Toast.makeText(SafeEntryCheckIn.this,"NO CURRENT CHECKINS",Toast.LENGTH_LONG).show();
+            }
+            else{
+                checkIn_location_name.setText(result);
+                //.makeText(SafeEntryCheckIn.this,"Success Checking In.",Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    /*class executeCheckIn extends AsyncTask<String, String, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -281,7 +290,7 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
         }
     }
-
+*/
 
 
 }
