@@ -11,15 +11,13 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.kairan.uidesign.Utils.StringsUsed;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 public abstract class ListViewAdapter extends BaseAdapter {
-
-    // Declare Variables
-
     Context mContext;
     LayoutInflater inflater;
     private List<String> locationList = null;
@@ -100,16 +98,11 @@ public abstract class ListViewAdapter extends BaseAdapter {
                 }
             }
         }
-        holder.location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //check into location
-                String checkInLocation = holder.location.getText().toString();
-                //Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
-                //Intent checkIn = new Intent(mContext, SafeEntryCheckIn.class);
-                //checkIn.putExtra(checkInLocation, checkInLocation);
-                createIntent(checkInLocation);
-            }
+        holder.location.setOnClickListener(v -> {
+
+            //check into location
+            String checkInLocation = holder.location.getText().toString();
+            createIntent(checkInLocation);
         });
         return view;
     }

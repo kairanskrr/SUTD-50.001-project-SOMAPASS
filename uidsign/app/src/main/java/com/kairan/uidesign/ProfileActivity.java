@@ -1,21 +1,17 @@
 package com.kairan.uidesign;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -43,8 +39,6 @@ public class ProfileActivity extends AppCompatActivity {
         String loggedInId = sharedPreferences.getString(StringsUsed.user_id_sp,StringsUsed.undefined_sp);
         userName.setText(loggedInName);
         studentId.setText(loggedInId);
-
-
 
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
@@ -77,6 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
                 }
                 return false;
             }
+            return false;
         });
 
         //View TEMP HISTORY BUTTON
@@ -90,7 +85,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        // Implement Log out Button
         logout_button = findViewById(R.id.textView_signout_profile);
         logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,18 +97,14 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 
-            }
         });
 
         // back to home button
         backbutton = findViewById(R.id.imageView_back_profile);
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this,MenuActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
-            }
+        backbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this,MenuActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.left_in,R.anim.left_out);
         });
     }
 
@@ -145,11 +135,7 @@ public class ProfileActivity extends AppCompatActivity {
                     alertDialog.setTitle("Scan Error");
                     alertDialog.setMessage("QR Code could not be scanned");
                     alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                }
-                            });
+                            (dialog, which) -> dialog.dismiss());
                     alertDialog.show();
                 }
                 return;
@@ -166,20 +152,6 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.putString(StringsUsed.checkInLocation_sp,result);
                 editor.commit();
 
-            /*
-            code that check in straightaway without confirmation:
-
-            executeCheckIn openQR = new executeCheckIn();
-            openQR.execute(result);
-
-            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
-            startActivity(successScreen);
-             */
-
-
-            /*
-            code that ask for confirmation with a check in button
-             */
                 Intent openConfirmation = new Intent(ProfileActivity.this, SafeEntryCheckIn.class);
                 openConfirmation.putExtra("Location To Check Into", result);
                 startActivity(openConfirmation);

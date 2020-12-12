@@ -1,22 +1,19 @@
 package com.kairan.uidesign;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -66,17 +63,15 @@ public class TempTaking extends AppCompatActivity {
                 }
                 return false;
             }
+            return false;
         });
 
         // back to home
         backbutton = findViewById(R.id.imageView_back_fromtemp);
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TempTaking.this,MenuActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
-            }
+        backbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(TempTaking.this,MenuActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.left_in,R.anim.left_out);
         });
 
         //Submit button
@@ -93,17 +88,43 @@ public class TempTaking extends AppCompatActivity {
         });
 
         temp_history_button = findViewById(R.id.temp_history_button);
-        temp_history_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent_to_temp_history = new Intent(TempTaking.this,TemperatureHistory.class);
-                startActivity(intent_to_temp_history);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
-            }
+        temp_history_button.setOnClickListener(v -> {
+            Intent intent_to_temp_history = new Intent(TempTaking.this,TemperatureHistory.class);
+            startActivity(intent_to_temp_history);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
         });
 
     }
 
+
+    public String currentTemperature = null;
+    public void lessthan376clicked(View view) {
+        currentTemperature="Less than 37.6";
+    }
+
+    public void morethan377wellclicked(View view) {
+        currentTemperature="More than 37.6 but well";
+    }
+
+    public void morethan377notwell(View view) {
+        currentTemperature="More than 37.6 unwell";
+    }
+
+    // HTTPGetRequest Class to check latest checked in location
+    class HttpReqNewTemp extends HttpRequest {
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result == null){
+                Toast.makeText(TempTaking.this,"There was an error with Temperature Declaration.",Toast.LENGTH_LONG).show();
+            }
+            else{
+                Intent intent = new Intent(TempTaking.this,MenuActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            }
+        }
+    }
     /*****************
      * QR Code Scanner with ASyncTask to open next activity that showcases check in successful
      * @param requestCode
@@ -131,11 +152,7 @@ public class TempTaking extends AppCompatActivity {
                 alertDialog.setTitle("Scan Error");
                 alertDialog.setMessage("QR Code could not be scanned");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+                        (dialog, which) -> dialog.dismiss());
                 alertDialog.show();
             }
             return;
@@ -152,21 +169,7 @@ public class TempTaking extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("checkInLocation",result);
             editor.commit();
-
-            /*
-            code that check in straightaway without confirmation:
-
-            executeCheckIn openQR = new executeCheckIn();
-            openQR.execute(result);
-
-            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
-            startActivity(successScreen);
-             */
-
-
-            /*
-            code that ask for confirmation with a check in button
-             */
+            Log.i(tag,"editor, put check in location");
             Intent openConfirmation = new Intent(TempTaking.this, SafeEntryCheckIn.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);
@@ -174,99 +177,5 @@ public class TempTaking extends AppCompatActivity {
 
         }
     }
-    public String currentTemperature = null;
-    public void lessthan376clicked(View view) {
-        currentTemperature="Less than 37.6";
-    }
-
-    public void morethan377wellclicked(View view) {
-        currentTemperature="More than 37.6 but well";
-    }
-
-    public void morethan377notwell(View view) {
-        currentTemperature="More than 37.6 unwell";
-    }
-
-    // HTTPGetRequest Class to check latest checked in location
-    class HttpReqNewTemp extends HttpRequest {
-
-        @Override
-        protected void onPostExecute(String result) {
-            if (result == null){
-                Toast.makeText(TempTaking.this,"There was an error with Temperature Declaration.",Toast.LENGTH_LONG).show();
-            }
-            else{
-                //Toast.makeText(TempTaking.this,"Success Temp declaration out.",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(TempTaking.this,MenuActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_in, R.anim.left_out);
-            }
-        }
-    }
-
-    /*public class HttpGetRequestNewTemperature extends AsyncTask<String, Void, String> {
-        public static final String REQUEST_METHOD = "GET";
-        public static final int READ_TIMEOUT = 15000;
-        public static final int CONNECTION_TIMEOUT = 15000;
-
-        protected String doInBackground(String... params){
-            //String stringUrl = params[0];
-            String result;
-            String inputLine;
-            SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-            String useridtosend = sharedPreferences.getString("userid","UNDEFINED");;
-            String passwordtosend = sharedPreferences.getString("password","UNDEFINED");;
-            try {
-                //Create a URL object holding our url
-                //TODO TO implement the URL Builder taught to us instead of string concat for URL
-                URL myUrl = new URL("https://somapass.xyz/newtemperature/"+useridtosend+"/"+passwordtosend+"/"+currentTemperature);
-                //Create a connection
-                HttpURLConnection connection =(HttpURLConnection)
-                        myUrl.openConnection();
-                //Set methods and timeouts
-                connection.setRequestMethod(REQUEST_METHOD);
-                connection.setReadTimeout(READ_TIMEOUT);
-                connection.setConnectTimeout(CONNECTION_TIMEOUT);
-
-                //Connect to our url
-                connection.connect();
-                //Create a new InputStreamReader
-                InputStreamReader streamReader = new
-                        InputStreamReader(connection.getInputStream());
-                //Create a new buffered reader and String Builder
-                BufferedReader reader = new BufferedReader(streamReader);
-                StringBuilder stringBuilder = new StringBuilder();
-                //Check if the line we are reading is not null
-                while((inputLine = reader.readLine()) != null){
-                    stringBuilder.append(inputLine);
-                }
-                //Close our InputStream and Buffered reader
-                reader.close();
-                streamReader.close();
-                //Set our result equal to our stringBuilder
-                result = stringBuilder.toString();
-            }
-            catch(IOException e){
-                e.printStackTrace();
-                result = null;
-            }
-            return result;
-        }
-        protected void onPostExecute(String result){
-            JSONObject jsonObject;
-            if (result == null){
-                Toast.makeText(TempTaking.this,"There was an error with Temperature Declaration.",Toast.LENGTH_LONG).show();
-            }
-            else{
-                //Toast.makeText(TempTaking.this,"Success Temp declaration out.",Toast.LENGTH_LONG).show();
-                Intent intent3 = new Intent(TempTaking.this,MenuActivity.class);
-                startActivity(intent3);
-                overridePendingTransition(R.anim.left_in, R.anim.left_out);
-            }
-
-        }
-    }*/
-
-
 
 }

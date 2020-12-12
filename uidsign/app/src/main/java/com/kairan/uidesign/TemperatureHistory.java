@@ -1,16 +1,13 @@
 package com.kairan.uidesign;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,7 +19,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class TemperatureHistory extends AppCompatActivity {
-
     TextView datetime1;
     TextView temp1;
     TextView datetime2;
@@ -52,13 +48,10 @@ public class TemperatureHistory extends AppCompatActivity {
 
         // back to profile activity
         backbutton = findViewById(R.id.imageView_back_fromtemphist);
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TemperatureHistory.this,ProfileActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_in,R.anim.left_out);
-            }
+        backbutton.setOnClickListener(v -> {
+            Intent intent = new Intent(TemperatureHistory.this,ProfileActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.left_in,R.anim.left_out);
         });
 
         //Initialize and Assign Variable
@@ -93,6 +86,7 @@ public class TemperatureHistory extends AppCompatActivity {
                 }
                 return false;
             }
+            return false;
         });
     }
 
@@ -121,86 +115,5 @@ public class TemperatureHistory extends AppCompatActivity {
                 }}
         }
     }
-
-    /*public class HttpGetRequestTempHistory extends AsyncTask<String, Void, String> {
-        public static final String REQUEST_METHOD = "GET";
-        public static final int READ_TIMEOUT = 15000;
-        public static final int CONNECTION_TIMEOUT = 15000;
-
-        protected String doInBackground(String... params){
-            //String stringUrl = params[0];
-            String result;
-            String inputLine;
-            SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-            String useridtosend = sharedPreferences.getString("userid","UNDEFINED");;
-            String passwordtosend = sharedPreferences.getString("password","UNDEFINED");;
-            try {
-                //Create a URL object holding our url
-                //TODO TO implement the URL Builder taught to us instead of string concat for URL
-                URL myUrl = new URL("https://somapass.xyz/latesttemperatures/"+useridtosend+"/"+passwordtosend);
-                //Create a connection
-                HttpURLConnection connection =(HttpURLConnection)
-                        myUrl.openConnection();
-                //Set methods and timeouts
-                connection.setRequestMethod(REQUEST_METHOD);
-                connection.setReadTimeout(READ_TIMEOUT);
-                connection.setConnectTimeout(CONNECTION_TIMEOUT);
-
-                //Connect to our url
-                connection.connect();
-                //Create a new InputStreamReader
-                InputStreamReader streamReader = new
-                        InputStreamReader(connection.getInputStream());
-                //Create a new buffered reader and String Builder
-                BufferedReader reader = new BufferedReader(streamReader);
-                StringBuilder stringBuilder = new StringBuilder();
-                //Check if the line we are reading is not null
-                while((inputLine = reader.readLine()) != null){
-                    stringBuilder.append(inputLine);
-                }
-                //Close our InputStream and Buffered reader
-                reader.close();
-                streamReader.close();
-                //Set our result equal to our stringBuilder
-                result = stringBuilder.toString();
-            }
-            catch(IOException e){
-                e.printStackTrace();
-                result = null;
-            }
-            return result;
-        }
-        protected void onPostExecute(String result){
-            JSONObject jsonObject;
-            if (result == null){
-                Toast.makeText(TemperatureHistory.this,"No Temperature declarations.",Toast.LENGTH_LONG).show();
-
-
-            }
-            else{
-                try {
-                    jsonObject = new JSONObject(result);
-//                        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.putString("userid",jsonObject.getString("userid"));
-//                        editor.putString("password",jsonObject.getString("password"));
-//                        editor.putString("name",jsonObject.getString("name"));
-//                        editor.commit();
-                    //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
-//                    latestCheckIn.setText(jsonObject.getString("locationname"));
-//                    latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
-
-                    datetime1.setText(jsonObject.getString("datetime1"));
-                    temp1.setText(jsonObject.getString("temp1"));
-                    datetime2.setText(jsonObject.getString("datetime2"));
-                    temp2.setText(jsonObject.getString("temp2"));
-                    datetime3.setText(jsonObject.getString("datetime3"));
-                    temp3.setText(jsonObject.getString("temp3"));
-                }catch (JSONException err){
-                    Log.d("Error", err.toString());
-                }}
-
-        }
-    }*/
 
 }

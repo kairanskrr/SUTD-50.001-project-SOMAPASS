@@ -1,7 +1,5 @@
 package com.kairan.uidesign.Utils;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -13,7 +11,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-@SuppressWarnings("deprecation")
 abstract public class HttpRequest extends AsyncTask<String,String,String> {
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
@@ -76,6 +73,5 @@ abstract public class HttpRequest extends AsyncTask<String,String,String> {
     }
 
     protected abstract void onPostExecute(String result);
-
 
 }
