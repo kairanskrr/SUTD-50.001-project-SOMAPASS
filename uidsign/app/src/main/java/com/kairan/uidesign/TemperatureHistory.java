@@ -3,10 +3,12 @@ package com.kairan.uidesign;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
@@ -86,7 +88,6 @@ public class TemperatureHistory extends AppCompatActivity {
                 }
                 return false;
             }
-            return false;
         });
     }
 

@@ -35,4 +35,7 @@ public class StringsUsed {
     //JSON
     public final static String locationName_json = "locationname";
     public final static String checkInTimeReadable_json = "checkintimereadable";
+    public final static String userId_json = "userid";
+    public final static String userPassword_json = "password";
+    public final static String userName_json = "name";
 }

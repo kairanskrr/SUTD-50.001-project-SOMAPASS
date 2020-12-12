@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -68,11 +69,11 @@ public class LoginActivity extends AppCompatActivity {
             else{
                 try {
                     jsonObject = new JSONObject(result);
-                    SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                    SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("userid",jsonObject.getString("userid"));
-                    editor.putString("password",jsonObject.getString("password"));
-                    editor.putString("name",jsonObject.getString("name"));
+                    editor.putString(StringsUsed.user_id_sp,jsonObject.getString(StringsUsed.userId_json));
+                    editor.putString(StringsUsed.user_password_sp,jsonObject.getString(StringsUsed.userPassword_json));
+                    editor.putString(StringsUsed.user_name_sp,jsonObject.getString(StringsUsed.userName_json));
                     editor.commit();
                     Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
                     startActivity(intent);

@@ -92,7 +92,7 @@ public abstract class ListViewAdapter extends BaseAdapter {
         // Set the results into TextViews
         holder.location.setText(locationList.get(position));
         for (String location: locationList) {
-            if (sharedPreferences.getString("starred locations","").contains(location)){
+            if (sharedPreferences.getString(StringsUsed.starredLocations_sp,"").contains(location)){
                 if (holder.location.getText().toString() == location) {
                     holder.checkbox.setChecked(true);
                 }

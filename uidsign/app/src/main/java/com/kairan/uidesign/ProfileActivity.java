@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,7 +74,6 @@ public class ProfileActivity extends AppCompatActivity {
                 }
                 return false;
             }
-            return false;
         });
 
         //View TEMP HISTORY BUTTON
@@ -97,7 +99,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 
-        });
+        }});
 
         // back to home button
         backbutton = findViewById(R.id.imageView_back_profile);

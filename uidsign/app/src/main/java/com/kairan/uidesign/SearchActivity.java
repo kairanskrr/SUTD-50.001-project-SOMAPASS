@@ -10,6 +10,8 @@ import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kairan.uidesign.Utils.StringsUsed;
+
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
@@ -64,11 +66,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         list.setOnItemClickListener((parent, view, position, id) -> {
             Log.i("click",parent.getSelectedItem().toString());
             Intent intent = new Intent(SearchActivity.this, SafeEntryCheckIn.class);
-            System.out.println("======================================================");
-            System.out.println("======================================================");
-            System.out.println("======================================================");
-            System.out.println(parent.getSelectedItem().toString());
-            System.out.println(parent.getItemAtPosition(position).toString());
+            Log.i(StringsUsed.TAG,parent.getItemAtPosition(position).toString());
             intent.putExtra(CheckInLocation,parent.getSelectedItem().toString());
             startActivity(intent);
 
