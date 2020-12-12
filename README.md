@@ -1,5 +1,5 @@
 # SOMAPASS
-![logo](https://github.com/kairanskrr/1d-test/blob/main/somapasslogo.png?raw=true)
+<img src="https://github.com/kairanskrr/1d-test/blob/main/somapasslogo.png" width="200" height="200">
 ## API Documentation
 
 ## Domain: https://somapass.xyz
