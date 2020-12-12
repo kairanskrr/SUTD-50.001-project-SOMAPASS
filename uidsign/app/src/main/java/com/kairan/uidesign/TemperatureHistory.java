@@ -3,10 +3,7 @@ package com.kairan.uidesign;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -17,15 +14,11 @@ import android.widget.Toast;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.ToSharePreferences;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class TemperatureHistory extends AppCompatActivity {
 
@@ -49,8 +42,10 @@ public class TemperatureHistory extends AppCompatActivity {
         temp2 = findViewById(R.id.temp2);
         datetime3 = findViewById(R.id.datetime3);
         temp3 = findViewById(R.id.temp3);
-        TemperatureHistory.HttpGetRequestTempHistory httpreqtemphistory = new TemperatureHistory.HttpGetRequestTempHistory();
-        httpreqtemphistory.execute();
+        HttpReqTempHistory httpreqtemphistory = new HttpReqTempHistory();
+        httpreqtemphistory.execute("latesttemperatures",
+                ToSharePreferences.GetSharedPreferences(TemperatureHistory.this,"userid"),
+                ToSharePreferences.GetSharedPreferences(TemperatureHistory.this,"password"));
 
         backbutton = findViewById(R.id.imageView_back_fromtemphist);
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +61,7 @@ public class TemperatureHistory extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
 
         //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
 
         //Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -75,7 +70,7 @@ public class TemperatureHistory extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.navigation_scan:
-//                        startActivity(new Intent(getApplicationContext(),SafeEntryCheckIn.class));
+                        startActivity(new Intent(getApplicationContext(),SafeEntryCheckIn.class));
 //                        overridePendingTransition(0,0);
 
 
@@ -84,7 +79,7 @@ public class TemperatureHistory extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_home:
-                        //startActivity(new Intent(getApplicationContext(),MenuActivity.class));
+                        startActivity(new Intent(getApplicationContext(),MenuActivity.class));
                         //overridePendingTransition(0,0);
                         return true;
 
@@ -94,7 +89,7 @@ public class TemperatureHistory extends AppCompatActivity {
                         return true;
 
                     case R.id.navigation_profile:
-                        startActivity(new Intent(TemperatureHistory.this,ProfileActivity.class));
+                        //startActivity(new Intent(TemperatureHistory.this,ProfileActivity.class));
                         //overridePendingTransition(0,0);
                         return true;
 
@@ -105,7 +100,31 @@ public class TemperatureHistory extends AppCompatActivity {
     }
 
 
-    public class HttpGetRequestTempHistory extends AsyncTask<String, Void, String> {
+    class HttpReqTempHistory extends HttpRequest {
+
+        @Override
+        protected void onPostExecute(String result) {
+            JSONObject jsonObject;
+            if (result == null){
+                Toast.makeText(TemperatureHistory.this,"No Temperature declarations.",Toast.LENGTH_LONG).show();
+                datetime1.setText("Please do your temperature declarations :)");
+            }
+            else{
+                try {
+                    jsonObject = new JSONObject(result);
+                    datetime1.setText(jsonObject.getString("datetime1"));
+                    temp1.setText(jsonObject.getString("temp1"));
+                    datetime2.setText(jsonObject.getString("datetime2"));
+                    temp2.setText(jsonObject.getString("temp2"));
+                    datetime3.setText(jsonObject.getString("datetime3"));
+                    temp3.setText(jsonObject.getString("temp3"));
+                }catch (JSONException err){
+                    Log.d("Error", err.toString());
+                }}
+        }
+    }
+
+    /*public class HttpGetRequestTempHistory extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -184,6 +203,6 @@ public class TemperatureHistory extends AppCompatActivity {
                 }}
 
         }
-    }
+    }*/
 
 }
