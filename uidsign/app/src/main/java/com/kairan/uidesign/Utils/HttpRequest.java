@@ -10,7 +10,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-@SuppressWarnings("deprecation")
 abstract public class HttpRequest extends AsyncTask<String,String,String> {
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
@@ -21,12 +20,9 @@ abstract public class HttpRequest extends AsyncTask<String,String,String> {
 
 
     protected String doInBackground(String... strings){
-        //String stringUrl = params[0];
         String result;
         String inputLine;
         try {
-            //Create a URL object holding our url
-            //TODO TO implement the URL Builder taught to us instead of string concat for URL
             URL myUrl = getURL(strings);
             System.out.println("==================================================================");
             System.out.println("===================================================================");
@@ -76,6 +72,5 @@ abstract public class HttpRequest extends AsyncTask<String,String,String> {
     }
 
     protected abstract void onPostExecute(String result);
-
 
 }

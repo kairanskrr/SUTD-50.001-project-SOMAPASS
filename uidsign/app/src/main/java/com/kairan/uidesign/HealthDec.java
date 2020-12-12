@@ -1,18 +1,14 @@
 package com.kairan.uidesign;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -45,8 +41,6 @@ public class HealthDec extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_declare:
-                    //startActivity(new Intent(getApplicationContext(),TempTaking.class));
-                    //overridePendingTransition(0,0);
                     return true;
 
                 case R.id.navigation_profile:
@@ -98,21 +92,6 @@ public class HealthDec extends AppCompatActivity {
             //Getting the passed result
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(MenuActivity.getLOGTAG(), "Have scan result in your app activity :" + result);
-
-            /*
-            code that check in straightaway without confirmation:
-
-            executeCheckIn openQR = new executeCheckIn();
-            openQR.execute(result);
-
-            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
-            startActivity(successScreen);
-             */
-
-
-            /*
-            code that ask for confirmation with a check in button
-             */
             Intent openConfirmation = new Intent(HealthDec.this, SafeEntryCheckIn.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);

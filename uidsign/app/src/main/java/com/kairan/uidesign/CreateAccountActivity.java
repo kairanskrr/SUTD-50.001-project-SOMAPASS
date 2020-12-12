@@ -3,7 +3,6 @@ package com.kairan.uidesign;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.kairan.uidesign.Utils.HttpRequest;
 
 public class CreateAccountActivity extends AppCompatActivity {
-
-
     ImageView back_to_login;
     Button create_account_button;
     EditText student_id;
@@ -43,7 +40,6 @@ public class CreateAccountActivity extends AppCompatActivity {
         });
 
     }
-
     class HttpReqCreateAccount extends HttpRequest {
         @Override
         protected void onPostExecute(String result) {

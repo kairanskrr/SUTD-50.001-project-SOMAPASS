@@ -1,31 +1,25 @@
 package com.kairan.uidesign;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
-
-    // Declare Variables
     ListView list;
     ListViewAdapter adapter;
     SearchView editSearch;
     String[] locationList;
-    ArrayList<String> locationArray = new ArrayList<String>();
+    ArrayList<String> locationArray = new ArrayList<>();
     public static String CheckInLocation = "CHECK_IN_LOCATION";
     final int CHECK_IN_LOCATION_SEARCH = 1110;
-    ArrayAdapter<String> arrayAdapter;
 
 
 
@@ -34,13 +28,13 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         getSupportActionBar().hide();
-        // Generate sample data
 
+        // Generate sample data
         locationList = new String[]{"DSL","DANCE STUDIO 8","COHORT CLASSROOM 8", "CANTEEN","CHEMISTRY LAB","PI LAB","PHYSICS LAB","STUDIO 1","DANCE STUDIO 9","ONE STOP CENTRE","ISH 1"};
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         // Locate the ListView
-        list = (ListView) findViewById(R.id.listView_search_result);
+        list = findViewById(R.id.listView_search_result);
 
         for (int i = 0; i < locationList.length; i++) {
 
@@ -59,9 +53,6 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
             }
         };
-
-
-
 
         // Binds the Adapter to the ListView
         list.setAdapter(adapter);

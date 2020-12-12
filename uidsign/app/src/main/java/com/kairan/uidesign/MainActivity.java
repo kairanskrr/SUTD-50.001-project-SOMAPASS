@@ -1,12 +1,11 @@
 package com.kairan.uidesign;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,11 +34,5 @@ public class MainActivity extends AppCompatActivity {
                 },
                 2000);
 
-
-
-
-
-//        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-//        startActivity(intent);
     }
 }

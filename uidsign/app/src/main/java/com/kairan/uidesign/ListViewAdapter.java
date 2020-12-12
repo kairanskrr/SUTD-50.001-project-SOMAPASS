@@ -1,31 +1,19 @@
 package com.kairan.uidesign;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static java.lang.System.err;
-
 public abstract class ListViewAdapter extends BaseAdapter {
-
-    // Declare Variables
-
     Context mContext;
     LayoutInflater inflater;
     private List<String> locationList = null;
@@ -69,12 +57,13 @@ public abstract class ListViewAdapter extends BaseAdapter {
         if (view == null) {
             holder = new ViewHolder();
             view = inflater.inflate(R.layout.list_view_items, null);
-            // Locate the TextViews in listview_item.xml
 
+            // Locate the TextViews in listview_item.xml
             holder.location = (TextView) view.findViewById(R.id.textView_location_search);
             holder.checkbox = (CheckBox) view.findViewById(R.id.listCheckbox);
             holder.checkbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 if (isChecked) {
+
                     //add to sharedpref
                     if (sharedPreferences.contains("starred locations")) {
                         editor.putString("starred locations",  holder.location.getText().toString()+ ","+sharedPreferences.getString("starred locations", "") );
@@ -83,18 +72,11 @@ public abstract class ListViewAdapter extends BaseAdapter {
                         editor.putString("starred locations", holder.location.getText().toString()+ ",");
                     }
 
-
-
                 } else {
                     //remove from sharedpref
                     editor.putString("starred locations", sharedPreferences.getString("starred locations", "").replace(holder.location.getText().toString() + ",", ""));
-
                 }
                 editor.commit();
-                //this returns a fucking long string and i have no goddamn idea why. works tho
-                //Toast.makeText(mContext,sharedPreferences.getString("starred locations", ""),Toast.LENGTH_SHORT).show();
-
-
             });
             view.setTag(holder);
         } else {
@@ -111,11 +93,9 @@ public abstract class ListViewAdapter extends BaseAdapter {
             }
         }
         holder.location.setOnClickListener(v -> {
+
             //check into location
             String checkInLocation = holder.location.getText().toString();
-            //Toast.makeText(mContext, checkInLocation, Toast.LENGTH_SHORT).show();
-            //Intent checkIn = new Intent(mContext, SafeEntryCheckIn.class);
-            //checkIn.putExtra(checkInLocation, checkInLocation);
             createIntent(checkInLocation);
         });
 

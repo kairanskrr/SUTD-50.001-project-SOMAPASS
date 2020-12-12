@@ -1,21 +1,17 @@
 package com.kairan.uidesign;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,8 +40,6 @@ public class ProfileActivity extends AppCompatActivity {
         userName.setText(loggedInName);
         studentId.setText(loggedInId);
 
-
-
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
 
@@ -71,14 +65,11 @@ public class ProfileActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.navigation_profile:
-                    //startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                     return true;
 
             }
             return false;
         });
-
-        //View TEMP HISTORY BUTTON
 
         temphistory = findViewById(R.id.textView_history_profile);
         temphistory.setOnClickListener(v -> {
@@ -87,7 +78,6 @@ public class ProfileActivity extends AppCompatActivity {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
         });
 
-        // Implement Log out Button
         logout_button = findViewById(R.id.textView_signout_profile);
         logout_button.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -158,20 +148,6 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.commit();
                 Log.i(tag,"editor, put check in location");
 
-            /*
-            code that check in straightaway without confirmation:
-
-            executeCheckIn openQR = new executeCheckIn();
-            openQR.execute(result);
-
-            Intent successScreen = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
-            startActivity(successScreen);
-             */
-
-
-            /*
-            code that ask for confirmation with a check in button
-             */
                 Intent openConfirmation = new Intent(ProfileActivity.this, SafeEntryCheckIn.class);
                 openConfirmation.putExtra("Location To Check Into", result);
                 startActivity(openConfirmation);
