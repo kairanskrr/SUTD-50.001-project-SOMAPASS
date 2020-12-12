@@ -2,6 +2,7 @@ package com.kairan.uidesign.Utils;
 
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,9 +15,11 @@ abstract public class HttpRequest extends AsyncTask<String,String,String> {
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
     public static final int CONNECTION_TIMEOUT = 15000;
-    final String scheme = "https";
-    final String authority = "somapass.xyz";
+    private static final String scheme = "https";
+    private static final String authority = "somapass.xyz";
     private Uri uri;
+
+
 
 
     protected String doInBackground(String... strings){
@@ -24,9 +27,7 @@ abstract public class HttpRequest extends AsyncTask<String,String,String> {
         String inputLine;
         try {
             URL myUrl = getURL(strings);
-            System.out.println("==================================================================");
-            System.out.println("===================================================================");
-            System.out.println(myUrl);
+            Log.i(StringsUsed.TAG,"my URL: " + myUrl.toString());
             //Create a connection
             HttpURLConnection connection =(HttpURLConnection)
                     myUrl.openConnection();

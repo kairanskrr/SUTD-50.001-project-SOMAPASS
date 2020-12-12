@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +16,9 @@ import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HealthDec extends AppCompatActivity {
+
     ImageButton backbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,33 +28,37 @@ public class HealthDec extends AppCompatActivity {
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
 
-        //Set Home Selected
+        //Set Dec Selected
         bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
 
         //Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.navigation_scan:
-                    startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
-                    overridePendingTransition(0, 0);
-                    return true;
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_scan:
+                        startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
 
-                case R.id.navigation_home:
-                    startActivity(new Intent(getApplicationContext(),MenuActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
+                    case R.id.navigation_home:
+                        startActivity(new Intent(getApplicationContext(),MenuActivity.class));
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
 
-                case R.id.navigation_declare:
-                    return true;
+                    case R.id.navigation_declare:
+                        return true;
 
-                case R.id.navigation_profile:
-                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
-
+                    case R.id.navigation_profile:
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
+                }
+                return false;
             }
-            return false;
         });
+
+        // button back to home
         backbutton = findViewById(R.id.imageView_back_fromhealth);
         backbutton.setOnClickListener(v -> {
             Intent intent = new Intent(HealthDec.this,MenuActivity.class);

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 import com.kairan.uidesign.Utils.ToSharePreferences;
 
 // maybe rename this activity?
@@ -26,8 +27,10 @@ public class SafeEntryCheckIn extends AppCompatActivity {
         setContentView(R.layout.activity_safe_entry);
         getSupportActionBar().hide();
 
-        checkIn_location_name = findViewById(R.id.textView_current_location);
 
+
+        Log.i(StringsUsed.TAG,"go to safe entry activity");
+        checkIn_location_name = findViewById(R.id.textView_current_location);
         String checkInLocation_scan = getIntent().getStringExtra(MenuActivity.checkIn_location_intent);
         String checkInLocation_search = getIntent().getStringExtra(SearchActivity.CheckInLocation);
         if(checkInLocation_search==null) {
@@ -36,6 +39,7 @@ public class SafeEntryCheckIn extends AppCompatActivity {
             checkIn_location_name.setText(checkInLocation_search);
         }
 
+        //check in buttons
         Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
 
         mCheckIn.setOnClickListener(v -> {

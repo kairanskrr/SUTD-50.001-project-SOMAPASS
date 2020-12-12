@@ -18,13 +18,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 import com.kairan.uidesign.Utils.ToSharePreferences;
 
 public class TempTaking extends AppCompatActivity {
     ImageButton backbutton;
     Button temp_submit;
     Button temp_history_button;
-    public String tag = "SHARED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,32 +35,38 @@ public class TempTaking extends AppCompatActivity {
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
 
-        //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
+        //Set Dec Selected
+        bottomNavigationView.setSelectedItemId(R.id.navigation_declare);
 
         //Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.navigation_scan:
-                    startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
-                    overridePendingTransition(0, 0);
-                    return true;
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_scan:
+                        startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
 
-                case R.id.navigation_home:
-                    startActivity(new Intent(getApplicationContext(),MenuActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
+                    case R.id.navigation_home:
+                        startActivity(new Intent(getApplicationContext(),MenuActivity.class));
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
 
-                case R.id.navigation_declare:
-                    return true;
+                    case R.id.navigation_declare:
+                        return true;
 
-                case R.id.navigation_profile:
-                    startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                    overridePendingTransition(0,0);
-                    return true;
+                    case R.id.navigation_profile:
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
+                }
+                return false;
             }
             return false;
         });
+
+        // back to home
         backbutton = findViewById(R.id.imageView_back_fromtemp);
         backbutton.setOnClickListener(v -> {
             Intent intent = new Intent(TempTaking.this,MenuActivity.class);
@@ -70,12 +76,15 @@ public class TempTaking extends AppCompatActivity {
 
         //Submit button
         temp_submit = findViewById(R.id.temp_submit);
-        temp_submit.setOnClickListener(v -> {
-            HttpReqNewTemp newTempReq = new HttpReqNewTemp();
-            newTempReq.execute("newtemperature",
-                    ToSharePreferences.GetSharedPreferences(TempTaking.this,"userid"),
-                    ToSharePreferences.GetSharedPreferences(TempTaking.this,"password"),
-                    currentTemperature);
+        temp_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HttpReqNewTemp newTempReq = new HttpReqNewTemp();
+                newTempReq.execute(StringsUsed.NewTemp_http,
+                        ToSharePreferences.GetSharedPreferences(TempTaking.this,StringsUsed.user_id_sp),
+                        ToSharePreferences.GetSharedPreferences(TempTaking.this,StringsUsed.user_password_sp),
+                        currentTemperature);
+            }
         });
 
         temp_history_button = findViewById(R.id.temp_history_button);
@@ -156,12 +165,8 @@ public class TempTaking extends AppCompatActivity {
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(MenuActivity.getLOGTAG(), "Have scan result in your app activity :" + result);
 
-            Log.i(tag,"requestCode == REQUEST_CODE_QR_CODE");
-            Log.i(tag,result);
             SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-            Log.i(tag,sharedPreferences.toString());
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            Log.i(tag,editor.toString());
             editor.putString("checkInLocation",result);
             editor.commit();
             Log.i(tag,"editor, put check in location");

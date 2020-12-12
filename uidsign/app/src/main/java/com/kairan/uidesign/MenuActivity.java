@@ -8,12 +8,14 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,7 @@ import androidx.core.content.ContextCompat;
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 import com.kairan.uidesign.Utils.ToSharePreferences;
 
 import org.json.JSONException;
@@ -67,29 +70,34 @@ public class MenuActivity extends AppCompatActivity{
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
 
         //Perform ItemSelectedListener
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.navigation_scan:
-                    startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
-                    Log.i(tag,"startActivity_QRSCAN");
-                    overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
-                    return true;
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-                case R.id.navigation_home:
-                    return true;
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_scan:
+                        startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), REQUEST_CODE_QR_SCAN);
+                        Log.i(tag,"startActivity_QRSCAN");
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
 
-                case R.id.navigation_declare:
-                    startActivity(new Intent(getApplicationContext(),TempTaking.class));
-                    overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
-                    return true;
+                    case R.id.navigation_home:
+                        return true;
 
-                case R.id.navigation_profile:
-                    startActivity(new Intent(MenuActivity.this,ProfileActivity.class));
-                    overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
-                    return true;
+                    case R.id.navigation_declare:
+                        startActivity(new Intent(getApplicationContext(),TempTaking.class));
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
+
+                    case R.id.navigation_profile:
+                        startActivity(new Intent(MenuActivity.this,ProfileActivity.class));
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                        return true;
+
+                }
+                return false;
 
             }
-            return false;
         });
         small_QR_icon = findViewById(R.id.imageView_qrcode_icon);
         small_QR_icon.setOnClickListener(v -> {
@@ -100,34 +108,57 @@ public class MenuActivity extends AppCompatActivity{
         latestCheckInTime = findViewById(R.id.textView_current_latest_checkintime);
         // get latest checkin and update latestCheckIn
         HttpGetRequest httpRequest_LatestCheckIn = new HttpGetRequest();
-        httpRequest_LatestCheckIn.execute("latestcheckin",
-                ToSharePreferences.GetSharedPreferences(MenuActivity.this,"userid"),
-                ToSharePreferences.GetSharedPreferences(MenuActivity.this,"password"));
+        httpRequest_LatestCheckIn.execute(StringsUsed.LatestCheckIn_http,
+                ToSharePreferences.GetSharedPreferences(MenuActivity.this,StringsUsed.user_id_sp),
+                ToSharePreferences.GetSharedPreferences(MenuActivity.this,StringsUsed.user_password_sp));
+        //httpgetrequest below
 
+
+        // go to temperature taking
         temp_imagebutton = findViewById(R.id.temp_imagebutton);
-        temp_imagebutton.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this,TempTaking.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
+        temp_imagebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this,TempTaking.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            }
         });
+
+        // go to health declaration
         healthdec_imagebutton = findViewById(R.id.healthdec_imagebutton);
-        healthdec_imagebutton.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this,HealthDec.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
+        healthdec_imagebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this,HealthDec.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            }
         });
+
+        // go to search
         textView_search_menu = findViewById(R.id.textView_search_menu);
-        textView_search_menu.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.zoom_out, R.anim.zoom_out);
+        textView_search_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this,SearchActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            }
+
         });
 
         checkout_home = findViewById(R.id.checkout_home);
-        checkout_home.setOnClickListener(v -> {
-            Intent intent_to_checkout_card = new Intent(MenuActivity.this,SafeEntryCheckout.class);
-            startActivity(intent_to_checkout_card);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+        checkout_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //INSTEAD OF IMMEDIATE CHECKOUT, GO TO NEW ACTIVITY FOR CHECKOUT CARD
+//                MenuActivity.HttpGetRequestCheckout httpreqcheckout = new MenuActivity.HttpGetRequestCheckout();
+//                httpreqcheckout.execute();
+                Intent intent_to_checkout_card = new Intent(MenuActivity.this,SafeEntryCheckout.class);
+                startActivity(intent_to_checkout_card);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            }
         });
 
     }
@@ -149,16 +180,14 @@ public class MenuActivity extends AppCompatActivity{
             else{
                 try {
                     JSONObject jsonObject = new JSONObject(result);
-                    SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                    SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("checkoutlocationnamecard",jsonObject.getString("locationname"));
+                    editor.putString(StringsUsed.checkoutLocation_sp,jsonObject.getString(StringsUsed.locationName_json));
                     editor.commit();
                     //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
-                    latestCheckIn.setText(jsonObject.getString("locationname"));
-                    latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
+                    latestCheckIn.setText(jsonObject.getString(StringsUsed.locationName_json));
+                    latestCheckInTime.setText(jsonObject.getString(StringsUsed.checkInTimeReadable_json));
                     checkout_home.setVisibility(View.VISIBLE);
-
-
                 }catch (JSONException err){
                     Log.d("Error", err.toString());
                 }}
@@ -203,15 +232,15 @@ public class MenuActivity extends AppCompatActivity{
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(LOGTAG, "Have scan result in your app activity :" + result);
 
-            Log.i(tag,"requestCode == REQUEST_CODE_QR_CODE");
-            Log.i(tag,result);
-            SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-            Log.i(tag,sharedPreferences.toString());
+            //Log.i(StringsUsed.TAG,"requestCode == REQUEST_CODE_QR_CODE");
+            //Log.i(StringsUsed.TAG,result);
+            SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
+            //Log.i(StringsUsed.TAG,sharedPreferences.toString());
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            Log.i(tag,editor.toString());
-            editor.putString("checkInLocation",result);
+            //Log.i(StringsUsed.TAG,editor.toString());
+            editor.putString(StringsUsed.checkInLocation_sp,result);
             editor.commit();
-            Log.i(tag,"editor, put check in location");
+            //Log.i(StringsUsed.TAG,"editor, put check in location");
 
 
             Intent openConfirmation = new Intent(MenuActivity.this, SafeEntryCheckIn.class);

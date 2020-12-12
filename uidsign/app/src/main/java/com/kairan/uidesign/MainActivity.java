@@ -7,6 +7,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kairan.uidesign.Utils.StringsUsed;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // Check shared preferences if user is logged in.
-        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        String loggedInUserID = sharedPreferences.getString("userid",null);
+        SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
+        String loggedInUserID = sharedPreferences.getString(StringsUsed.user_id_sp,null);
         new android.os.Handler().postDelayed(
                 () -> {
                     if (loggedInUserID != null){

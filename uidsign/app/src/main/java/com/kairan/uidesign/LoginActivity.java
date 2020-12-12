@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,9 +29,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
-
         setContentView(R.layout.activity_login);
+
+        //To hide top ActionBar
+        getSupportActionBar().hide();
 
         editText_username = findViewById(R.id.editText_username);
         editText_passward = findViewById(R.id.editText_password);
@@ -43,9 +45,15 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(LoginActivity.this,CreateAccountActivity.class);
             startActivity(intent);
         });
-        button_login.setOnClickListener(v -> {
-            HttpLogin httpreq = new HttpLogin();
-            httpreq.execute("login",editText_username.getText().toString(),editText_passward.getText().toString());
+
+        button_login.setOnClickListener(new View.OnClickListener() {
+            //TODO REFACTOR Login logic LATER
+            @Override
+            public void onClick(View v) {
+                HttpLogin httpreq = new HttpLogin();
+                httpreq.execute(StringsUsed.Login_http,editText_username.getText().toString(),editText_passward.getText().toString());
+            }
+            //TODO END OF REFACTOR LATER
         });
     }
 
@@ -68,8 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.commit();
                     Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
-
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_in);
                 }catch (JSONException err){
                     Log.d("Error", err.toString());
                 }}
