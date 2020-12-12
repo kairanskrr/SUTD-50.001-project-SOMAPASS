@@ -31,6 +31,8 @@ import android.widget.TextView;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.ToSharePreferences;
 
 
 import org.json.JSONException;
@@ -54,6 +56,7 @@ public class MenuActivity extends AppCompatActivity {
     Button checkout_home;
     public String tag = "SHARED";
     public static String checkIn_location_intent = "Location To Check Into";
+    public static final String LatestCheckIn = "latestcheckin";
     final int CHECK_IN_LOCATION_MENU = 1111;
 
     /**
@@ -159,38 +162,10 @@ public class MenuActivity extends AppCompatActivity {
         //MenuActivity.HttpGetRequest httpreq = new MenuActivity.HttpGetRequest();
         //httpreq.execute();
         //httpgetrequest below
-        HttpRequest httpRequest = new HttpRequest("latestcheckin",MenuActivity.this) {
-            @Override
-            protected void onPostExecute(String result) {
-                System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
-                System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++");
-                System.out.println(result);
-                JSONObject jsonObject;
-                if (result == null){
-                    //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
-                    latestCheckIn.setText("No Check Ins");
-                    latestCheckInTime.setText("");
-                    checkout_home.setVisibility(View.INVISIBLE);
-                }
-                else{
-                    try {
-                        jsonObject = new JSONObject(result);
-                        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("checkoutlocationnamecard",jsonObject.getString("locationname"));
-                        editor.commit();
-                        //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
-                        latestCheckIn.setText(jsonObject.getString("locationname"));
-                        latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
-                        checkout_home.setVisibility(View.VISIBLE);
-
-
-                    }catch (JSONException err){
-                        Log.d("Error", err.toString());
-                    }}
-            }
-        };
-        httpRequest.execute();
+        HttpGetRequest httpRequest_LatestCheckIn = new HttpGetRequest();
+        httpRequest_LatestCheckIn.execute(LatestCheckIn,
+                ToSharePreferences.GetSharedPreferences(MenuActivity.this,"userid"),
+                ToSharePreferences.GetSharedPreferences(MenuActivity.this,"password"));
 
 
         temp_imagebutton = findViewById(R.id.temp_imagebutton);
@@ -241,7 +216,35 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     // HTTPGetRequest Class to handle login network logic
-    class HttpGetRequest extends AsyncTask<String, Void, String> {
+    class HttpGetRequest extends HttpRequest{
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result == null){
+                //Toast.makeText(MenuActivity.this,"Not checked in to anywhere yet.",Toast.LENGTH_LONG).show();
+                latestCheckIn.setText("No Check Ins");
+                latestCheckInTime.setText("");
+                checkout_home.setVisibility(View.INVISIBLE);
+            }
+            else{
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("checkoutlocationnamecard",jsonObject.getString("locationname"));
+                    editor.commit();
+                    //Toast.makeText(MenuActivity.this, result, Toast.LENGTH_SHORT).show();
+                    latestCheckIn.setText(jsonObject.getString("locationname"));
+                    latestCheckInTime.setText(jsonObject.getString("checkintimereadable"));
+                    checkout_home.setVisibility(View.VISIBLE);
+
+
+                }catch (JSONException err){
+                    Log.d("Error", err.toString());
+                }}
+        }
+    }
+    /*class HttpGetRequest extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -262,13 +265,13 @@ public class MenuActivity extends AppCompatActivity {
                 //TODO TO implement the URL Builder taught to us instead of string concat for URL
                 URL myUrl = new URL("https://somapass.xyz/latestcheckin/"+useridtosend+"/"+passwordtosend);
                 //Create a connection
-                /*this.back = back+"/"+useridtosend+"/"+passwordtosend;
+                *//*this.back = back+"/"+useridtosend+"/"+passwordtosend;
                 Uri.Builder builder = new Uri.Builder();
                 builder.scheme(scheme)
                         .authority(authority)
                         .appendPath(this.back);
                 uri = builder.build();
-                URL myUrl= new URL(uri.toString());*/
+                URL myUrl= new URL(uri.toString());*//*
                 System.out.println("==================================================================");
                 System.out.println("===================================================================");
                 System.out.println(myUrl);
@@ -332,7 +335,7 @@ public class MenuActivity extends AppCompatActivity {
                 }}
 
         }
-    }
+    }*/
 
 
     //end of latestCheckIn

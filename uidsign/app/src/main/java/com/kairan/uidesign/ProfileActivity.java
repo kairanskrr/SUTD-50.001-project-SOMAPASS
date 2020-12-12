@@ -89,7 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intenttemphistory = new Intent(ProfileActivity.this,TemperatureHistory.class);
                 startActivity(intenttemphistory);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                overridePendingTransition(R.anim.fade_out, R.anim.fade_out);
             }
         });
 
@@ -191,7 +191,7 @@ public class ProfileActivity extends AppCompatActivity {
                 Intent openConfirmation = new Intent(ProfileActivity.this, SafeEntryCheckIn.class);
                 openConfirmation.putExtra("Location To Check Into", result);
                 startActivity(openConfirmation);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                overridePendingTransition(R.anim.fade_out, R.anim.fade_out);
 
             }
         }

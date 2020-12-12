@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.ToSharePreferences;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -40,14 +43,36 @@ public class SafeEntryCheckout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //NETWORK REQ AND EXECUTE
-                SafeEntryCheckout.HttpGetRequestCheckout httpreqcheckout = new SafeEntryCheckout.HttpGetRequestCheckout();
-                httpreqcheckout.execute();
+                //SafeEntryCheckout.HttpGetRequestCheckout httpreqcheckout = new SafeEntryCheckout.HttpGetRequestCheckout();
+                //httpreqcheckout.execute();
+                HttpReqCheckout httpReqCheckout = new HttpReqCheckout();
+                httpReqCheckout.execute("latestcheckout",
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"userid"),
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"password"));
             }
         });
 
+
+
+    }
+
+    class HttpReqCheckout extends HttpRequest{
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result == null){
+                Toast.makeText(SafeEntryCheckout.this,"NO CHECKINS.",Toast.LENGTH_LONG).show();
+            }
+            else{
+                //Toast.makeText(SafeEntryCheckout.this,"Success Checking out.",Toast.LENGTH_LONG).show();
+                Intent intent_after_checkout = new Intent(SafeEntryCheckout.this,MenuActivity.class);
+                startActivity(intent_after_checkout);
+                overridePendingTransition(R.anim.left_in,R.anim.left_out);
+            }
+        }
     }
     // HTTPGetRequest Class to check latest checked in location
-    class HttpGetRequestCheckout extends AsyncTask<String, Void, String> {
+    /*class HttpGetRequestCheckout extends AsyncTask<String, Void, String> {
         public static final String REQUEST_METHOD = "GET";
         public static final int READ_TIMEOUT = 15000;
         public static final int CONNECTION_TIMEOUT = 15000;
@@ -108,7 +133,9 @@ public class SafeEntryCheckout extends AppCompatActivity {
             }
 
         }
-    }
+    }*/
+
+
 
 
     //end of latestCheckIn

@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
                         if (loggedInUserID != null){
                             Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                             startActivity(intent);
-                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                            overridePendingTransition(R.anim.fade_out, R.anim.fade_out);
                         }else{
                             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                             startActivity(intent);
-                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                            overridePendingTransition(R.anim.fade_out, R.anim.fade_out);
                         }
                     }
                 },

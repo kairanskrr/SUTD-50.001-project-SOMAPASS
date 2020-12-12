@@ -1,4 +1,4 @@
-package com.kairan.uidesign;
+package com.kairan.uidesign.Utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
-abstract class HttpRequest extends AsyncTask<String,Void,String> {
+abstract public class HttpRequest extends AsyncTask<String,Void,String> {
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
     public static final int CONNECTION_TIMEOUT = 15000;
@@ -26,20 +27,8 @@ abstract class HttpRequest extends AsyncTask<String,Void,String> {
     private String back;
     private Uri uri;
 
-    HttpRequest(String back, Context context){
-        SharedPreferences sharedPreferences = context.getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        useridtosend = sharedPreferences.getString("userid","UNDEFINED");;
-        passwordtosend = sharedPreferences.getString("password","UNDEFINED");;
-        this.back = back+"/"+useridtosend+"/"+passwordtosend;
-        // maybe try a self build url builder
-        Uri.Builder builder = new Uri.Builder();
-        builder.scheme(scheme)
-                .authority(authority)
-                .appendPath(this.back);
-        uri = builder.build();
-    }
 
-    protected String doInBackground(String... params){
+    protected String doInBackground(String... strings){
         //String stringUrl = params[0];
         String result;
         String inputLine;
@@ -49,9 +38,7 @@ abstract class HttpRequest extends AsyncTask<String,Void,String> {
         try {
             //Create a URL object holding our url
             //TODO TO implement the URL Builder taught to us instead of string concat for URL
-            //URL myUrl = new URL("https://somapass.xyz/latestcheckout/"+useridtosend+"/"+passwordtosend);
-            URL myUrl = new URL("https://somapass.xyz/"+back);
-            //URL myUrl= new URL(uri.toString());
+            URL myUrl = getURL(strings);
             System.out.println("==================================================================");
             System.out.println("===================================================================");
             System.out.println(myUrl);
@@ -87,10 +74,18 @@ abstract class HttpRequest extends AsyncTask<String,Void,String> {
         }
         return result;
     }
+
+    public URL getURL(String[] strings) throws MalformedURLException {
+        Uri.Builder builder = new Uri.Builder();
+        builder.scheme(scheme)
+                .authority(authority);
+        for(String i:strings){
+            builder.appendPath(i);
+        }
+        uri = builder.build();
+        return new URL(uri.toString());
+    }
+
     protected abstract void onPostExecute(String result);
-
-    //protected abstract void makeToast(String text);
-
-    //protected abstract void createIntent();
 
 }
