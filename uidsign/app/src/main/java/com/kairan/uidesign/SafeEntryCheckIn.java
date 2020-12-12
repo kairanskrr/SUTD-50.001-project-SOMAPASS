@@ -44,9 +44,9 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
         mCheckIn.setOnClickListener(v -> {
             HttpCheckIn executeCheckIn = new HttpCheckIn();
-            executeCheckIn.execute("checkin",
-                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"userid"),
-                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"password"),
+            executeCheckIn.execute(StringsUsed.CheckIn_http,
+                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,StringsUsed.user_id_sp),
+                    ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,StringsUsed.user_password_sp),
                     "1",checkIn_location_name.getText().toString());
 
             Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);

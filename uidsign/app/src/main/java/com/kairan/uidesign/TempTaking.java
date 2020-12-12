@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,7 +65,6 @@ public class TempTaking extends AppCompatActivity {
                 }
                 return false;
             }
-            return false;
         });
 
         // back to home
@@ -169,7 +170,7 @@ public class TempTaking extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("checkInLocation",result);
             editor.commit();
-            Log.i(tag,"editor, put check in location");
+            Log.i(StringsUsed.TAG,"editor, put check in location");
             Intent openConfirmation = new Intent(TempTaking.this, SafeEntryCheckIn.class);
             openConfirmation.putExtra("Location To Check Into", result);
             startActivity(openConfirmation);
