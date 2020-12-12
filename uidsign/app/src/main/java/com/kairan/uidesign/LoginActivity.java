@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,20 +32,16 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //To hide top ActionBar(three methods):
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
-
         setContentView(R.layout.activity_login);
+
+        //To hide top ActionBar
+        getSupportActionBar().hide();
 
         editText_username = findViewById(R.id.editText_username);
         editText_passward = findViewById(R.id.editText_password);
         checkBox_rememberME = findViewById(R.id.checkBox_rememberMe);
         button_login = findViewById(R.id.button_login);
         button_create_account = findViewById(R.id.button_create_account);
-
 
         //Click create account button: to createAccount
         button_create_account.setOnClickListener(new View.OnClickListener() {
@@ -60,9 +57,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HttpLogin httpreq = new HttpLogin();
-                httpreq.execute("login",editText_username.getText().toString(),editText_passward.getText().toString());
+                httpreq.execute(StringsUsed.Login_http,editText_username.getText().toString(),editText_passward.getText().toString());
             }
-
             //TODO END OF REFACTOR LATER
         });
     }
@@ -87,9 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                     //Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this,MenuActivity.class);
                     startActivity(intent);
-                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
-
-
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_in);
                 }catch (JSONException err){
                     Log.d("Error", err.toString());
                 }}
@@ -168,6 +162,5 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     }*/
-
 
 }

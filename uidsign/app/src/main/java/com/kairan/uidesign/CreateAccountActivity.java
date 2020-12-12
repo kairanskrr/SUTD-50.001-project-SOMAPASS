@@ -12,21 +12,23 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 
 public class CreateAccountActivity extends AppCompatActivity {
-
 
     ImageView back_to_login;
     Button create_account_button;
     EditText student_id;
     EditText password;
     EditText name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_create_account);
 
+        // back to login button
         back_to_login = findViewById(R.id.back_to_login);
         back_to_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,8 @@ public class CreateAccountActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.left_in,R.anim.left_out);
             }
         });
+
+
         student_id = findViewById(R.id.editText_name_create_account);
         password = findViewById(R.id.editText_password_create_account);
         name = findViewById(R.id.editText_studentname_create_account);
@@ -45,14 +49,12 @@ public class CreateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HttpReqCreateAccount httpreqcreate = new HttpReqCreateAccount();
-                httpreqcreate.execute("createaccount",student_id.getText().toString(),password.getText().toString(),name.getText().toString());
+                httpreqcreate.execute(StringsUsed.CreateAccount_http,student_id.getText().toString(),password.getText().toString(),name.getText().toString());
             }
         });
-
-
-
     }
 
+    // http request for creating account
     class HttpReqCreateAccount extends HttpRequest {
 
         @Override

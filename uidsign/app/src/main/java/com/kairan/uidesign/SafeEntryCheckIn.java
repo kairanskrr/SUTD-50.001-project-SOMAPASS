@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 import com.kairan.uidesign.Utils.ToSharePreferences;
 
 // maybe rename this activity?
@@ -32,22 +33,17 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
 
 
-        //Log.i(tag,"go to scan activity");
+        Log.i(StringsUsed.TAG,"go to safe entry activity");
         checkIn_location_name = findViewById(R.id.textView_current_location);
-        //SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        //Log.i(tag,sharedPreferences.toString());
-        //String checkinlocationnamecardstring = sharedPreferences.getString("checkInLocation","UNDEFINED");
         String checkInLocation_scan = getIntent().getStringExtra(MenuActivity.checkIn_location_intent);
         String checkInLocation_search = getIntent().getStringExtra(SearchActivity.CheckInLocation);
         if(checkInLocation_search==null) {
-            //Log.i(tag, checkinlocationnamecardstring);
             checkIn_location_name.setText(checkInLocation_scan);
         }else{
             checkIn_location_name.setText(checkInLocation_search);
         }
-        //Log.i(tag,"set text");
 
-        //check in and out buttons
+        //check in buttons
         Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
         //Button mCheckOut = findViewById(R.id.button_checkOut_safeEntry);
 
@@ -72,16 +68,16 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
 
                 HttpCheckIn executeCheckIn = new HttpCheckIn();
-                executeCheckIn.execute("checkin",
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"userid"),
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,"password"),
+                executeCheckIn.execute(StringsUsed.CheckIn_http,
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,StringsUsed.user_id_sp),
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckIn.this,StringsUsed.user_password_sp),
                         "1",checkIn_location_name.getText().toString());
 
                 Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);
                 successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
                 startActivity(successScreen);
                 overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
-                Log.i(tag,checkIn_location_name.getText().toString());
+                Log.i(StringsUsed.TAG,checkIn_location_name.getText().toString());
 
             }
         });

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,25 +18,19 @@ abstract public class HttpRequest extends AsyncTask<String,String,String> {
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
     public static final int CONNECTION_TIMEOUT = 15000;
-    final String scheme = "https";
-    final String authority = "somapass.xyz";
+    private static final String scheme = "https";
+    private static final String authority = "somapass.xyz";
     private Uri uri;
 
 
+
+
     protected String doInBackground(String... strings){
-        //String stringUrl = params[0];
         String result;
         String inputLine;
-        /*SharedPreferences sharedPreferences = getSharedPreferences_("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        String useridtosend = sharedPreferences.getString("userid","UNDEFINED");;
-        String passwordtosend = sharedPreferences.getString("password","UNDEFINED");;*/
         try {
-            //Create a URL object holding our url
-            //TODO TO implement the URL Builder taught to us instead of string concat for URL
             URL myUrl = getURL(strings);
-            System.out.println("==================================================================");
-            System.out.println("===================================================================");
-            System.out.println(myUrl);
+            Log.i(StringsUsed.TAG,"my URL: " + myUrl.toString());
             //Create a connection
             HttpURLConnection connection =(HttpURLConnection)
                     myUrl.openConnection();

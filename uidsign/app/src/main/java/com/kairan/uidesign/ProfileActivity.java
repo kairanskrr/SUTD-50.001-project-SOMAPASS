@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kairan.uidesign.Utils.StringsUsed;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView logout_button;
@@ -26,7 +27,6 @@ public class ProfileActivity extends AppCompatActivity {
     TextView temphistory;
     TextView userName;
     TextView studentId;
-    public String tag = "SHARED";
 
 
     @Override
@@ -35,12 +35,12 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         getSupportActionBar().hide();
 
+        // set text: user name and id
         userName = findViewById(R.id.textView_username_profile_right);
         studentId = findViewById(R.id.textView_studentid_profile_right);
-
-        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        String loggedInName = sharedPreferences.getString("name","UNDEFINED");
-        String loggedInId = sharedPreferences.getString("userid","UNDEFINED");
+        SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
+        String loggedInName = sharedPreferences.getString(StringsUsed.user_name_sp,StringsUsed.undefined_sp);
+        String loggedInId = sharedPreferences.getString(StringsUsed.user_id_sp,StringsUsed.undefined_sp);
         userName.setText(loggedInName);
         studentId.setText(loggedInId);
 
@@ -59,37 +59,34 @@ public class ProfileActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.navigation_scan:
                         startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                         return true;
 
                     case R.id.navigation_home:
                         startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                         return true;
 
                     case R.id.navigation_declare:
                         startActivity(new Intent(getApplicationContext(), TempTaking.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                         return true;
 
                     case R.id.navigation_profile:
-                        //startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
                         return true;
-
                 }
                 return false;
             }
         });
 
         //View TEMP HISTORY BUTTON
-
         temphistory = findViewById(R.id.textView_history_profile);
         temphistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intenttemphistory = new Intent(ProfileActivity.this,TemperatureHistory.class);
                 startActivity(intenttemphistory);
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
 
@@ -99,16 +96,17 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("userid", null);
-                editor.putString("password", null);
-                editor.putString("name", null);
+                editor.putString(StringsUsed.user_id_sp, null);
+                editor.putString(StringsUsed.user_password_sp, null);
+                editor.putString(StringsUsed.user_name_sp, null);
                 editor.commit();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 
             }
         });
 
+        // back to home button
         backbutton = findViewById(R.id.imageView_back_profile);
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,16 +161,10 @@ public class ProfileActivity extends AppCompatActivity {
                 //Getting the passed result
                 String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
                 Log.d(MenuActivity.getLOGTAG(), "Have scan result in your app activity :" + result);
-
-                Log.i(tag,"requestCode == REQUEST_CODE_QR_CODE");
-                Log.i(tag,result);
-                SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-                Log.i(tag,sharedPreferences.toString());
+                SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                Log.i(tag,editor.toString());
-                editor.putString("checkInLocation",result);
+                editor.putString(StringsUsed.checkInLocation_sp,result);
                 editor.commit();
-                Log.i(tag,"editor, put check in location");
 
             /*
             code that check in straightaway without confirmation:

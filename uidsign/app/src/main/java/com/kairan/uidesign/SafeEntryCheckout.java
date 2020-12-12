@@ -12,12 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 import com.kairan.uidesign.Utils.ToSharePreferences;
 
 public class SafeEntryCheckout extends AppCompatActivity {
     TextView locationanamecard;
     Button checkOutButton;
-    public String tag = "SHARED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,8 @@ public class SafeEntryCheckout extends AppCompatActivity {
         setContentView(R.layout.activity_safe_entry_checkout);
         getSupportActionBar().hide();
         locationanamecard = findViewById(R.id.textView_current_location_out);
-        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        String checkoutlocationnamecard = sharedPreferences.getString("checkoutlocationnamecard","UNDEFINED");;
+        SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
+        String checkoutlocationnamecard = sharedPreferences.getString(StringsUsed.checkoutLocation_sp,StringsUsed.undefined_sp);;
         locationanamecard.setText(checkoutlocationnamecard);
 
         checkOutButton = findViewById(R.id.button_checkOut_safeEntry);
@@ -35,13 +35,13 @@ public class SafeEntryCheckout extends AppCompatActivity {
             public void onClick(View v) {
                 //NETWORK REQ AND EXECUTE
                 HttpReqCheckout httpReqCheckout = new HttpReqCheckout();
-                httpReqCheckout.execute("latestcheckout",
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"userid"),
-                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,"password"));
+                httpReqCheckout.execute(StringsUsed.LatestCheckout_http,
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,StringsUsed.user_id_sp),
+                        ToSharePreferences.GetSharedPreferences(SafeEntryCheckout.this,StringsUsed.user_password_sp));
             }
         });
-
     }
+
     // HTTPGetRequest Class to check latest checked in location
     class HttpReqCheckout extends HttpRequest {
 

@@ -1,7 +1,6 @@
 package com.kairan.uidesign;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,18 +8,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONException;
+import com.kairan.uidesign.Utils.StringsUsed;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import static java.lang.System.err;
 
 public abstract class ListViewAdapter extends BaseAdapter {
 
@@ -40,7 +34,7 @@ public abstract class ListViewAdapter extends BaseAdapter {
         inflater = LayoutInflater.from(mContext);
         this.locationArrayList = new ArrayList<String>();
         this.locationArrayList.addAll(locationList);
-        this.sharedPreferences = mContext.getSharedPreferences("com.example.android.searchsharedprefs", Context.MODE_PRIVATE);
+        this.sharedPreferences = mContext.getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
         this.editor = sharedPreferences.edit();
     }
 
@@ -69,8 +63,8 @@ public abstract class ListViewAdapter extends BaseAdapter {
         if (view == null) {
             holder = new ViewHolder();
             view = inflater.inflate(R.layout.list_view_items, null);
-            // Locate the TextViews in listview_item.xml
 
+            // Locate the TextViews in listview_item.xml
             holder.location = (TextView) view.findViewById(R.id.textView_location_search);
             holder.checkbox = (CheckBox) view.findViewById(R.id.listCheckbox);
             holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -78,32 +72,25 @@ public abstract class ListViewAdapter extends BaseAdapter {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
                         //add to sharedpref
-                        if (sharedPreferences.contains("starred locations")) {
-                            editor.putString("starred locations",  holder.location.getText().toString()+ ","+sharedPreferences.getString("starred locations", "") );
-
+                        if (sharedPreferences.contains(StringsUsed.starredLocations_sp)) {
+                            editor.putString(StringsUsed.starredLocations_sp,  holder.location.getText().toString()+ ","+sharedPreferences.getString(StringsUsed.starredLocations_sp, "") );
                         } else {
-                            editor.putString("starred locations", holder.location.getText().toString()+ ",");
+                            editor.putString(StringsUsed.starredLocations_sp, holder.location.getText().toString()+ ",");
                         }
-
-
-
                     } else {
                         //remove from sharedpref
-                        editor.putString("starred locations", sharedPreferences.getString("starred locations", "").replace(holder.location.getText().toString() + ",", ""));
-
+                        editor.putString(StringsUsed.starredLocations_sp, sharedPreferences.getString(StringsUsed.starredLocations_sp, "").replace(holder.location.getText().toString() + ",", ""));
                     }
                     editor.commit();
                     //this returns a fucking long string and i have no goddamn idea why. works tho
                     //Toast.makeText(mContext,sharedPreferences.getString("starred locations", ""),Toast.LENGTH_SHORT).show();
-
-
                 }
-
             });
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
+
         // Set the results into TextViews
         holder.location.setText(locationList.get(position));
         for (String location: locationList) {
@@ -111,7 +98,6 @@ public abstract class ListViewAdapter extends BaseAdapter {
                 if (holder.location.getText().toString() == location) {
                     holder.checkbox.setChecked(true);
                 }
-
             }
         }
         holder.location.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +111,6 @@ public abstract class ListViewAdapter extends BaseAdapter {
                 createIntent(checkInLocation);
             }
         });
-
         return view;
     }
 

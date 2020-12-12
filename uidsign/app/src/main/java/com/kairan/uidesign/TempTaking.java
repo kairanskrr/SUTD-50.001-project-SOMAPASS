@@ -21,14 +21,13 @@ import android.widget.Toast;
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kairan.uidesign.Utils.HttpRequest;
+import com.kairan.uidesign.Utils.StringsUsed;
 import com.kairan.uidesign.Utils.ToSharePreferences;
 
 public class TempTaking extends AppCompatActivity {
     ImageButton backbutton;
     Button temp_submit;
     Button temp_history_button;
-    public String tag = "SHARED";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +38,8 @@ public class TempTaking extends AppCompatActivity {
         //Initialize and Assign Variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
 
-        //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
+        //Set Dec Selected
+        bottomNavigationView.setSelectedItemId(R.id.navigation_declare);
 
         //Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -49,27 +48,27 @@ public class TempTaking extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.navigation_scan:
                         startActivityForResult(new Intent(getApplicationContext(), QrCodeActivity.class), MenuActivity.getRequestCodeQrScan());
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                         return true;
 
                     case R.id.navigation_home:
                         startActivity(new Intent(getApplicationContext(),MenuActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                         return true;
 
                     case R.id.navigation_declare:
-                        //startActivity(new Intent(getApplicationContext(),TempTaking.class));
-                        //overridePendingTransition(0,0);
                         return true;
 
                     case R.id.navigation_profile:
                         startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                         return true;
                 }
                 return false;
             }
         });
+
+        // back to home
         backbutton = findViewById(R.id.imageView_back_fromtemp);
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,9 +85,9 @@ public class TempTaking extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 HttpReqNewTemp newTempReq = new HttpReqNewTemp();
-                newTempReq.execute("newtemperature",
-                        ToSharePreferences.GetSharedPreferences(TempTaking.this,"userid"),
-                        ToSharePreferences.GetSharedPreferences(TempTaking.this,"password"),
+                newTempReq.execute(StringsUsed.NewTemp_http,
+                        ToSharePreferences.GetSharedPreferences(TempTaking.this,StringsUsed.user_id_sp),
+                        ToSharePreferences.GetSharedPreferences(TempTaking.this,StringsUsed.user_password_sp),
                         currentTemperature);
             }
         });
@@ -149,15 +148,10 @@ public class TempTaking extends AppCompatActivity {
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d(MenuActivity.getLOGTAG(), "Have scan result in your app activity :" + result);
 
-            Log.i(tag,"requestCode == REQUEST_CODE_QR_CODE");
-            Log.i(tag,result);
             SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-            Log.i(tag,sharedPreferences.toString());
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            Log.i(tag,editor.toString());
             editor.putString("checkInLocation",result);
             editor.commit();
-            Log.i(tag,"editor, put check in location");
 
             /*
             code that check in straightaway without confirmation:

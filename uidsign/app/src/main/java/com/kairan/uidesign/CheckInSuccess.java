@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kairan.uidesign.Utils.StringsUsed;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -21,7 +23,6 @@ public class CheckInSuccess extends AppCompatActivity {
     TextView textView_checkIn_date;
     TextView textView_checkIn_time;
     TextView textView_current_location;
-    public String tag = "SHARED";
     HashMap<Integer, String> monthsMap = new HashMap<>();
 
 
@@ -31,11 +32,11 @@ public class CheckInSuccess extends AppCompatActivity {
         setContentView(R.layout.activity_checkinsuccess);
         getSupportActionBar().hide();
 
-        Log.i(tag,"go to check in success");
+        Log.i(StringsUsed.TAG,"go to check in success");
 
+        // get and set check in time and date
         textView_checkIn_date = findViewById(R.id.checkin_date);
         textView_checkIn_time = findViewById(R.id.checkin_time);
-
 
         String dateFormat = "dd MMM yyyy";
         String timeFormat = "hh:mm aa";
@@ -44,21 +45,19 @@ public class CheckInSuccess extends AppCompatActivity {
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+8"));
 
         textView_checkIn_date.setText(date.format(new Date()));
-        Log.i(tag,date.format(new Date()));
-        textView_checkIn_time.setText(time.format(new Date()));
-        Log.i(tag,time.format(new Date()));
-        Log.i(tag,String.valueOf(textView_checkIn_date.getText()));
-        Log.i(tag,String.valueOf(textView_checkIn_time.getText()));
+        Log.i(StringsUsed.TAG,date.format(new Date()));
+        Log.i(StringsUsed.TAG,String.valueOf(textView_checkIn_date.getText()));
 
-        Log.i(tag,"go to scan activity");
+        textView_checkIn_time.setText(time.format(new Date()));
+        Log.i(StringsUsed.TAG,time.format(new Date()));
+        Log.i(StringsUsed.TAG,String.valueOf(textView_checkIn_time.getText()));
+
+        // get and set current location (intent from check in activity)
         textView_current_location = findViewById(R.id.textView_current_location_checkIn);
-        //SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        //Log.i(tag,sharedPreferences.toString());
-        //String checkInLocation = sharedPreferences.getString("checkInLocation","UNDEFINED");
         String checkInLocation = getIntent().getStringExtra(SafeEntryCheckIn.GET_CHECK_IN_LOCATION_SCAN);
-        Log.i(tag,checkInLocation);
+        Log.i(StringsUsed.TAG,checkInLocation);
         textView_current_location.setText(checkInLocation);
-        Log.i(tag,"set text");
+        Log.i(StringsUsed.TAG,"set text");
 
         //display date
 //        Calendar calendar = Calendar.getInstance();
@@ -72,7 +71,7 @@ public class CheckInSuccess extends AppCompatActivity {
 //        textView_checkIn_time.setText(formattedTime.format(date));
 
 
-
+        // back to home button (2 ways)
         Button mBackToHome = findViewById(R.id.backToHome);
         mBackToHome.setOnClickListener(new View.OnClickListener() {
             @Override
