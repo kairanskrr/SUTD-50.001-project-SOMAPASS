@@ -18,7 +18,6 @@ import com.kairan.uidesign.Utils.ToSharePreferences;
 public class SafeEntryCheckIn extends AppCompatActivity {
     ImageView backButton;
     TextView checkIn_location_name;
-    public String tag = "SHARED";
     static String GET_CHECK_IN_LOCATION_SCAN = "get check in location";
 
     @Override
@@ -41,7 +40,6 @@ public class SafeEntryCheckIn extends AppCompatActivity {
 
         //check in buttons
         Button mCheckIn = findViewById(R.id.button_checkIn_safeEntry);
-
         mCheckIn.setOnClickListener(v -> {
             HttpCheckIn executeCheckIn = new HttpCheckIn();
             executeCheckIn.execute(StringsUsed.CheckIn_http,
@@ -52,8 +50,8 @@ public class SafeEntryCheckIn extends AppCompatActivity {
             Intent successScreen = new Intent(SafeEntryCheckIn.this, CheckInSuccess.class);
             successScreen.putExtra(GET_CHECK_IN_LOCATION_SCAN,checkIn_location_name.getText().toString());
             startActivity(successScreen);
-            overridePendingTransition(R.anim.zoom_out,R.anim.zoom_out);
-            Log.i(tag,checkIn_location_name.getText().toString());
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            Log.i(StringsUsed.TAG,checkIn_location_name.getText().toString());
 
         });
 

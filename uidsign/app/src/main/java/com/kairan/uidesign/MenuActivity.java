@@ -55,8 +55,8 @@ public class MenuActivity extends AppCompatActivity{
                 setContentView(R.layout.activity_menu);
         getSupportActionBar().hide();
         textview_username_menu = findViewById(R.id.textview_username_menu);
-        SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
-        String loggedInName = sharedPreferences.getString("name","UNDEFINED");
+        SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
+        String loggedInName = sharedPreferences.getString(StringsUsed.user_name_sp,StringsUsed.undefined_sp);
         textview_username_menu.setText(loggedInName);
 
         //get user permission
@@ -204,15 +204,16 @@ public class MenuActivity extends AppCompatActivity{
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.i(tag,"onActivityResult");
-        Log.i(tag,"data: "+data);
-        Log.i(tag,"resultCode: "+requestCode);
+        Log.i(StringsUsed.TAG,"onActivityResult");
+        Log.i(StringsUsed.TAG,"data: "+data);
+        Log.i(StringsUsed.TAG,"resultCode: "+requestCode);
+
         if (resultCode != Activity.RESULT_OK) {
             Log.d(LOGTAG, "COULD NOT GET A GOOD RESULT.");
             if (data == null)
                 return;
             //Getting the passed result
-            String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
+            String result = data.getStringExtra(StringsUsed.requestError_scan);
             if (result != null) {
 
                 AlertDialog alertDialog = new AlertDialog.Builder(MenuActivity.this).create();
@@ -229,18 +230,18 @@ public class MenuActivity extends AppCompatActivity{
             if (data == null)
                 return;
             //Getting the passed result
-            String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
+            String result = data.getStringExtra(StringsUsed.requestOk_scan);
             Log.d(LOGTAG, "Have scan result in your app activity :" + result);
 
-            //Log.i(StringsUsed.TAG,"requestCode == REQUEST_CODE_QR_CODE");
-            //Log.i(StringsUsed.TAG,result);
+            Log.i(StringsUsed.TAG,"requestCode == REQUEST_CODE_QR_CODE");
+            Log.i(StringsUsed.TAG,result);
             SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
-            //Log.i(StringsUsed.TAG,sharedPreferences.toString());
+            Log.i(StringsUsed.TAG,sharedPreferences.toString());
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            //Log.i(StringsUsed.TAG,editor.toString());
+            Log.i(StringsUsed.TAG,editor.toString());
             editor.putString(StringsUsed.checkInLocation_sp,result);
             editor.commit();
-            //Log.i(StringsUsed.TAG,"editor, put check in location");
+            Log.i(StringsUsed.TAG,"editor, put check in location");
 
 
             Intent openConfirmation = new Intent(MenuActivity.this, SafeEntryCheckIn.class);
