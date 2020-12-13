@@ -23,6 +23,7 @@ public class StringsUsed {
     public final static String checkInLocation_sp = "checkInLocation";
     public final static String checkoutLocation_sp = "checkoutlocationnamecard";
     public final static String starredLocations_sp = "starred locations";
+    public final static String checkInLocationNameCard_sp = "checkinlocationnamecard";
 
     // temp taking history
     public final static String tempTaking_dateTime1 = "datetime1";
@@ -32,10 +33,15 @@ public class StringsUsed {
     public final static String tempTaking_dateTime3 = "datetime3";
     public final static String tempTaking_temp3 = "temp3";
 
-    //JSON
+    // JSON
     public final static String locationName_json = "locationname";
     public final static String checkInTimeReadable_json = "checkintimereadable";
     public final static String userId_json = "userid";
     public final static String userPassword_json = "password";
     public final static String userName_json = "name";
+
+    // scan
+    public final static String requestError_scan = "com.blikoon.qrcodescanner.error_decoding_image";
+    public final static String requestOk_scan = "com.blikoon.qrcodescanner.got_qr_scan_relult";
+    public final static String locationToCheckInto_scan = "Location To Check Into";
 }

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.blikoon.qrcodescanner.QrCodeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kairan.uidesign.Utils.StringsUsed;
 
 public class HealthDec extends AppCompatActivity {
 
@@ -82,7 +83,7 @@ public class HealthDec extends AppCompatActivity {
             if (data == null)
                 return;
             //Getting the passed result
-            String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
+            String result = data.getStringExtra(StringsUsed.requestError_scan);
             if (result != null) {
                 AlertDialog alertDialog = new AlertDialog.Builder(HealthDec.this).create();
                 alertDialog.setTitle("Scan Error");
@@ -98,7 +99,7 @@ public class HealthDec extends AppCompatActivity {
             if (data == null)
                 return;
             //Getting the passed result
-            String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
+            String result = data.getStringExtra(StringsUsed.requestOk_scan);
             Log.d(MenuActivity.getLOGTAG(), "Have scan result in your app activity :" + result);
             Intent openConfirmation = new Intent(HealthDec.this, SafeEntryCheckIn.class);
             openConfirmation.putExtra("Location To Check Into", result);

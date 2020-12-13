@@ -125,11 +125,11 @@ public class ProfileActivity extends AppCompatActivity {
                 if (data == null)
                     return;
                 //Getting the passed result
-                String result = data.getStringExtra("com.blikoon.qrcodescanner.error_decoding_image");
+                String result = data.getStringExtra(StringsUsed.requestError_scan);
                 if (result != null) {
-                    SharedPreferences sharedPreferences = getSharedPreferences("com.example.android.mainsharedprefs", Context.MODE_PRIVATE);
+                    SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("checkinlocationnamecard",String.valueOf(data));
+                    editor.putString(StringsUsed.checkInLocationNameCard_sp,String.valueOf(data));
 
                     editor.commit();
 
@@ -147,7 +147,7 @@ public class ProfileActivity extends AppCompatActivity {
                 if (data == null)
                     return;
                 //Getting the passed result
-                String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
+                String result = data.getStringExtra(StringsUsed.requestOk_scan);
                 Log.d(MenuActivity.getLOGTAG(), "Have scan result in your app activity :" + result);
                 SharedPreferences sharedPreferences = getSharedPreferences(StringsUsed.pref_file_sp, Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -155,7 +155,7 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.commit();
 
                 Intent openConfirmation = new Intent(ProfileActivity.this, SafeEntryCheckIn.class);
-                openConfirmation.putExtra("Location To Check Into", result);
+                openConfirmation.putExtra(StringsUsed.locationToCheckInto_scan, result);
                 startActivity(openConfirmation);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_in);
 
